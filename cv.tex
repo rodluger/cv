@@ -1,0 +1,380 @@
+% Don't like 10pt? Try 11pt or 12pt
+\documentclass[11pt]{article}
+\newcommand{\sbullet}{\,\begin{picture}(1,1)(0,-3)\circle*{3}\end{picture}\ }
+% The automated optical recognition software used to digitize resume
+% information works best with fonts that do not have serifs. This
+% command uses a sans serif font throughout. Uncomment both lines (or at
+% least the second) to restore a Roman font (i.e., a font with serifs).
+%\usepackage{times}
+%\renewcommand{\familydefault}{\sfdefault}
+
+% This is a helpful package that puts math inside length specifications
+\usepackage{calc}
+\usepackage{mdwlist}
+
+% Simpler bibsection for CV sections
+% (thanks to natbib for inspiration)
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{1em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newenvironment{bibsection}%
+        {\begin{list}{}{%
+       \setlength{\leftmargin}{\bibhang}%
+       \setlength{\itemindent}{-\leftmargin}%
+       \setlength{\itemsep}{\bibsep}%
+       \setlength{\parsep}{\z@}%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+\makeatother
+
+% Layout: Puts the section titles on left side of page
+\reversemarginpar
+
+%
+%         PAPER SIZE, PAGE NUMBER, AND DOCUMENT LAYOUT NOTES:
+%
+% The next \usepackage line changes the layout for CV style section
+% headings as marginal notes. It also sets up the paper size as either
+% letter or A4. By default, letter was used. If A4 paper is desired,
+% comment out the letterpaper lines and uncomment the a4paper lines.
+%
+% As you can see, the margin widths and section title widths can be
+% easily adjusted.
+%
+% ALSO: Notice that the includefoot option can be commented OUT in order
+% to put the PAGE NUMBER *IN* the bottom margin. This will make the
+% effective text area larger.
+%
+% IF YOU WISH TO REMOVE THE ``of LASTPAGE'' next to each page number,
+% see the note about the +LP and -LP lines below. Comment out the +LP
+% and uncomment the -LP.
+%
+% IF YOU WISH TO REMOVE PAGE NUMBERS, be sure that the includefoot line
+% is uncommented and ALSO uncomment the \pagestyle{empty} a few lines
+% below.
+%
+
+%% Use these lines for letter-sized paper
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=1.2in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=1in,               % 1 inch margins
+            includemp]{geometry}
+
+%% Use these lines for A4-sized paper
+%\usepackage[paper=a4paper,
+%            %includefoot, % Uncomment to put page number above margin
+%            marginparwidth=30.5mm,    % Length of section titles
+%            marginparsep=1.5mm,       % Space between titles and text
+%            margin=25mm,              % 25mm margins
+%            includemp]{geometry}
+
+%% More layout: Get rid of indenting throughout entire document
+\setlength{\parindent}{0in}
+
+\usepackage[shortlabels]{enumitem}
+
+%% Reference the last page in the page number
+%
+% NOTE: comment the +LP line and uncomment the -LP line to have page
+%       numbers without the ``of ##'' last page reference)
+%
+% NOTE: uncomment the \pagestyle{empty} line to get rid of all page
+%       numbers (make sure includefoot is commented out above)
+%
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+%\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+% Finally, give us PDF bookmarks
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,urlcolor=MidnightBlue,filecolor=MidnightBlue}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The title (name) with a horizontal rule under it
+% (optional argument typesets an object right-justified across from name
+%  as well)
+%
+% Usage: \makeheading{name}
+%        OR
+%        \makeheading[right_object]{name}
+%
+% Place at top of document. It should be the first thing.
+% If ``right_object'' is provided in the square-braced optional
+% argument, it will be right justified on the same line as ``name'' at
+% the top of the CV. For example:
+%
+%       \makeheading[\emph{Curriculum vitae}]{Your Name}
+%
+% will put an emphasized ``Curriculum vitae'' at the top of the document
+% as a title. Likewise, a picture could be included:
+%
+%   \makeheading[\includegraphics[height=1.5in]{my_picutre}]{Your Name}
+%
+% the picture will be flush right across from the name.
+\newcommand{\makeheading}[2][]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+             {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}}
+
+% The section headings
+%
+% Usage: \section{section name}
+\renewcommand{\section}[1]{\pagebreak[3]%
+    \hyphenpenalty=10000%
+    \vspace{1.3\baselineskip}%
+    \phantomsection\addcontentsline{toc}{section}{#1}%
+    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\raggedright #1}}}%
+    \vspace{-\baselineskip}\par}
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*]}{\end{itemize}%
+         \vspace{-.6\baselineskip}}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+        {\begin{list}{#1}{%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+
+% An itemize-style list with little space between items
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt]}
+        {\end{itemize}}
+
+% An environment IDENTICAL to innerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{loneinnerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt]}
+        {\end{itemize}\vspace{-.6\baselineskip}}
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+\newcommand{\blankline}{\quad\pagebreak[3]}
+\newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
+
+% Uses hyperref to link DOI
+\newcommand\doilink[1]{\href{http://dx.doi.org/#1}{#1}}
+\newcommand\doi[1]{doi:\doilink{#1}}
+
+% For \url{SOME_URL}, links SOME_URL to the url SOME_URL
+\providecommand*\url[1]{\href{#1}{#1}}
+% Same as above, but pretty-prints SOME_URL in teletype fixed-width font
+\renewcommand*\url[1]{\href{#1}{\texttt{#1}}}
+
+% For \email{ADDRESS}, links ADDRESS to the url mailto:ADDRESS
+\providecommand*\email[1]{\href{mailto:#1}{#1}}
+% Same as above, but pretty-prints ADDRESS in teletype fixed-width font
+%\renewcommand*\email[1]{\href{mailto:#1}{\texttt{#1}}}
+
+%\providecommand\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+%\providecommand\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%    \TeX}}
+\providecommand\BibTeX{{B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    \TeX}}
+\providecommand\Matlab{\textsc{Matlab}}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%my additions
+\renewcommand{\labelitemi}{$\cdots$}
+
+\newlength{\wideitemsep}
+\setlength{\wideitemsep}{.5\itemsep}
+\addtolength{\wideitemsep}{-7pt}
+\let\olditem\item
+\renewcommand{\item}{\setlength{\itemsep}{\wideitemsep}\olditem}
+
+\begin{document}
+\makeheading{\Large Rodrigo~Luger \hfill \textcolor{CadetBlue}{\emph{Astronomer}}}
+
+\section{Contact}
+
+% NOTE: Mind where the & separators and \\ breaks are in the following
+%       table.
+%
+% ALSO: \rcollength is the width of the right column of the table
+%       (adjust it to your liking; default is 1.85in).
+%
+\newlength{\rcollength}\setlength{\rcollength}{1.50in}%
+%
+%\begin{tabular}[t]{@{}p{\textwidth-\rcollength}p{\rcollength}}
+%University of Washington \\
+%Department of Astronomy & \hspace*{-1.25in} \fontsize{9pt}{1em}\url{www.astro.washington.edu/users/rodluger}\\
+%3910 15th Ave NE $\cdots$ Seattle, WA 98195 & \hfill \email{rodluger@uw.edu}\phantom{---}\\[0.2cm]
+%\end{tabular}
+%
+Univ. of Washington\ \ $\cdots$\ \ Department of Astronomy\\
+3910 15th Ave NE\ \ $\cdots$\ \ Seattle, WA 98195 -- U.S.A.\\
+\email{rodluger@uw.edu}\ \ $\cdots$\ \ \url{staff.washington.edu/rodluger/} \\[0.65cm]
+%
+\section{Education}
+\vspace*{-0.62cm}\textbf{University of Washington}, Seattle, WA\hfill \textbf{2012 - }\\[0.05cm]
+\hspace*{-0.62cm}
+\begin{minipage}[b]{\linewidth+0.5cm}
+\begin{itemize}[leftmargin=3em]
+\item[$\cdots$] Astronomy/Astrobiology PhD Candidate
+\item[$\cdots$] MSc Astronomy, December 2013\\[-0.2cm]
+\end{itemize}
+\end{minipage}
+
+\textbf{Swarthmore College}, Swarthmore, PA\hfill \textbf{2006 - 2010}\\[0.1cm]
+\hspace*{-0.62cm}
+\begin{minipage}[b]{\linewidth+0.5cm}
+\begin{itemize}[leftmargin=3em]
+\item[$\cdots$] BA Astrophysics / English Literature minor, May 2010\\[-0.2cm]
+\end{itemize}
+\end{minipage}
+
+\textbf{American School of Campinas}, Campinas, Brazil\hfill \textbf{2002 - 2006}\\[0.1cm]
+\hspace*{-0.62cm}
+\begin{minipage}[b]{\linewidth+0.5cm}
+\end{minipage}\\[-1cm]
+
+\section{Research Experience}
+\textbf{Researcher}, Virtual Planet Laboratory @ UW\hfill \textbf{2012 - }\\[0.1cm]
+\hspace*{-0.62cm}
+\begin{minipage}[b]{\linewidth+0.5cm}
+\begin{itemize}[leftmargin=3em]
+\item Research with Profs. Eric Agol, Rory Barnes, and Victoria Meadows
+\item Developing methods to de-trend \emph{K2} light curves and search for small potentially habitable transiting planets
+\item Investigating the atmospheric evolution of planets in the habitable zone of M dwarfs\\[-0.2cm]
+\end{itemize}
+\end{minipage}
+
+\textbf{Student Researcher}, Swarthmore College\hfill \textbf{2008 - 2009}\\[0.1cm]
+\hspace*{-0.62cm}
+\begin{minipage}[b]{\linewidth+0.5cm}
+\begin{itemize}[leftmargin=3em]
+\item Research under Professor Eric Jensen on planet formation and T Tauri disks\\[-0.2cm]
+\end{itemize}
+\end{minipage}
+
+\section{\small Selected Publications}
+
+\fontsize{10pt}{1em}
+
+\textbf{Luger, R.}, Sestovic, M., Kruse, E., et al. (2017) \emph{A seven-planet resonant chain in TRAPPIST-1.} Nature Astronomy 1, 0129\\[-0.3cm]
+
+\textbf{Luger, R.}, Kruse, E., Foreman-Mackey, D., Agol, Eric, and Saunders, Nicholas. (2017) \emph{An update to the EVEREST K2 pipeline: Short cadence, saturated stars, and Kepler-like photometry down to $Kp$ = 15.} arXiv:1702.05488.\\[-0.3cm]
+
+\textbf{Luger, R.}, Lustig-Yaeger, J., Fleming, D.~P., Tilley, M.~A., Agol, E., Meadows, V.~S., Deitrick, R., and Barnes, R. (2017) \emph{The Pale Green Dot: A Method to Characterize Proxima Centauri b using Exo-Aurorae.} ApJ 837, 63.\\[-0.3cm]
+
+Meadows, V.~S., Arney, G.~N., Schwieterman, E.~W., 
+Lustig-Yaeger, J., Lincowski, A.~P., Robinson, T., 
+Domagal-Goldman, S.~D., Barnes, R.~K., Fleming, D.~P., 
+Deitrick, R., \textbf{Luger, R.}, Driscoll, P.~E., Quinn, T.~R., and
+Crisp, D. (2016) \emph{The Habitability of Proxima Centauri b: II: Environmental States and Observational Discriminants.} arXiv:1608.08620.\\[-0.3cm]
+
+Barnes, R., Deitrick, R., \textbf{Luger, R.}, Driscoll, P.~E., 
+Quinn, T.~R., Fleming, D.~P., Guyer, B., McDonald, D.~V., 
+Meadows, V.~S., Arney, G., Crisp, D., Domagal-Goldman, S.~D., 
+Lincowski, A., Lustig-Yaeger, J., and Schwieterman, E. (2016)
+\emph{The Habitability of Proxima Centauri b I: Evolutionary Scenarios.} arXiv:1608.06919.\\[-0.3cm]
+
+\textbf{Luger, R.}, Agol, E., Kruse, E., Barnes, R., Becker, A., Foreman-Mackey, D., and Deming, D. (2016) \emph{EVEREST: Pixel Level Decorrelation of K2 Light curves.} AJ 152, 100.\\[-0.3cm]
+
+Schwieterman, E.~W., Meadows, V.~S., Domagal-Goldman, S.~D., 
+Deming, D., Arney, G.~N., \textbf{Luger, R.}, Harman, C.~E., 
+Misra, A., and Barnes, R. (2016) \emph{Identifying Planetary Biosignature Impostors: Spectral Features of CO and O$_4$ Resulting from Abiotic O$_2$/O$_3$ Production.} ApJL 819, 13.\\[-0.3cm]
+
+\textbf{Luger, R.} and Barnes, R. (2015) \emph{Extreme Water Loss and Abiotic O$_2$ Buildup on Planets Throughout the Habitable Zones of M Dwarfs.} Astrobiology 15, 119.\\[-0.3cm]
+
+\textbf{Luger, R.}, Barnes, R., Lopez, E., Fortney, J., Jackson, B., and Meadows, S. (2015) \emph{Habitable Evaporated Cores: Transforming Mini-Neptunes into Super-Earths in the Habitable Zones of M Dwarfs.} Astrobiology 15, 57.\\[-0.3cm]
+
+Deitrick, R., Barnes, R., McArthur, B., Quinn, T., \textbf{Luger, R.}, Antonsen, A., and Benedict, G. (2014) \emph{The Three-dimensional Architecture of the $\upsilon$ Andromedae Planetary System} ApJ 798, 46.
+
+\fontsize{11pt}{1em}
+\section{Honors and Awards}
+\textbf{ARCS Fellowship}\hfill \textbf{2012 - 2014}\\%[0.1cm]
+\textbf{A}chievement \textbf{R}ewards for \textbf{C}ollege \textbf{S}cientists Foundation Fellowship recipient\\[-0.2cm]
+
+\textbf{Bobby Berman Memorial Prize}\hfill \textbf{May 2010}\\%[0.1cm]
+Awarded to a graduating senior who has shown achievement, commitment, and leadership in Physics and Astronomy\\[-0.2cm]
+
+\textbf{The Phi Beta Kappa Society}\hfill \textbf{May 2010}\\%[0.1cm]
+Inducted member
+
+\section{Teaching Experience}
+\textbf{Teacher}, St. Luke's School, New Canaan, CT\hfill \textbf{2010 - 2012}\\[0.1cm]
+\hspace*{-0.62cm}
+\begin{minipage}[b]{\linewidth+0.5cm}
+\begin{itemize}[leftmargin=3em]
+\item[$\cdots$] Created and taught a rigorous, college-level elective course in astrophysics aimed at seniors interested in pursuing college classes in the field
+\item[$\cdots$] Taught three sections of an 11th grade physics class with a focus on astronomy, aiming to help students develop critical thinking and creative problem solving skills\\[-0.2cm]
+\end{itemize}
+\end{minipage}
+
+\textbf{Science Associate \& Tutor}, Swarthmore College \hfill \textbf{2009 - 2010}\\[0.1cm]
+\hspace*{-0.62cm}
+\begin{minipage}[b]{\linewidth+0.5cm}
+\begin{itemize}[leftmargin=3em]
+\item[$\cdots$] Directed weekly large-group study sessions for an introductory course in astronomy; tutored students in courses in mechanics and E\&M\\[-0.2cm]
+\end{itemize}
+\end{minipage}
+
+\section{Work Experience}
+\textbf{IT Manager}, Virtual Planet Laboratory @ UW \hfill \textbf{2013 - }\\[0.1cm]
+\hspace*{-0.62cm}
+\begin{minipage}[b]{\linewidth+0.5cm}
+\begin{itemize}[leftmargin=3em]
+\item[$\cdots$] Manage VPL's virtual conferencing system and network\\[-0.2cm]
+\end{itemize}
+\end{minipage}
+
+\section{Leadership}
+\textbf{Head Coach}, St. Luke's School \hfill \textbf{2010 - 2012}\\[0.1cm]
+\hspace*{-0.62cm}
+\begin{minipage}[b]{\linewidth+0.5cm}
+\begin{itemize}[leftmargin=3em]
+\item[$\cdots$] Head coach of the JV Boys Soccer and Fencing Teams
+\item[$\cdots$] Assistant coach of the MS Tennis Team\\[-0.2cm]
+\end{itemize}
+\end{minipage}
+
+\textbf{Captain}, Swarthmore College Fencing Team \hfill \textbf{2009 - 2010}\\[0.1cm]
+\hspace*{-0.62cm}
+\begin{minipage}[b]{\linewidth+0.5cm}
+\begin{itemize}[leftmargin=3em]
+\item[$\cdots$] Captain and founding member of the Sabre Team
+\end{itemize}
+\end{minipage}
+
+%
+%\section{Skills and Interests}
+%\textbf{Programming}\\
+%Python, C, IDL, Mathematica, MATLAB, \LaTeX, HTML, CSS, Visual Basic\\[0.25cm]
+%\textbf{Languages}\\
+% Native speaker of English and Portuguese; intermediate knowledge of  Spanish\\[0.25cm]
+%\textbf{Interests}\\
+% Fencing, cycling, swimming, soccer, fiction writing, stargazing, hiking, climbing
+\end{document}
