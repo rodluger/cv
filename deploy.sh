@@ -23,11 +23,11 @@ git fetch upstream && git reset upstream/pdf
 
 # Refresh the pdf and delete aux stuff
 touch cv.pdf
-rm cv.aux
-rm cv.log
-rm cv.out
+rm -f cv.aux
+rm -f cv.log
+rm -f cv.out
 
 # Commit and push!
 git add cv.pdf
 git commit -m "rebuild pdf at ${rev}"
-git push -q -f upstream HEAD:pdf
+git push -q -f upstream/pdf
