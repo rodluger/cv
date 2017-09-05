@@ -8,8 +8,8 @@ before_install:
   texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
 script:
 - mkdir _build
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
+- pdflatex -interaction=nonstopmode -halt-on-error cv.tex
+- pdflatex -interaction=nonstopmode -halt-on-error cv.tex
 after_success:
 - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
   deploy.sh
