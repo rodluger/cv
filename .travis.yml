@@ -9,6 +9,7 @@ before_install:
 script:
 - mkdir _build
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
 after_success:
 - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
   deploy.sh

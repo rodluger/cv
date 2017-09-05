@@ -21,10 +21,14 @@ git config user.email "rodluger@gmail.com"
 git remote add upstream "https://$GH_TOKEN@github.com/rodluger/cv.git"
 git fetch upstream && git reset upstream/pdf
 
-# Refresh all files
-touch .
+# Refresh the pdf and delete aux stuff
+touch cv.pdf
+rm cv.aux
+rm cv.log
+rm cv.out
 
 # Commit and push!
 git add -A .
 git commit -m "rebuild pdf at ${rev}"
-git push -q -f upstream HEAD:pdf
+#git push -q -f upstream HEAD:pdf
+git push -q -f upstream pdf
