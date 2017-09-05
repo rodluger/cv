@@ -6,7 +6,7 @@
 set -o errexit -o nounset
 
 # Begin
-echo "Building docs..."
+echo "Committing pdf..."
 
 # Get git hash
 rev=$(git rev-parse --short HEAD)
@@ -17,7 +17,7 @@ git init
 git config user.name "Rodrigo Luger"
 git config user.email "rodluger@gmail.com"
 
-# We will push to gh-pages
+# We will push to the pdf branch
 git remote add upstream "https://$GH_TOKEN@github.com/rodluger/cv.git"
 git fetch upstream && git reset upstream/pdf
 

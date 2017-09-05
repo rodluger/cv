@@ -1,21 +1,17 @@
 sudo: required
-
 dist: trusty
-
 branches:
-    except:
-        - pdf
-
+  except:
+  - pdf
 before_install:
-    - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
-
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
 script:
-    - mkdir _build
-    - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
-   
+- mkdir _build
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
 after_success:
-    - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
-
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
+  deploy.sh
 env:
-    global:
-        secure: Vbump0ZjmpwBNt+cjlM5S5bgqlGsSeJsNgRXjUScMXcE544tUud8KvykFAKRBvwTNzH7JS/CmhwGYcbxgAWp/1+TGXo8W37qBnMrNP3hJ6v0upTrBBoG6rtS7fBSTcUHNTBrMxfkMgpww4fTn85w0Tq7GngTXDtqOgWLFS10JWPn+QoFBJSqTHVREYqmZ0aYwyOHxMxPUgWKJPUMW97ayYpIy+36LLyBC/YNaKf7VNg3kJIPg4L4Dn3cXbtTiO0jcsbIFEcJN5DydtNzQj4wsOVh0PcXQWR9fHpfsGtp5mvwKlJP7YC2Sr5M3L04RmbFkKMKDoyiUqI9mMbel2OdbIvQJfu8wTX5labgMyrBKWAgKlGFohLGR7LWQeqRMzoJGzBXxRz7I339C3wa+RlYuJXUXT6wUqF0zVxIf4SzbfRCO4Zc9fBwNP/a6GXTEEBkd++cCHZaY/Ga4S3LRxNeMnX0weq9Wixj57IE0jyEST/3mJTbJOJY/geYRDdC68s3uXv9Z+o6hKPENOBAjY+mU3uRQANAVnQHXG++kl0J9hHD9hTK2pniFzoWgiAPmxNGv9UXa1qscia+expH2/y6o/qgZy5EDZ0Se0sGomJKYcPIV2BTCRF+t0qSSUkr8fNBLFp4/p2Z4IsaFi9nCAB3nTD6j8x+bBqBC6+LiH80ax8=
+  global:
+  - secure: IoX4fDvlXiiLI2F6s1o+OqJ53yt/uNZxcOLmyTWF4IEBMwbi5hc78tH8W1oB1MMAd7+oVaDl9b667MYRHBLu9OvSmz6QvIbJM5e33X4fZ6Y0Df98RxmjrxbKomtIV2Y/1Y/NcQzMuSsqi7UTj79iMnlj0mT3S+pMqHOtdrDaXDmigd4fXcJ26N9aIyJJBglqu4bXrFysaU1OeRmGpfkN5MLSPh2NcHwxV3/h9Z6urf6i99RLx6xxQr6w+HP+IopcWSk5hN7U6J10msTCSxK2Ao/jxAu7hsv5tHoawnYqD6fGlSWmJVbkCr9x60LXZ5990DHNfUhN/BU0usyHf65XlNxXlP0QlDq+EZVkv8xxC/mHV9SH9Phzjio0mfZHcfcKeewUo/0e1UMaTzylywhfM+O/kQI6qWDyVkqPwcvwTuXyDgBOK+DQx5/puzlV1SbQUSgrFlk1Yn1a/6lRegL8mN5wK1mZgVVKX7ueX1ZonYfQ8LBSXYiI/Sc8+JKxG8kaAsUJyrBpGOd3EqzThhr2cyNQ+J6OiE55B+tIO38+cIHCu9nl+gh23E8DdIIb1hHU9204WRGqYNb1A5H1GDbx9ylkgekNdDvyBHiRuCbOJjqJ5mQpsTZfMmaGZ0abIj7LGpiX21kEJU+4soBmoJlOvXeLcL1hGy1ZRyqpjN1n/DE=
