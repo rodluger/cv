@@ -27,4 +27,4 @@ touch .
 # Commit and push!
 git add -A .
 git commit -m "rebuild pdf at ${rev}"
-git push -q upstream HEAD:pdf
+git push -q -f upstream HEAD:pdf
