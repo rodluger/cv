@@ -1,0 +1,17 @@
+sudo: required
+
+dist: trusty
+
+before_install:
+    - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+
+script:
+    - mkdir _build
+    - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
+   
+after_success:
+    - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
+
+env:
+    global:
+        secure: Vbump0ZjmpwBNt+cjlM5S5bgqlGsSeJsNgRXjUScMXcE544tUud8KvykFAKRBvwTNzH7JS/CmhwGYcbxgAWp/1+TGXo8W37qBnMrNP3hJ6v0upTrBBoG6rtS7fBSTcUHNTBrMxfkMgpww4fTn85w0Tq7GngTXDtqOgWLFS10JWPn+QoFBJSqTHVREYqmZ0aYwyOHxMxPUgWKJPUMW97ayYpIy+36LLyBC/YNaKf7VNg3kJIPg4L4Dn3cXbtTiO0jcsbIFEcJN5DydtNzQj4wsOVh0PcXQWR9fHpfsGtp5mvwKlJP7YC2Sr5M3L04RmbFkKMKDoyiUqI9mMbel2OdbIvQJfu8wTX5labgMyrBKWAgKlGFohLGR7LWQeqRMzoJGzBXxRz7I339C3wa+RlYuJXUXT6wUqF0zVxIf4SzbfRCO4Zc9fBwNP/a6GXTEEBkd++cCHZaY/Ga4S3LRxNeMnX0weq9Wixj57IE0jyEST/3mJTbJOJY/geYRDdC68s3uXv9Z+o6hKPENOBAjY+mU3uRQANAVnQHXG++kl0J9hHD9hTK2pniFzoWgiAPmxNGv9UXa1qscia+expH2/y6o/qgZy5EDZ0Se0sGomJKYcPIV2BTCRF+t0qSSUkr8fNBLFp4/p2Z4IsaFi9nCAB3nTD6j8x+bBqBC6+LiH80ax8=
