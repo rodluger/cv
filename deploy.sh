@@ -28,7 +28,6 @@ rm cv.log
 rm cv.out
 
 # Commit and push!
-git add -A .
+git add cv.pdf
 git commit -m "rebuild pdf at ${rev}"
-#git push -q -f upstream HEAD:pdf
-git push -q -f upstream pdf
+git push -q -f upstream HEAD:pdf
