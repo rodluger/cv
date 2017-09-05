@@ -1,6 +1,8 @@
 #!/bin/bash
 # Automatically update the PDF on the pdf branch with Travis. Based on
 # http://www.steveklabnik.com/automatically_update_github_pages_with_travis_example/
+# and
+# https://github.com/dfm/imprs/blob/master/.travis.yml#L50
 
 # Exit on errors
 set -o errexit -o nounset
