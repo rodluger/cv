@@ -13,7 +13,7 @@ echo "Committing pdf..."
 # Get git hash
 rev=$(git rev-parse --short HEAD)
 
-# Create *new* git repo in html folder
+# Create orphan repo (DFM's hack)
 cd $TRAVIS_BUILD_DIR
 git checkout --orphan pdf
 git rm -rf .
