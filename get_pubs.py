@@ -5,9 +5,26 @@ from __future__ import division, print_function
 
 import json
 from operator import itemgetter
-
+import re
 import ads
-from utf8totex import utf8totex
+from utf8totex import utf8totex as _utf8totex
+
+def utf8totex(arg):
+    '''
+    Customized!
+    
+    '''
+    
+    # Do the conversion
+    arg = _utf8totex(arg)
+    
+    # Handle subscripts
+    arg = re.sub('<SUB>(.*?)</SUB>', r'$_\1$', arg)
+    
+    # Fudge O2 paper
+    arg = re.sub('O2Buildup', r'O$_2$ Buildup', arg)
+    
+    return arg
 
 __all__ = ["get_papers"]
 
@@ -21,6 +38,12 @@ def get_papers(author):
     ))
     dicts = []
     for paper in papers:
+        
+        if not (("Luger, Rodrigo" in paper.author) or
+                ("Luger, R." in paper.author) or
+                ("Luger, R" in paper.author)):
+            continue
+        
         aid = [":".join(t.split(":")[1:]) for t in paper.identifier
                if t.startswith("arXiv:")]
         for t in paper.identifier:
@@ -38,6 +61,7 @@ def get_papers(author):
             page = None
             if paper.page[0].startswith("arXiv:"):
                 aid.append(":".join(paper.page[0].split(":")[1:]))
+        
         dicts.append(dict(
             doctype=paper.doctype,
             authors=list(map(utf8totex, paper.author)),
@@ -55,6 +79,6 @@ def get_papers(author):
     return sorted(dicts, key=itemgetter("pubdate"), reverse=True)
 
 if __name__ == "__main__":
-    papers = get_papers("Foreman-Mackey")
+    papers = get_papers("Luger, R")
     with open("pubs.json", "w") as f:
         json.dump(papers, f, sort_keys=True, indent=2, separators=(",", ": "))

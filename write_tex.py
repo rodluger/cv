@@ -21,15 +21,16 @@ JOURNAL_MAP = {
 
 def format_pub(args):
     ind, pub = args
-    fmt = "\\item[{{\\color{{numcolor}}\\scriptsize{0}}}] ".format(ind)
+    fmt = "\\item[{{\\color{{numcolor}}\\scriptsize{0}}}] ".format(
+                                                            pub["citations"])
     n = [i for i in range(len(pub["authors"]))
-         if "Foreman-Mackey, D" in pub["authors"][i]][0]
-    pub["authors"][n] = "\\textbf{Foreman-Mackey, Daniel}"
+         if "Luger, R" in pub["authors"][i]][0]
+    pub["authors"][n] = "\\textbf{Luger, Rodrigo}"
     if len(pub["authors"]) > 5:
         fmt += ", ".join(pub["authors"][:4])
         fmt += ", \etal"
         if n >= 4:
-            fmt += "\\ (incl.\\ \\textbf{DFM})"
+            fmt += "\\ (incl.\\ \\textbf{RL})"
     elif len(pub["authors"]) > 1:
         fmt += ", ".join(pub["authors"][:-1])
         fmt += ", \\& " + pub["authors"][-1]
@@ -56,32 +57,20 @@ def format_pub(args):
     if pub["arxiv"] is not None:
         fmt += " (\\arxiv{{{0}}})".format(pub["arxiv"])
 
-    if pub["citations"] > 1:
-        fmt += " [\\href{{{0}}}{{{1} citations}}]".format(pub["url"],
-                                                          pub["citations"])
-
     return fmt
 
 
 if __name__ == "__main__":
     with open("pubs.json", "r") as f:
         pubs = json.load(f)
-    with open("other_pubs.json", "r") as f:
-        other_pubs = json.load(f)
-    for p in other_pubs:
-        for p1 in pubs:
-            if (p1["arxiv"] is not None and p["arxiv"] == p1["arxiv"]) or \
-                    p["title"] == p1["title"]:
-                p["citations"] = max(p["citations"], p1["citations"])
-                pubs.remove(p1)
-    pubs = sorted(pubs + other_pubs, key=itemgetter("pubdate"), reverse=True)
+    pubs = sorted(pubs, key=itemgetter("pubdate"), reverse=True)
     pubs = [p for p in pubs if p["doctype"] in ["article", "eprint"]]
     ref = [p for p in pubs if p["doctype"] == "article"]
     unref = [p for p in pubs if p["doctype"] == "eprint"]
 
     # Compute citation stats
     npapers = len(ref)
-    nfirst = sum(1 for p in pubs if "Foreman-Mackey" in p["authors"][0])
+    nfirst = sum(1 for p in pubs if "Luger, R" in p["authors"][0])
     cites = sorted((p["citations"] for p in pubs), reverse=True)
     ncitations = sum(cites)
     hindex = sum(c >= i for i, c in enumerate(cites))
@@ -92,9 +81,6 @@ if __name__ == "__main__":
     with open("pubs_summary.tex", "w") as f:
         f.write(summary)
 
-    ref = list(map(format_pub, zip(range(len(ref), 0, -1), ref)))
-    unref = list(map(format_pub, zip(range(len(unref), 0, -1), unref)))
-    with open("pubs_ref.tex", "w") as f:
-        f.write("\n\n".join(ref))
-    with open("pubs_unref.tex", "w") as f:
-        f.write("\n\n".join(unref))
+    pubs = list(map(format_pub, zip(range(len(pubs), 0, -1), pubs)))
+    with open("pubs.tex", "w") as f:
+        f.write("\n\n".join(pubs))
