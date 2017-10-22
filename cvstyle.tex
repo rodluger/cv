@@ -24,25 +24,23 @@
 % literature links--use doi if you can
 \newcommand{\doi}[2]{\emph{\href{http://dx.doi.org/#1}{{#2}}}}
 \newcommand{\ads}[2]{\href{http://adsabs.harvard.edu/abs/#1}{{#2}}}
+\newcommand{\arxiv}[2]{\emph{\href{http://arxiv.org/abs/#1}{{#2}}}}
 \newcommand{\isbn}[1]{{\footnotesize(\textsc{isbn:}{#1})}}
-\newcommand{\arxiv}[1]{{\href{http://arxiv.org/abs/#1}{arXiv:{#1}}}}
 
 % Section headings.
 \newcommand{\cvheading}[1]{\addvspace{1ex}\pagebreak[2]\par\textbf{#1}\nopagebreak\vspace{-0.4em}}
 
 % Set up the custom unordered list.
-\newcounter{refpubnum}
 \newcommand{\cvlist}{%
     \rightmargin=0in
     \leftmargin=0.15in
     \topsep=0ex
     \partopsep=0pt
-    \itemsep=0.2ex
+    \itemsep=1.25ex
     \parsep=0pt
     \itemindent=-1.0\leftmargin
     \listparindent=0.0\leftmargin
     \settowidth{\labelsep}{~}
-    %\usecounter{refpubnum}
 }
 
 % Margins and spaces.

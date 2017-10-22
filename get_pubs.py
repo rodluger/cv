@@ -7,16 +7,23 @@ import json
 from operator import itemgetter
 import re
 import ads
-from utf8totex import utf8totex as _utf8totex
+from utf8totex import utf8totex
+from titlecase import titlecase
 
-def utf8totex(arg):
+def title_callback(word, **kwargs):
+    if '\\' in word:
+        return word
+    else:
+        return None
+
+def format_title(arg):
     '''
     Customized!
     
     '''
-    
+
     # Do the conversion
-    arg = _utf8totex(arg)
+    arg = utf8totex(arg)
     
     # Handle subscripts
     arg = re.sub('<SUB>(.*?)</SUB>', r'$_\1$', arg)
@@ -24,7 +31,29 @@ def utf8totex(arg):
     # Fudge O2 paper
     arg = re.sub('O2Buildup', r'O$_2$ Buildup', arg)
     
+    # Capitalize!
+    arg = titlecase(arg, callback = title_callback)
+    
     return arg
+
+def format_authors(authors):
+    '''
+    Customized!
+    
+    '''
+
+    # Do the conversion
+    authors = list(map(utf8totex, authors))
+    
+    # Abbreviate names. This drops middle
+    # initials -- should eventually fix this.
+    for i, author in enumerate(authors):
+        match = re.match('^(.*?),\s(.*?)$', author)
+        if match is not None:
+            first, last = match.groups()
+            authors[i] = '%s, %s.' % (first, last[0])
+    
+    return authors
 
 __all__ = ["get_papers"]
 
@@ -64,11 +93,11 @@ def get_papers(author):
         
         dicts.append(dict(
             doctype=paper.doctype,
-            authors=list(map(utf8totex, paper.author)),
+            authors=format_authors(paper.author),
             year=paper.year,
             pubdate=paper.pubdate,
             doi=paper.doi[0] if paper.doi is not None else None,
-            title=utf8totex(paper.title[0]),
+            title=format_title(paper.title[0]),
             pub=paper.pub,
             volume=paper.volume,
             page=page,

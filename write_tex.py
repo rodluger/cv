@@ -25,12 +25,12 @@ def format_pub(args):
                                                             pub["citations"])
     n = [i for i in range(len(pub["authors"]))
          if "Luger, R" in pub["authors"][i]][0]
-    pub["authors"][n] = "\\textbf{Luger, Rodrigo}"
+    pub["authors"][n] = "\\textbf{Luger, R.}"
     if len(pub["authors"]) > 5:
         fmt += ", ".join(pub["authors"][:4])
         fmt += ", \etal"
         if n >= 4:
-            fmt += "\\ (incl.\\ \\textbf{RL})"
+            fmt += "\\ (including\\ \\textbf{Luger, R.})"
     elif len(pub["authors"]) > 1:
         fmt += ", ".join(pub["authors"][:-1])
         fmt += ", \\& " + pub["authors"][-1]
@@ -41,21 +41,23 @@ def format_pub(args):
 
     if pub["doi"] is not None:
         fmt += ", \\doi{{{0}}}{{{1}}}".format(pub["doi"], pub["title"])
+    elif pub["arxiv"] is not None:
+        fmt += ", \\arxiv{{{0}}}{{{1}}}".format(pub["arxiv"], pub["title"])
     else:
-        fmt += ", " + pub["title"]
-
-    if not pub["pub"] in [None, "ArXiv e-prints"]:
+        fmt += ", \\emph{{{0}}}".format(pub["title"])
+        
+    if not pub["pub"] is None:
         fmt += ", " + JOURNAL_MAP.get(pub["pub"].strip("0123456789# "),
                                       pub["pub"])
-
+    
+    if pub["pub"] == 'ArXiv e-prints':
+        fmt += ":{0}".format(pub["arxiv"])
+    
     if pub["volume"] is not None:
         fmt += ", \\textbf{{{0}}}".format(pub["volume"])
 
     if pub["page"] is not None:
         fmt += ", {0}".format(pub["page"])
-
-    if pub["arxiv"] is not None:
-        fmt += " (\\arxiv{{{0}}})".format(pub["arxiv"])
 
     return fmt
 
@@ -75,9 +77,9 @@ if __name__ == "__main__":
     ncitations = sum(cites)
     hindex = sum(c >= i for i, c in enumerate(cites))
 
-    summary = (("refereed: {1} / first author: {2} / citations: {3} / "
-               "h-index: {4} ({0})")
-               .format(date.today(), npapers, nfirst, ncitations, hindex))
+    summary = (("\\textbf{{Refereed:}} {0} / \\textbf{{First Author:}} {1} / \\textbf{{Citations:}} {2} / "
+               "\\textbf{{h-index:}} {3}")
+               .format(npapers, nfirst, ncitations, hindex))
     with open("pubs_summary.tex", "w") as f:
         f.write(summary)
 
