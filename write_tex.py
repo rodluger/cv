@@ -21,8 +21,11 @@ JOURNAL_MAP = {
 
 def format_pub(args):
     ind, pub = args
-    fmt = "\\item[{{\\color{{numcolor}}\\scriptsize{0}}}] ".format(
-                                                            pub["citations"])
+    
+    cites = pub["citations"]
+    if cites == 0:
+        cites = ""
+    fmt = "\\item[{{\\color{{numcolor}}\\scriptsize{0}}}] ".format(cites)
     n = [i for i in range(len(pub["authors"]))
          if "Luger, R" in pub["authors"][i]][0]
     pub["authors"][n] = "\\textbf{Luger, R.}"
@@ -65,21 +68,27 @@ def format_pub(args):
 if __name__ == "__main__":
     with open("pubs.json", "r") as f:
         pubs = json.load(f)
-    pubs = sorted(pubs, key=itemgetter("pubdate"), reverse=True)
+    with open("pubs_manual.json", "r") as f:
+        pubs_manual = json.load(f)
+    pubs = sorted(pubs + pubs_manual, key=itemgetter("pubdate"), reverse=True)
     pubs = [p for p in pubs if p["doctype"] in ["article", "eprint"]]
     ref = [p for p in pubs if p["doctype"] == "article"]
     unref = [p for p in pubs if p["doctype"] == "eprint"]
 
     # Compute citation stats
+    ntotal = len(ref) + len(unref)
     npapers = len(ref)
     nfirst = sum(1 for p in pubs if "Luger, R" in p["authors"][0])
     cites = sorted((p["citations"] for p in pubs), reverse=True)
     ncitations = sum(cites)
     hindex = sum(c >= i for i, c in enumerate(cites))
 
-    summary = (("\\textbf{{Refereed:}} {0} / \\textbf{{First Author:}} {1} / \\textbf{{Citations:}} {2} / "
-               "\\textbf{{h-index:}} {3}")
-               .format(npapers, nfirst, ncitations, hindex))
+    summary = (("\\textbf{{Total:}} {0} $\\bigg|$ "
+                "\\textbf{{Refereed:}} {1} $\\bigg|$ "
+                "\\textbf{{First Author:}} {2} $\\bigg|$ "
+                "\\textbf{{Citations:}} {3} $\\bigg|$ "
+                "\\textbf{{h-index:}} {4}")
+               .format(ntotal, npapers, nfirst, ncitations, hindex))
     with open("pubs_summary.tex", "w") as f:
         f.write(summary)
 
