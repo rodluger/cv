@@ -1,4 +1,5 @@
-LATEX       = pdflatex
+LATEX       = xelatex
+BIB         = biber
 BASH        = bash -c
 ECHO        = echo
 RM          = rm -rf
@@ -8,15 +9,15 @@ RM_TMP      = ${RM} $(foreach suff, ${TMP_SUFFS}, *.${suff})
 
 CHECK_RERUN = grep Rerun $*.log
 
-ALL_FILES = cv.pdf publications.pdf cv_pubs.pdf
+ALL_FILES = cv.pdf cv_pubs.pdf
 
 all: ${ALL_FILES}
 
-%.pdf: %.tex cvstyle.tex publications.tex pubs.json
-	${LATEX} $<
-	${LATEX} $<
+cv.pdf: cv.tex luger-cv.cls
+	${LATEX} cv
+	${LATEX} cv
 
-cv_pubs.pdf: cv.tex publications.tex cvstyle.tex pubs.json
+cv_pubs.pdf: cv.tex luger-cv.cls pubs.tex
 	${LATEX} -jobname=cv_pubs "\def\withpubs{}\input{cv}"
 	${LATEX} -jobname=cv_pubs "\def\withpubs{}\input{cv}"
 

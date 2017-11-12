@@ -1,128 +1,364 @@
-% The formatting of this CV is based on @davidwhogg's layout.
-\documentclass[12pt,letterpaper]{article}
-\input{cvstyle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 1.2 (3/5/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Begin
-\begin{document}\thispagestyle{empty}\sloppy\sloppypar\raggedbottom
+\documentclass[]{luger-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
 
-% Title
-\textbf{\textsf{\Large Rodrigo Luger}}\\[0.5ex]
-Postdoctoral Researcher, University of Washington\\[0.5ex]
+\usepackage{fontspec}
+\newfontfamily{\FA}[Path = fonts/]{fontawesome-webfont}
 
-% Education
-\cvsection{Coordinates}{
-\begin{list}{}{\cvlist}
-    \item \href{mailto:rodluger@gmail.com}{rodluger@gmail.com} 
-          $\smash{|}$ 
-          \href{https://rodluger.github.io}{rodluger.github.io}
-          $\smash{|}$ 
-          \href{tel:610-675-6056}{(610) 675 6056}
+\usepackage{ragged2e}
+
+\def\faEnvelope{{\FA\symbol{"F0E0}}}
+\def\faGithub{{\FA\symbol{"F09B}}}
+\def\faDesktop{{\FA\symbol{"F108}}}
+\def\faPhone{{\FA\symbol{"F095}}}
+\def\faHandPointerO{{\FA\symbol{"F25A}}}
+\def\faMapMarker{{\FA\symbol{"F041}}}
+
+\begin{document}
+
+\header{Rodrigo}{Luger}
+
+%----------------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{aside}
+
+\section{coordinates}
+\href{mailto:rodluger@gmail.com}{rodluger@gmail.com\ \faEnvelope}\\[0.75em]
+%
+\href{https://github.com/rodluger}{github.com/rodluger\ \faGithub}\\[0.75em]
+%
+\href{https://rodluger.github.io}{rodluger.github.io\ \faHandPointerO}\\[0.75em]
+%
+\href{tel:610-675-6056}{+1 (610) 675 6056\ \faPhone}\\[0.75em]
+%
+\href{https://www.google.com/maps/place/3910+15th+Ave+NE,+Seattle,+WA+98105/@47.6533863,-122.3140594,17z/data=!3m1!4b1!4m5!3m4!1s0x549014f27663af37:0x8d4887f6e248ac63!8m2!3d47.6533827!4d-122.3118654}{3910 15th Ave NE\ \faMapMarker}\\
+\href{https://www.google.com/maps/place/3910+15th+Ave+NE,+Seattle,+WA+98105/@47.6533863,-122.3140594,17z/data=!3m1!4b1!4m5!3m4!1s0x549014f27663af37:0x8d4887f6e248ac63!8m2!3d47.6533827!4d-122.3118654}{Seattle, WA 98195}\ \phantom{\faMapMarker}
+
+\section{about}
+\footnotesize
+I'm currently a postdoc at UW in Seattle, working on finding novel ways to detect
+\& char-\\ acterize exoplanets, particu-\\ larly those in the habitable zone. I mainly
+work with light curves from the K2 mission, and I'm gearing up to tackle science
+with TESS \& JWST. Outside the office I love to hike, bike, swim, craft lattes,
+faulty parallelism, and Oxford commas.
+
+\end{aside}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{education}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{2012--2017}
+{PhD {\normalfont Astronomy and Astrobiology}}
+{University of Washington, Seattle WA}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item On the evolution, detection, and characterization of small \\ planets in the habitable zones of M dwarfs
+\end{list}
+}
+
+%------------------------------------------------
+
+\entry
+{2012--2013}
+{MSc {\normalfont Astronomy and Astrobiology}}
+{University of Washington, Seattle WA}
+
+%------------------------------------------------
+
+\entry
+{2006--2010}
+{BA {\normalfont Astrophysics}}
+{Swarthmore College, Swarthmore PA}
+{\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Minor in English Literature
 \end{list}}
 
-% Education
-\cvsection{Education}{
-\begin{list}{}{\cvlist}
-    %
-    \item \textbf{University of Washington}, Seattle WA
-        \begin{list}{--}{\cvsublist}
-            \item PhD Astronomy \& Astrobiology, August 2017
-            \item MSc Astronomy \& Astrobiology, December 2013
-        \end{list}
-    %
-    \item \textbf{Swarthmore College}, Swarthmore PA
-        \begin{list}{--}{\cvsublist}
-            \item BA Astrophysics $\smash{|}$ English Literature Minor, 
-                  May 2010
-        \end{list}
-    %
-\end{list}}
+%------------------------------------------------
 
-% Positions
-\cvsection{Positions}{
-\begin{list}{}{\cvlist}
-    %
-    \item \textbf{Postdoctoral Researcher}, University of Washington
-        \begin{list}{--}{\cvsublist}
-            %
-            \item Investigate the effects of tidal evolution on 
-                  \emph{Kepler} systems
-            %
-            \item Develop photometric de-trending methods to 
-                  search for small planets transiting small stars; 
-                  develop and maintain the \everest pipeline
-            %
-        \end{list}
-    %
-    \item \textbf{Research Associate}, University of Washington
-        \begin{list}{--}{\cvsublist}
-            %
-            \item Research with Professors Eric Agol, Rory Barnes, 
-                  and Victoria Meadows
-            %
-            \item Developed techniques to detect and characterize 
-                  potentially habitable exoplanets with next-generation 
-                  telescopes
-            \item Investigated the atmospheric evolution of planets 
-                  orbiting M dwarfs
-            %
-        \end{list}
-    %
-    \item \textbf{Student Researcher}, Swarthmore College
-        \begin{list}{--}{\cvsublist}
-            %
-            \item Research under Prof. Eric Jensen on planet formation 
-                  and T Tauri disks
-            %
-        \end{list}
-\end{list}}
+\end{entrylist}
 
-% Publications
+%----------------------------------------------------------------------------------------
+%	POSITIONS
+%----------------------------------------------------------------------------------------
+
+\section{positions}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{2017--}
+{Postdoctoral Researcher}
+{University of Washington}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Investigate the effects of tidal evolution on the ensemble of Kepler systems
+\item Develop photometric de-trending methods to aid in the search for small
+      planets transiting small stars; develop and maintain the everest pipeline
+\end{list}
+}
+
+%------------------------------------------------
+
+\entry
+{2012--2017}
+{Research Associate}
+{University of Washington}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Research with Professors Eric Agol, Rory Barnes, and Victoria Meadows
+\item Developed techniques to detect and characterize habitable
+zone planets
+\item Investigated the atmospheric evolution of planets orbiting M dwarfs
+\end{list}
+}
+
+%------------------------------------------------
+
+\entry
+{2008--2009}
+{Student Researcher}
+{Swarthmore College}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Research under Professor Eric Jensen on planet formation and T Tauri disks
+\end{list}
+}
+
+%------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS
+%----------------------------------------------------------------------------------------
+
+\section{honors}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{2012--2015}
+{ARCS Fellowship}
+{University of Washington}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item \textbf{A}chievement \textbf{R}ewards for \textbf{C}ollege \textbf{S}cientists
+Foundation Fellowship recipient
+\end{list}
+}
+
+%------------------------------------------------
+
+\entry
+{2010}
+{Bobby Berman Memorial Prize}
+{Swarthmore College}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item For achievement, commitment, and
+leadership in Physics and Astronomy
+\end{list}
+}
+
+%------------------------------------------------
+
+\entry
+{2010}
+{The Phi Beta Kappa Society}
+{Swarthmore College}
+{}
+
+%------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	TEACHING
+%----------------------------------------------------------------------------------------
+
+\section{teaching \& outreach}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{2012--2017}
+{Mobile Planetarium}
+{University of Washington}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Presented planetarium shows at schools and public venues throughout
+Washington state using UW's inflatable mobile planetarium
+\end{list}
+}
+
+%------------------------------------------------
+
+\entry
+{2012--2013}
+{Teaching Assistant}
+{University of Washington}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Taught two bi-weekly tutorial sessions for two college astronomy courses
+\end{list}
+}
+
+%------------------------------------------------
+
+\entry
+{2010--2012}
+{High School Teacher}
+{St. Luke's School, New Canaan CT}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Created and taught a rigorous, college-level elective course in astrophysics
+aimed at seniors interested in pursuing college classes in the field
+\item Taught three sections of 11th grade physics with a focus on
+astronomy, helping students develop critical thinking and creative
+problem solving skills
+\end{list}
+}
+
+%------------------------------------------------
+
+\end{entrylist}
+%
+% PAGEBREAK
+%
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{2009--2010}
+{Science Associate \& Tutor}
+{Swarthmore College}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Directed weekly large-group study sessions for an introductory course in
+astronomy; tutored students in courses in mechanics and E\&M
+\end{list}
+}
+
+%------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	OTHER
+%----------------------------------------------------------------------------------------
+
+\section{other}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{2013--2017}
+{IT Manager}
+{Virtual Planet Laboratory, University of Washington}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Managed VPL's virtual conferencing system and network
+\end{list}
+}
+
+%------------------------------------------------
+
+\entry
+{2010--2012}
+{Head Coach}
+{St. Luke's School, New Canaan CT}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Head coach of the JV Boys Soccer and Fencing Teams
+\item Assistant coach of the MS Tennis Team
+\end{list}
+}
+
+%------------------------------------------------
+
+\entry
+{2009--2010}
+{Captain}
+{Swarthmore College Fencing Team}
+{%
+\vspace{-1em}
+\begin{list}{$+$}{\cvlist}
+\item Captain and founding member of the Sabre Team
+\end{list}
+}
+
+%------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
 \ifdefined\withpubs
-\cvsection{Publications}{
-\resizebox{\textwidth}{!}{
-    \input{pubs_summary}
-}\vspace*{1em}
-
-\citearrow
-\begin{list}{}{\cvlist}
-    \input{pubs}
-\end{list}}
+    %
+    \section{publications}
+    %
+    \begin{center}\input{pubs_summary}\\\end{center}
+    \vspace*{0.2em}
+    %
+    \citearrow
+    %
+    \begin{list}{}{\pubslist}
+        \input{pubs}
+    \end{list}
+    %
 \fi
-
-% Talks
-% Education
-\cvsection{Talks}{
-\begin{list}{}{\cvlist}
-    \item Hello
-\end{list}}
-
-% Honors
-\cvsection{Honors}{
-\begin{list}{}{\cvlist}
-    %
-    \item \textbf{ARCS Fellowship}
-        \begin{list}{--}{\cvsublist}
-            %
-            \item \textbf{A}chievement \textbf{R}ewards for \textbf{C}ollege 
-                  \textbf{S}cientists Fellowship recipient
-            %
-        \end{list}
-    %
-    \item \textbf{Bobby Berman Memorial Prize}
-        \begin{list}{--}{\cvsublist}
-            %
-            \item Awarded to a graduating senior who has shown achievement, 
-                  commitment, and leadership in Physics and Astronomy
-            %
-        \end{list}
-    %
-    \item \textbf{The Phi Beta Kappa Society}
-        \begin{list}{--}{\cvsublist}
-            %
-            \item Inducted member
-            %
-        \end{list}
-    %
-\end{list}}
 
 \end{document}
