@@ -1,93 +1,128 @@
 % The formatting of this CV is based on @davidwhogg's layout.
-
 \documentclass[12pt,letterpaper]{article}
-
 \input{cvstyle}
 
+% Begin
 \begin{document}\thispagestyle{empty}\sloppy\sloppypar\raggedbottom
 
-\textbf{\Large Rodrigo Luger} \hfill
-\textsf{\small rodluger@gmail.com, http://rodluger.github.io} \\[0.5ex]
+% Title
+\textbf{\textsf{\Large Rodrigo Luger}}\\[0.5ex]
 Postdoctoral Researcher, University of Washington\\[0.5ex]
 
-\cvheading{Education}
+% Education
+\cvsection{Coordinates}{
 \begin{list}{}{\cvlist}
-\item
-PhD 2015, Department of Physics, New York University. Advisor: Hogg
-\item
-MSc 2010, Department of Physics, Queen's University, Canada. Advisor: Widrow
-\item
-BSc 2008, Department of Physics, McGill University, Canada.
-\end{list}
+    \item \href{mailto:rodluger@gmail.com}{rodluger@gmail.com} 
+          $\smash{|}$ 
+          \href{https://rodluger.github.io}{rodluger.github.io}
+          $\smash{|}$ 
+          \href{tel:610-675-6056}{(610) 675 6056}
+\end{list}}
 
-\cvheading{Positions}
+% Education
+\cvsection{Education}{
 \begin{list}{}{\cvlist}
-\item
-Associate Research Scientist, Flatiron Institute, 2017--present.
-\item
-Sagan Postdoctoral Fellow, University of Washington, 2015--2017.
-\end{list}
+    %
+    \item \textbf{University of Washington}, Seattle WA
+        \begin{list}{--}{\cvsublist}
+            \item PhD Astronomy \& Astrobiology, August 2017
+            \item MSc Astronomy \& Astrobiology, December 2013
+        \end{list}
+    %
+    \item \textbf{Swarthmore College}, Swarthmore PA
+        \begin{list}{--}{\cvsublist}
+            \item BA Astrophysics $\smash{|}$ English Literature Minor, 
+                  May 2010
+        \end{list}
+    %
+\end{list}}
 
+% Positions
+\cvsection{Positions}{
+\begin{list}{}{\cvlist}
+    %
+    \item \textbf{Postdoctoral Researcher}, University of Washington
+        \begin{list}{--}{\cvsublist}
+            %
+            \item Investigate the effects of tidal evolution on 
+                  \emph{Kepler} systems
+            %
+            \item Develop photometric de-trending methods to 
+                  search for small planets transiting small stars; 
+                  develop and maintain the \everest pipeline
+            %
+        \end{list}
+    %
+    \item \textbf{Research Associate}, University of Washington
+        \begin{list}{--}{\cvsublist}
+            %
+            \item Research with Professors Eric Agol, Rory Barnes, 
+                  and Victoria Meadows
+            %
+            \item Developed techniques to detect and characterize 
+                  potentially habitable exoplanets with next-generation 
+                  telescopes
+            \item Investigated the atmospheric evolution of planets 
+                  orbiting M dwarfs
+            %
+        \end{list}
+    %
+    \item \textbf{Student Researcher}, Swarthmore College
+        \begin{list}{--}{\cvsublist}
+            %
+            \item Research under Prof. Eric Jensen on planet formation 
+                  and T Tauri disks
+            %
+        \end{list}
+\end{list}}
+
+% Publications
 \ifdefined\withpubs
-    \cvheading{Publications}
+\cvsection{Publications}{
+\resizebox{\textwidth}{!}{
     \input{pubs_summary}
+}\vspace*{1em}
 
-    \begin{list}{}{\cvlist}
+\citearrow
+\begin{list}{}{\cvlist}
     \input{pubs}
-    \end{list}
-    
+\end{list}}
 \fi
 
-\cvheading{Selected invited talks \& tutorials}
+% Talks
+% Education
+\cvsection{Talks}{
 \begin{list}{}{\cvlist}
+    \item Hello
+\end{list}}
 
-\item \emph{Long-period transiting planets \& their population},
-    2016, Seminar, Canadian Institute of Theoretical Astrophysics.
-
-\item \emph{Long-period transiting planets \& their population},
-    2016, Seminar, University of Birmingham.
-
-\end{list}
-
-\cvheading{Popular open-source software}
+% Honors
+\cvsection{Honors}{
 \begin{list}{}{\cvlist}
-
-\item {\bf emcee} ---
-    MCMC sampling in Python. Popular in astronomy;
-    the paper has 524 citations as of 2016-01-26.
-    \url{dfm.io/emcee}
-
-\item {\bf George} ---
-    Blazingly fast Gaussian processes for regression. Implemented in C++ and
-    Python bindings. Joint work with applied mathematicians at NYU.
-    \url{dfm.io/george}
-
-\end{list}
-
-\cvheading{Honors}
-\begin{list}{}{\cvlist}
-
-\item Kavli Fellow, 2015.
-\item Sagan Postdoctoral Fellowship, 2015--present.
-\item James Arthur Graduate Fellowship, 2014.
-\item Horizon Fellowship in the Natural \& Physical Sciences, 2012.
-\item Henry M. MacCracken Fellowship, 2010.
-\item NSERC Undergraduate Summer Research Award, 2007.
-
-\end{list}
-
-% \ifdefined\withpubs
-%     \newpage
-% \fi
-
-\cvheading{Professional service \& activities}
-\begin{list}{}{\cvlist}
-\item MAST Users Group --- Member
-\item American Astronomical Society --- Full Member
-\item Active Referee ---
-    AAS Journals,
-    Journal of Statistical Software,
-    Journal of Open Source Software
-\end{list}
+    %
+    \item \textbf{ARCS Fellowship}
+        \begin{list}{--}{\cvsublist}
+            %
+            \item \textbf{A}chievement \textbf{R}ewards for \textbf{C}ollege 
+                  \textbf{S}cientists Fellowship recipient
+            %
+        \end{list}
+    %
+    \item \textbf{Bobby Berman Memorial Prize}
+        \begin{list}{--}{\cvsublist}
+            %
+            \item Awarded to a graduating senior who has shown achievement, 
+                  commitment, and leadership in Physics and Astronomy
+            %
+        \end{list}
+    %
+    \item \textbf{The Phi Beta Kappa Society}
+        \begin{list}{--}{\cvsublist}
+            %
+            \item Inducted member
+            %
+        \end{list}
+    %
+\end{list}}
 
 \end{document}

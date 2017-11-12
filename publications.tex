@@ -3,9 +3,6 @@
 \input{cvstyle}
 \chead{\deemph{Publication List}}
 
-\usepackage{graphicx}
-\usepackage{amssymb}
-
 \begin{document}
 
 \begin{center}
@@ -13,12 +10,7 @@
 \input{pubs_summary}
 \end{center}
 
-\begin{minipage}[l]{\linewidth}
-\hspace{-0.15in}
-\rotatebox[origin=c]{90}{\textcolor{grey}{$\Lsh$}}
-\raisebox{0.3em}{\textcolor{grey}{\footnotesize \# of citations}}
-
-\end{minipage}\hfill
+\citearrow
 
 \begin{list}{}{\cvlist}
 \input{pubs}

@@ -83,10 +83,10 @@ if __name__ == "__main__":
     ncitations = sum(cites)
     hindex = sum(c >= i for i, c in enumerate(cites))
 
-    summary = (("\\textbf{{Total:}} {0} $\\bigg|$ "
-                "\\textbf{{Refereed:}} {1} $\\bigg|$ "
-                "\\textbf{{First Author:}} {2} $\\bigg|$ "
-                "\\textbf{{Citations:}} {3} $\\bigg|$ "
+    summary = (("\\textbf{{Total:}} {0} $\\smash{{|}}$ "
+                "\\textbf{{Refereed:}} {1} $\\smash{{|}}$ "
+                "\\textbf{{First Author:}} {2} $\\smash{{|}}$ "
+                "\\textbf{{Citations:}} {3} $\\smash{{|}}$ "
                 "\\textbf{{h-index:}} {4}")
                .format(ntotal, npapers, nfirst, ncitations, hindex))
     with open("pubs_summary.tex", "w") as f:

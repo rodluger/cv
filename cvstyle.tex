@@ -2,6 +2,10 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{ifthen}
+\usepackage{adjustbox}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{amssymb}
 
 % Link formatting.
 \definecolor{numcolor}{rgb}{0.5,0.5,0.5}
@@ -27,8 +31,28 @@
 \newcommand{\arxiv}[2]{\emph{\href{http://arxiv.org/abs/#1}{{#2}}}}
 \newcommand{\isbn}[1]{{\footnotesize(\textsc{isbn:}{#1})}}
 
+% Citation count arrow
+\newcommand{\citearrow}[0]{
+\begin{minipage}[l]{\linewidth}
+\hspace{-0.15in}
+\rotatebox[origin=c]{90}{\textcolor{grey}{$\Lsh$}}
+\raisebox{0.3em}{\textcolor{grey}{\footnotesize \# of citations}}
+\end{minipage}\hfill
+}
+
 % Section headings.
-\newcommand{\cvheading}[1]{\addvspace{1ex}\pagebreak[2]\par\textbf{#1}\nopagebreak\vspace{-0.4em}}
+\newcommand{\cvheading}[1]{
+\addvspace{1ex}\pagebreak[2]\par\textbf{\textsf{#1}}\nopagebreak\vspace{-0.4em}}
+
+% Sections.
+\newcommand{\cvsection}[2]{%
+\adjustbox{valign=t}{\begin{minipage}{0.175\linewidth}
+    \cvheading{#1}
+\end{minipage}}%
+\adjustbox{valign=t}{\begin{minipage}[t]{0.825\linewidth}
+    #2
+\end{minipage}}
+}
 
 % Set up the custom unordered list.
 \newcommand{\cvlist}{%
@@ -40,6 +64,17 @@
     \parsep=0pt
     \itemindent=-1.0\leftmargin
     \listparindent=0.0\leftmargin
+    \settowidth{\labelsep}{~}
+}
+
+% Custom sublist
+\newcommand{\cvsublist}{%
+    \rightmargin=0in
+    \leftmargin=0.15in
+    \topsep=1.25ex
+    \partopsep=0ex
+    \itemsep=0.75ex
+    \parsep=0pt
     \settowidth{\labelsep}{~}
 }
 
@@ -69,3 +104,6 @@
 \newcommand{\apj}{ApJ}
 \newcommand{\pasp}{PASP}
 \newcommand{\mnras}{MNRAS}
+
+% Custom commands
+\newcommand{\everest}{\href{https://github.com/rodluger/everest}{\ttfamily\fontseries{b}\selectfont everest}\xspace}
