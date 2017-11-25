@@ -26,6 +26,8 @@
 
 \usepackage{ragged2e}
 
+\usepackage{marginnote}
+
 \def\faEnvelope{{\FA\symbol{"F0E0}}}
 \def\faGithub{{\FA\symbol{"F09B}}}
 \def\faDesktop{{\FA\symbol{"F108}}}
@@ -38,35 +40,28 @@
 \header{Rodrigo}{Luger}
 
 %----------------------------------------------------------------------------------------
-%	SIDEBAR SECTION
+%	COORDINATES
 %----------------------------------------------------------------------------------------
 
-\begin{aside}
-
-\section{coordinates}
-\href{mailto:rodluger@gmail.com}{rodluger@gmail.com\ \faEnvelope}\\[0.75em]
-%
-\href{https://github.com/rodluger}{github.com/rodluger\ \faGithub}\\[0.75em]
-%
-\href{https://rodluger.github.io}{rodluger.github.io\ \faHandPointerO}\\[0.75em]
-%
-\href{tel:610-675-6056}{+1 (610) 675 6056\ \faPhone}\\[0.75em]
-%
-\href{https://www.google.com/maps/place/3910+15th+Ave+NE,+Seattle,+WA+98105/@47.6533863,-122.3140594,17z/data=!3m1!4b1!4m5!3m4!1s0x549014f27663af37:0x8d4887f6e248ac63!8m2!3d47.6533827!4d-122.3118654}{3910 15th Ave NE\ \faMapMarker}\\
-\href{https://www.google.com/maps/place/3910+15th+Ave+NE,+Seattle,+WA+98105/@47.6533863,-122.3140594,17z/data=!3m1!4b1!4m5!3m4!1s0x549014f27663af37:0x8d4887f6e248ac63!8m2!3d47.6533827!4d-122.3118654}{Seattle, WA 98195}\ \phantom{\faMapMarker}
-
-\section{about}
-\footnotesize
-I'm currently a postdoc at UW in Seattle, working on finding novel ways to detect
-\& char-\\ acterize exoplanets, particu-\\ larly those in the habitable zone. I mainly
-work with light curves from the K2 mission, and I'm gearing up to tackle science
-with TESS \& JWST. Outside the office I love to hike, bike, swim, craft lattes,
-faulty parallelism, and Oxford commas.
-
-\end{aside}
+\aside{coordinates}{0.03}{
+    %
+    \vspace*{-0.1cm}
+    %
+    \href{mailto:rodluger@gmail.com}{rodluger@gmail.com\ \faEnvelope}\\[0.5em]
+    %
+    \href{https://github.com/rodluger}{github.com/rodluger\ \faGithub}\\[0.5em]
+    %
+    \href{https://rodluger.github.io}{rodluger.github.io\ \faHandPointerO}\\[0.5em]
+    %
+    \href{tel:610-675-6056}{+1 (610) 675 6056\ \faPhone}\\[0.5em]
+    %
+    \href{https://www.google.com/maps/place/3910+15th+Ave+NE,+Seattle,+WA+98105/@47.6533863,-122.3140594,17z/data=!3m1!4b1!4m5!3m4!1s0x549014f27663af37:0x8d4887f6e248ac63!8m2!3d47.6533827!4d-122.3118654}{3910 15th Ave NE\ \faMapMarker}\\
+    \href{https://www.google.com/maps/place/3910+15th+Ave+NE,+Seattle,+WA+98105/@47.6533863,-122.3140594,17z/data=!3m1!4b1!4m5!3m4!1s0x549014f27663af37:0x8d4887f6e248ac63!8m2!3d47.6533827!4d-122.3118654}{Seattle, WA 98195}\ \phantom{\faMapMarker}
+    %
+}
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
+%	EDUCATION
 %----------------------------------------------------------------------------------------
 
 \section{education}
@@ -109,8 +104,22 @@ faulty parallelism, and Oxford commas.
 \end{entrylist}
 
 %----------------------------------------------------------------------------------------
+%	ABOUT
+%----------------------------------------------------------------------------------------
+
+\aside{about}{0.04}{
+    \footnotesize
+    I'm currently a postdoc at UW in Seattle, working on finding novel ways to detect
+    \& char-\\ acterize exoplanets, particu-\\ larly those in the habitable zone. I mainly
+    work with light curves from the K2 mission, and I'm gearing up to tackle science
+    with TESS, JWST, and other next-generation telescopes. Outside the office I love to
+    hike, cycle, swim, craft lattes, faulty parallelism, and Oxford commas.
+}
+
+%----------------------------------------------------------------------------------------
 %	POSITIONS
 %----------------------------------------------------------------------------------------
+
 
 \section{positions}
 
@@ -348,12 +357,17 @@ astronomy; tutored students in courses in mechanics and E\&M
 
 \ifdefined\withpubs
     %
+    \aside{stats}{0.05}{
+        Total \textbf{12}\\
+        Refereed \textbf{8}\\
+        First Author \textbf{8}\\
+        Citations \textbf{238}\\
+        h-index \textbf{9}
+    }
+    %
     \section{publications}
     %
-    \begin{center}\input{pubs_summary}\\\end{center}
-    \vspace*{0.2em}
-    %
-    \citearrow
+    %\citearrow
     %
     \begin{list}{}{\pubslist}
         \input{pubs}

@@ -67,9 +67,9 @@
 % Citation count arrow
 \newcommand{\citearrow}[0]{
 \begin{minipage}[l]{\linewidth}
-\hspace{-0.15in}
-\rotatebox[origin=c]{90}{\textcolor{grey}{$\Lsh$}}
-\raisebox{0.3em}{\textcolor{grey}{\footnotesize \# of citations}}
+\hspace{-0.65in}
+\raisebox{0.3em}{\footnotesize citations}
+\rotatebox[origin=c]{270}{\textcolor{grey}{$\Rsh$}}
 \end{minipage}\hfill
 }
 
@@ -197,21 +197,16 @@
 % Side block %
 %%%%%%%%%%%%%%
 
-\RequirePackage[absolute,overlay]{textpos}
+\RequirePackage[overlay]{textpos}
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
-\newenvironment{aside}{%
-  \let\oldsection\section
-  \renewcommand{\section}[1]{
-    \par\vspace{\parskip}{\LARGE\headingfont\color{headercolor} ##1}
-    \par\vspace{0.5\parskip}
-  }
-  \begin{textblock}{3.6}(1.5, 4.33)
-  \begin{flushright}
-}{%
-  \end{flushright}
-  \end{textblock}
-  \let\section\oldsection
+\newcommand{\aside}[3]{
+    \begin{textblock}{3.6}(-4.5, #2)
+        \begin{flushright}
+            \section{#1}
+                #3
+        \end{flushright}
+    \end{textblock}
 }
 
 %%%%%%%%%%%%%%%%
