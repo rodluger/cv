@@ -21,7 +21,7 @@ JOURNAL_MAP = {
 
 def format_pub(args):
     ind, pub = args
-    
+
     cites = pub["citations"]
     if cites == 0:
         cites = ""
@@ -48,14 +48,14 @@ def format_pub(args):
         fmt += ", \\arxiv{{{0}}}{{{1}}}".format(pub["arxiv"], pub["title"])
     else:
         fmt += ", \\emph{{{0}}}".format(pub["title"])
-        
+
     if not pub["pub"] is None:
         fmt += ", " + JOURNAL_MAP.get(pub["pub"].strip("0123456789# "),
                                       pub["pub"])
-    
+
     if pub["pub"] == 'ArXiv e-prints':
         fmt += ":{0}".format(pub["arxiv"])
-    
+
     if pub["volume"] is not None:
         fmt += ", \\textbf{{{0}}}".format(pub["volume"])
 
@@ -82,12 +82,11 @@ if __name__ == "__main__":
     cites = sorted((p["citations"] for p in pubs), reverse=True)
     ncitations = sum(cites)
     hindex = sum(c >= i for i, c in enumerate(cites))
-
-    summary = (("\\textbf{{Total:}} {0} $\\smash{{|}}$ "
-                "\\textbf{{Refereed:}} {1} $\\smash{{|}}$ "
-                "\\textbf{{First Author:}} {2} $\\smash{{|}}$ "
-                "\\textbf{{Citations:}} {3} $\\smash{{|}}$ "
-                "\\textbf{{h-index:}} {4}")
+    summary = (("Total Pubs \\textbf{{{0}}}\\\\"
+                "Refereed \\textbf{{{1}}}\\\\"
+                "First Author \\textbf{{{2}}}\\\\"
+                "Citations \\textbf{{{3}}}\\\\"
+                "h-index \\textbf{{{4}}}\\\\")
                .format(ntotal, npapers, nfirst, ncitations, hindex))
     with open("pubs_summary.tex", "w") as f:
         f.write(summary)

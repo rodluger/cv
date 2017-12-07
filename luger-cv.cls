@@ -64,15 +64,6 @@
 \newcommand{\arxiv}[2]{\emph{\href{http://arxiv.org/abs/#1}{{#2}}}}
 \newcommand{\isbn}[1]{{\footnotesize(\textsc{isbn:}{#1})}}
 
-% Citation count arrow
-\newcommand{\citearrow}[0]{
-\begin{minipage}[l]{\linewidth}
-\hspace{-0.65in}
-\raisebox{0.3em}{\footnotesize citations}
-\rotatebox[origin=c]{270}{\textcolor{grey}{$\Rsh$}}
-\end{minipage}\hfill
-}
-
 % Journal names.
 \newcommand{\aj}{AJ}
 \newcommand{\apj}{ApJ}
