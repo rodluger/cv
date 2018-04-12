@@ -47,16 +47,16 @@
     %
     \vspace*{-0.1cm}
     %
-    \href{mailto:rodluger@gmail.com}{rodluger@gmail.com\ \faEnvelope}\\[0.5em]
+    \href{mailto:rodluger@gmail.com}{{\addfontfeature{Color=linkblue}rodluger@gmail.com}\ \faEnvelope}\\[0.5em]
     %
-    \href{https://github.com/rodluger}{github.com/rodluger\ \faGithub}\\[0.5em]
+    \href{https://github.com/rodluger}{{\addfontfeature{Color=linkblue}github.com/rodluger}\ \faGithub}\\[0.5em]
     %
-    \href{https://rodluger.github.io}{rodluger.github.io\ \faHandPointerO}\\[0.5em]
+    \href{https://rodluger.github.io}{{\addfontfeature{Color=linkblue}rodluger.github.io}\ \faHandPointerO}\\[0.5em]
     %
-    \href{tel:610-675-6056}{+1 (610) 675 6056\ \faPhone}\\[0.5em]
+    \href{tel:610-675-6056}{{\addfontfeature{Color=linkblue}+1 (610) 675 6056}\ \faPhone}\\[0.5em]
     %
-    \href{https://www.google.com/maps/place/3910+15th+Ave+NE,+Seattle,+WA+98105/@47.6533863,-122.3140594,17z/data=!3m1!4b1!4m5!3m4!1s0x549014f27663af37:0x8d4887f6e248ac63!8m2!3d47.6533827!4d-122.3118654}{3910 15th Ave NE\ \faMapMarker}\\
-    \href{https://www.google.com/maps/place/3910+15th+Ave+NE,+Seattle,+WA+98105/@47.6533863,-122.3140594,17z/data=!3m1!4b1!4m5!3m4!1s0x549014f27663af37:0x8d4887f6e248ac63!8m2!3d47.6533827!4d-122.3118654}{Seattle, WA 98195}\ \phantom{\faMapMarker}
+    \href{https://www.google.com/maps/place/3910+15th+Ave+NE,+Seattle,+WA+98105/@47.6533863,-122.3140594,17z/data=!3m1!4b1!4m5!3m4!1s0x549014f27663af37:0x8d4887f6e248ac63!8m2!3d47.6533827!4d-122.3118654}{{\addfontfeature{Color=linkblue}Univ. of Washington}\ \faMapMarker}\\
+    \href{https://www.google.com/maps/place/3910+15th+Ave+NE,+Seattle,+WA+98105/@47.6533863,-122.3140594,17z/data=!3m1!4b1!4m5!3m4!1s0x549014f27663af37:0x8d4887f6e248ac63!8m2!3d47.6533827!4d-122.3118654}{{\addfontfeature{Color=linkblue}Seattle, WA 98195}}\ \phantom{\faMapMarker}
     %
 }
 
@@ -120,7 +120,6 @@
 %	POSITIONS
 %----------------------------------------------------------------------------------------
 
-
 \section{positions}
 
 \begin{entrylist}
@@ -174,12 +173,28 @@ zone planets
 \end{entrylist}
 
 %----------------------------------------------------------------------------------------
+%	STATS
+%----------------------------------------------------------------------------------------
+
+\aside{stats}{0.04}{
+    \vspace{0.5em}
+    \input{pubs_summary}
+}
+
+%----------------------------------------------------------------------------------------
 %	AWARDS
 %----------------------------------------------------------------------------------------
 
 \section{honors}
 
 \begin{entrylist}
+
+\entry
+{2018}
+{Hubble Postdoctoral Fellowship}
+{Declined}
+{%
+}
 
 %------------------------------------------------
 
@@ -258,6 +273,14 @@ Washington state using UW's inflatable mobile planetarium
 
 %------------------------------------------------
 
+\end{entrylist}
+%
+% PAGEBREAK
+%
+\begin{entrylist}
+
+%------------------------------------------------
+
 \entry
 {2010--2012}
 {High School Teacher}
@@ -273,15 +296,7 @@ problem solving skills
 \end{list}
 }
 
-%------------------------------------------------
-
-\end{entrylist}
 %
-% PAGEBREAK
-%
-\begin{entrylist}
-
-%------------------------------------------------
 
 \entry
 {2009--2010}
@@ -359,7 +374,6 @@ astronomy; tutored students in courses in mechanics and E\&M
     %
     \aside{}{0.86}{
         {\footnotesize citations $\longrightarrow$}\\[1em]
-        \input{pubs_summary}
     }
     %
     \section{publications}
@@ -368,6 +382,17 @@ astronomy; tutored students in courses in mechanics and E\&M
         \input{pubs}
     \end{list}
     %
+    \vspace{1em}
 \fi
+
+%----------------------------------------------------------------------------------------
+%	TALKS
+%----------------------------------------------------------------------------------------
+
+\section{selected talks}
+%
+\begin{list}{}{\pubslist}
+    \input{talks}
+\end{list}
 
 \end{document}

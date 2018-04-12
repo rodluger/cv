@@ -19,12 +19,13 @@ JOURNAL_MAP = {
     "American Astronomical Society Meeting Abstracts": "AAS",
 }
 
+
 def format_pub(args):
     ind, pub = args
 
     cites = pub["citations"]
     if cites == 0:
-        cites = ""
+        cites = "---"
     fmt = "\\item[{{\\color{{numcolor}}\\scriptsize{0}}}] ".format(cites)
     n = [i for i in range(len(pub["authors"]))
          if "Luger, R" in pub["authors"][i]][0]
@@ -42,12 +43,14 @@ def format_pub(args):
 
     fmt += ", {0}".format(pub["year"])
 
+    title = pub["title"]
+    title = title.replace("\u2500", "-")
     if pub["doi"] is not None:
-        fmt += ", \\doi{{{0}}}{{{1}}}".format(pub["doi"], pub["title"])
+        fmt += ", \\doi{{{0}}}{{{1}}}".format(pub["doi"], title)
     elif pub["arxiv"] is not None:
-        fmt += ", \\arxiv{{{0}}}{{{1}}}".format(pub["arxiv"], pub["title"])
+        fmt += ", \\arxiv{{{0}}}{{{1}}}".format(pub["arxiv"], title)
     else:
-        fmt += ", \\emph{{{0}}}".format(pub["title"])
+        fmt += ", \\emph{{{0}}}".format(title)
 
     if not pub["pub"] is None:
         fmt += ", " + JOURNAL_MAP.get(pub["pub"].strip("0123456789# "),
@@ -65,7 +68,41 @@ def format_pub(args):
     return fmt
 
 
+def format_talk(args):
+    ind, talk = args
+
+    fmt = "\\item"
+    n = [i for i in range(len(talk["authors"]))
+         if "Luger, R" in talk["authors"][i]][0]
+    talk["authors"][n] = "\\textbf{Luger, R.}"
+    if len(talk["authors"]) > 5:
+        fmt += ", ".join(talk["authors"][:4])
+        fmt += ", \etal"
+        if n >= 4:
+            fmt += "\\ (including\\ \\textbf{Luger, R.})"
+    elif len(talk["authors"]) > 1:
+        fmt += ", ".join(talk["authors"][:-1])
+        fmt += ", \\& " + talk["authors"][-1]
+    else:
+        fmt += talk["authors"][0]
+
+    if not talk["url"] is None:
+        fmt += ", \\link{{{0}}}{{{1}}}".format(talk["url"], talk["title"])
+    else:
+        fmt += ", \\emph{{{0}}}".format(talk["title"])
+
+    fmt += ", {0}".format(talk["event"])
+    fmt += ", {0}".format(talk["location"])
+    fmt += ", {0}".format(date(*(int(i)
+                                 for i in talk["pubdate"].split("-"))).
+                          strftime('%B %d, %Y'))
+
+    return fmt
+
+
 if __name__ == "__main__":
+
+    # Get pubs
     with open("pubs.json", "r") as f:
         pubs = json.load(f)
     with open("pubs_manual.json", "r") as f:
@@ -82,15 +119,26 @@ if __name__ == "__main__":
     cites = sorted((p["citations"] for p in pubs), reverse=True)
     ncitations = sum(cites)
     hindex = sum(c >= i for i, c in enumerate(cites))
-    summary = (("Total Pubs \\textbf{{{0}}}\\\\"
-                "Refereed \\textbf{{{1}}}\\\\"
-                "First Author \\textbf{{{2}}}\\\\"
-                "Citations \\textbf{{{3}}}\\\\"
-                "h-index \\textbf{{{4}}}\\\\")
+    summary = (("Total Pubs & \\textbf{{{0}}}\\\\"
+                "Refereed & \\textbf{{{1}}}\\\\"
+                "First Author & \\textbf{{{2}}}\\\\"
+                "Citations & \quad \\textbf{{{3}}}\\\\"
+                "h-index & \\textbf{{{4}}}")
                .format(ntotal, npapers, nfirst, ncitations, hindex))
+    summary = "\\begin{table}\\begin{tabular}{rr}" + \
+              summary + "\\end{tabular}\\end{table}"
     with open("pubs_summary.tex", "w") as f:
         f.write(summary)
 
+    # Write pubs
     pubs = list(map(format_pub, zip(range(len(pubs), 0, -1), pubs)))
     with open("pubs.tex", "w") as f:
         f.write("\n\n".join(pubs))
+
+    # Get talks
+    with open("talks.json", "r") as f:
+        talks = json.load(f)
+    talks = sorted(talks, key=itemgetter("pubdate"), reverse=True)
+    talks = list(map(format_talk, zip(range(len(talks), 0, -1), talks)))
+    with open("talks.tex", "w") as f:
+        f.write("\n\n".join(talks))

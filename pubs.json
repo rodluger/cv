@@ -1,5 +1,89 @@
 [
   {
+    "arxiv": null,
+    "authors": [
+      "Meadows, V.",
+      "Arney, G.",
+      "Schwieterman, E.",
+      "Lustig-Yaeger, J.",
+      "Lincowski, A.",
+      "Robinson, T.",
+      "Domagal-Goldman, S.",
+      "Deitrick, R.",
+      "Barnes, R.",
+      "Fleming, D.",
+      "Luger, R.",
+      "Driscoll, P.",
+      "Quinn, T.",
+      "Crisp, D."
+    ],
+    "citations": 0,
+    "doctype": "article",
+    "doi": "10.1089/ast.2016.1589",
+    "page": 133,
+    "pub": "Astrobiology",
+    "pubdate": "2018-02-00",
+    "title": "The Habitability of Proxima Centauri B: Environmental States and Observational Discriminants",
+    "url": "http://adsabs.harvard.edu/abs/2018AsBio..18..133M",
+    "volume": "18",
+    "year": "2018"
+  },
+  {
+    "arxiv": null,
+    "authors": [
+      "Saunders, N.",
+      "Luger, R.",
+      "Barnes, R."
+    ],
+    "citations": 0,
+    "doctype": "abstract",
+    "doi": null,
+    "page": null,
+    "pub": "American Astronomical Society Meeting Abstracts",
+    "pubdate": "2018-01-00",
+    "title": "De-Trending K2 Exoplanet Targets for High Spacecraft Motion",
+    "url": "http://adsabs.harvard.edu/abs/2018AAS...23140301S",
+    "volume": null,
+    "year": "2018"
+  },
+  {
+    "arxiv": null,
+    "authors": [
+      "Luger, R.",
+      "Lustig-Yaeger, J.",
+      "Agol, E.",
+      "TRAPPIST-1 Collaboration"
+    ],
+    "citations": 0,
+    "doctype": "abstract",
+    "doi": null,
+    "page": null,
+    "pub": "American Astronomical Society Meeting Abstracts",
+    "pubdate": "2018-01-00",
+    "title": "Probing the TRAPPIST-1 System With K2, JWST, and Beyond",
+    "url": "http://adsabs.harvard.edu/abs/2018AAS...23141002L",
+    "volume": null,
+    "year": "2018"
+  },
+  {
+    "arxiv": "1711.05739",
+    "authors": [
+      "Luger, R.",
+      "Lustig-Yaeger, J.",
+      "Agol, E."
+    ],
+    "citations": 2,
+    "doctype": "article",
+    "doi": "10.3847/1538-4357/aa9c43",
+    "page": 94,
+    "pub": "The Astrophysical Journal",
+    "pubdate": "2017-12-00",
+    "title": "Planet\u2500Planet Occultations in TRAPPIST-1 and Other Exoplanet Systems",
+    "url": "http://adsabs.harvard.edu/abs/2017ApJ...851...94L",
+    "volume": "851",
+    "year": "2017"
+  },
+  {
     "arxiv": "1710.11136",
     "authors": [
       "Luger, R.",
@@ -10,7 +94,7 @@
     "doctype": "article",
     "doi": "10.3847/2515-5172/aa96b5",
     "page": 7,
-    "pub": "Notes of the American Astronomical Society",
+    "pub": "Research Notes of the American Astronomical Society",
     "pubdate": "2017-12-00",
     "title": "Linear Models for Systematics and Nuisances",
     "url": "http://adsabs.harvard.edu/abs/2017RNAAS...1....7L",
@@ -18,21 +102,42 @@
     "year": "2017"
   },
   {
-    "arxiv": "1711.05739",
+    "arxiv": null,
     "authors": [
       "Luger, R.",
       "Lustig-Yaeger, J.",
       "Agol, E."
     ],
-    "citations": 1,
-    "doctype": "eprint",
+    "citations": 0,
+    "doctype": "article",
     "doi": null,
-    "page": null,
-    "pub": "ArXiv e-prints",
+    "page": 4100,
+    "pub": "LPI Contributions",
     "pubdate": "2017-11-00",
-    "title": "Planet-Planet Occultations in TRAPPIST-1 and Other Exoplanet Systems",
-    "url": "http://adsabs.harvard.edu/abs/2017arXiv171105739L",
-    "volume": null,
+    "title": "Probing the Orbital and Atmospheric Properties of the TRAPPIST-1 Planets With JWST",
+    "url": "http://adsabs.harvard.edu/abs/2017LPICo2042.4100L",
+    "volume": "2042",
+    "year": "2017"
+  },
+  {
+    "arxiv": null,
+    "authors": [
+      "Lincowski, A.",
+      "Meadows, V.",
+      "Crisp, D.",
+      "Robinson, T.",
+      "Luger, R.",
+      "Arney, G."
+    ],
+    "citations": 0,
+    "doctype": "article",
+    "doi": null,
+    "page": 4091,
+    "pub": "LPI Contributions",
+    "pubdate": "2017-11-00",
+    "title": "Habitability Imposters: Extreme Terrestrial Climates in the Habitable Zone of M Dwarf Stars",
+    "url": "http://adsabs.harvard.edu/abs/2017LPICo2042.4091L",
+    "volume": "2042",
     "year": "2017"
   },
   {
@@ -72,7 +177,7 @@
       "Heng, K.",
       "Queloz, D."
     ],
-    "citations": 18,
+    "citations": 38,
     "doctype": "article",
     "doi": "10.1038/s41550-017-0129",
     "page": 129,
@@ -95,7 +200,7 @@
       "Deitrick, R.",
       "Barnes, R."
     ],
-    "citations": 6,
+    "citations": 11,
     "doctype": "article",
     "doi": "10.3847/1538-4357/aa6040",
     "page": 63,
@@ -115,7 +220,7 @@
       "Agol, E.",
       "Saunders, N."
     ],
-    "citations": 8,
+    "citations": 15,
     "doctype": "eprint",
     "doi": null,
     "page": null,
@@ -147,12 +252,12 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 120,
+    "page": null,
     "pub": "American Astronomical Society Meeting Abstracts",
     "pubdate": "2017-01-00",
     "title": "Proxima Centauri B: Environmental States and Observational Discriminants",
     "url": "http://adsabs.harvard.edu/abs/2017AAS...22912003M",
-    "volume": "229",
+    "volume": null,
     "year": "2017"
   },
   {
@@ -166,7 +271,7 @@
       "Foreman-Mackey, D.",
       "Deming, D."
     ],
-    "citations": 37,
+    "citations": 49,
     "doctype": "article",
     "doi": "10.3847/0004-6256/152/4/100",
     "page": 100,
@@ -195,7 +300,7 @@
       "Quinn, T.",
       "Crisp, D."
     ],
-    "citations": 23,
+    "citations": 29,
     "doctype": "eprint",
     "doi": null,
     "page": null,
@@ -221,11 +326,13 @@
       "Arney, G.",
       "Crisp, D.",
       "Domagal-Goldman, S.",
+      "Foreman-Mackey, D.",
+      "Kaib, N.",
       "Lincowski, A.",
       "Lustig-Yaeger, J.",
       "Schwieterman, E."
     ],
-    "citations": 23,
+    "citations": 24,
     "doctype": "eprint",
     "doi": null,
     "page": null,
@@ -273,7 +380,7 @@
       "Misra, A.",
       "Barnes, R."
     ],
-    "citations": 22,
+    "citations": 25,
     "doctype": "article",
     "doi": "10.3847/2041-8205/819/1/L13",
     "page": null,
@@ -298,12 +405,12 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 211,
+    "page": null,
     "pub": "American Astronomical Society Meeting Abstracts",
     "pubdate": "2016-01-00",
     "title": "Spectral Identification of Abiotic O$_2$ Buildup From Early Runaways and Rarefied Atmospheres",
     "url": "http://adsabs.harvard.edu/abs/2016AAS...22721104S",
-    "volume": "227",
+    "volume": null,
     "year": "2016"
   },
   {
@@ -319,7 +426,7 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 404,
+    "page": null,
     "pub": "AAS/Division for Planetary Sciences Meeting Abstracts",
     "pubdate": "2015-11-00",
     "title": "Spectral Identification of Abiotic O$_2$ Buildup From Early Runaways and Rarefied Atmospheres",
@@ -341,7 +448,7 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 305,
+    "page": null,
     "pub": "AAS/Division of Dynamical Astronomy Meeting",
     "pubdate": "2015-05-00",
     "title": "Stable Configurations of the {\\ensuremath{\\upsilon}} Andromedae Planetary System",
@@ -355,7 +462,7 @@
       "Luger, R.",
       "Barnes, R."
     ],
-    "citations": 74,
+    "citations": 89,
     "doctype": "article",
     "doi": "10.1089/ast.2014.1231",
     "page": 119,
@@ -376,7 +483,7 @@
       "Jackson, B.",
       "Meadows, V."
     ],
-    "citations": 32,
+    "citations": 36,
     "doctype": "article",
     "doi": "10.1089/ast.2014.1215",
     "page": 57,
@@ -408,12 +515,12 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 138,
+    "page": null,
     "pub": "American Astronomical Society Meeting Abstracts",
     "pubdate": "2015-01-00",
     "title": "Eclipsing the Need for Spectroscopy: Constraining Eclipsing Binary Parameters Using Only Kepler Photometry",
     "url": "http://adsabs.harvard.edu/abs/2015AAS...22513829W",
-    "volume": "225",
+    "volume": null,
     "year": "2015"
   },
   {
@@ -438,12 +545,12 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 138,
+    "page": null,
     "pub": "American Astronomical Society Meeting Abstracts",
     "pubdate": "2015-01-00",
     "title": "Ground-Based Data on Kepler Eclipsing Binaries",
     "url": "http://adsabs.harvard.edu/abs/2015AAS...22513830W",
-    "volume": "225",
+    "volume": null,
     "year": "2015"
   },
   {
@@ -477,12 +584,12 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 407,
+    "page": null,
     "pub": "American Astronomical Society Meeting Abstracts",
     "pubdate": "2015-01-00",
     "title": "Extreme Water Loss and Abiotic O$_2$ Buildup on Planets Throughout the Habitable Zones of M Dwarfs",
     "url": "http://adsabs.harvard.edu/abs/2015AAS...22540704L",
-    "volume": "225",
+    "volume": null,
     "year": "2015"
   },
   {
@@ -499,12 +606,12 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 407,
+    "page": null,
     "pub": "American Astronomical Society Meeting Abstracts",
     "pubdate": "2015-01-00",
     "title": "Distinguishing True and False Positive Oxygen Signatures With Models and Observations",
     "url": "http://adsabs.harvard.edu/abs/2015AAS...22540708S",
-    "volume": "225",
+    "volume": null,
     "year": "2015"
   },
   {
@@ -523,12 +630,12 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 407,
+    "page": null,
     "pub": "American Astronomical Society Meeting Abstracts",
     "pubdate": "2015-01-00",
     "title": "Mechanisms for Generating False Positives for Extrasolar Life",
     "url": "http://adsabs.harvard.edu/abs/2015AAS...22540707D",
-    "volume": "225",
+    "volume": null,
     "year": "2015"
   },
   {
@@ -587,12 +694,12 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 325,
+    "page": null,
     "pub": "American Astronomical Society Meeting Abstracts #223",
     "pubdate": "2014-01-00",
     "title": "Habitable Evaporated Cores: Converting Mini-Neptunes Into Super-Earths in the Habitable Zone of M Dwarfs",
     "url": "http://adsabs.harvard.edu/abs/2014AAS...22332505L",
-    "volume": "223",
+    "volume": null,
     "year": "2014"
   },
   {
@@ -609,7 +716,7 @@
     "citations": 0,
     "doctype": "abstract",
     "doi": null,
-    "page": 113,
+    "page": null,
     "pub": "AAS/Division for Planetary Sciences Meeting Abstracts",
     "pubdate": "2013-10-00",
     "title": "A Stable Configuration for the Upsilon Andromedae Planetary System",

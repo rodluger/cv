@@ -19,32 +19,32 @@ def title_callback(word, **kwargs):
 def format_title(arg):
     '''
     Customized!
-    
+
     '''
 
     # Do the conversion
     arg = utf8totex(arg)
-    
+
     # Handle subscripts
     arg = re.sub('<SUB>(.*?)</SUB>', r'$_\1$', arg)
-    
+
     # Fudge O2 paper
     arg = re.sub('O2Buildup', r'O$_2$ Buildup', arg)
-    
+
     # Capitalize!
     arg = titlecase(arg, callback = title_callback)
-    
+
     return arg
 
 def format_authors(authors):
     '''
     Customized!
-    
+
     '''
 
     # Do the conversion
     authors = list(map(utf8totex, authors))
-    
+
     # Abbreviate names. This drops middle
     # initials -- should eventually fix this.
     for i, author in enumerate(authors):
@@ -52,7 +52,7 @@ def format_authors(authors):
         if match is not None:
             first, last = match.groups()
             authors[i] = '%s, %s.' % (first, last[0])
-    
+
     return authors
 
 __all__ = ["get_papers"]
@@ -67,12 +67,12 @@ def get_papers(author):
     ))
     dicts = []
     for paper in papers:
-        
+
         if not (("Luger, Rodrigo" in paper.author) or
                 ("Luger, R." in paper.author) or
                 ("Luger, R" in paper.author)):
             continue
-        
+
         aid = [":".join(t.split(":")[1:]) for t in paper.identifier
                if t.startswith("arXiv:")]
         for t in paper.identifier:
@@ -90,7 +90,9 @@ def get_papers(author):
             page = None
             if paper.page[0].startswith("arXiv:"):
                 aid.append(":".join(paper.page[0].split(":")[1:]))
-        
+        except TypeError:
+            page = None
+
         dicts.append(dict(
             doctype=paper.doctype,
             authors=format_authors(paper.author),

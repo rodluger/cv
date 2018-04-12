@@ -17,18 +17,11 @@
 \RequirePackage{xcolor}
 
 \definecolor{numcolor}{rgb}{0.5,0.5,0.5}
-
 \definecolor{white}{RGB}{255,255,255}
-
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
+\definecolor{linkblue}{RGB}{10,82,131}
 \definecolor{lightgray}{HTML}{999999}
-
-\definecolor{green}{HTML}{C2E15F}
-\definecolor{orange}{HTML}{FDA333}
-\definecolor{purple}{HTML}{D3A4F9}
-\definecolor{red}{HTML}{FB4485}
-\definecolor{blue}{HTML}{6CE0F1}
 
 \ifdefined\@cv@print
   \colorlet{green}{gray}
@@ -46,7 +39,6 @@
 \colorlet{textcolor}{gray}
 \colorlet{headercolor}{gray}
 
-
 %%%%%%%%%%
 % MISC   %
 %%%%%%%%%%
@@ -59,9 +51,10 @@
 \newcommand{\deemph}[1]{\textcolor{grey}{\footnotesize{#1}}}
 
 % literature links--use doi if you can
-\newcommand{\doi}[2]{\emph{\href{http://dx.doi.org/#1}{{#2}}}}
-\newcommand{\ads}[2]{\href{http://adsabs.harvard.edu/abs/#1}{{#2}}}
-\newcommand{\arxiv}[2]{\emph{\href{http://arxiv.org/abs/#1}{{#2}}}}
+\newcommand{\doi}[2]{\emph{\addfontfeature{Color=linkblue}\href{http://dx.doi.org/#1}{{#2}}}}
+\newcommand{\link}[2]{\emph{\addfontfeature{Color=linkblue}\href{#1}{{#2}}}}
+\newcommand{\ads}[2]{{\addfontfeature{Color=linkblue}\href{http://adsabs.harvard.edu/abs/#1}}{{#2}}}
+\newcommand{\arxiv}[2]{\emph{\addfontfeature{Color=linkblue}\href{http://arxiv.org/abs/#1}{{#2}}}}
 \newcommand{\isbn}[1]{{\footnotesize(\textsc{isbn:}{#1})}}
 
 % Journal names.
@@ -100,7 +93,7 @@
   \begin{tikzpicture}[remember picture,overlay]
     \node [rectangle, fill=white, anchor=north, minimum width=\paperwidth,
            minimum height=4cm] (box) at (current page.north)
-           {\includegraphics[width=\paperwidth]{header.pdf}};
+           {\includegraphics[width=\paperwidth]{header_moon.pdf}};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{gray}%
       \raisebox{3em}{{\headingfont #1 #2}}
