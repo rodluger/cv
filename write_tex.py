@@ -93,10 +93,13 @@ def format_talk(args):
 
     fmt += ", {0}".format(talk["event"])
     fmt += ", {0}".format(talk["location"])
-    fmt += ", {0}".format(date(*(int(i)
-                                 for i in talk["pubdate"].split("-"))).
-                          strftime('%B %d, %Y'))
 
+    YMD = [int(i) for i in talk["pubdate"].split("-")]
+    if len(YMD) == 3:
+        fmt += ", {0}".format(date(*YMD).strftime('%B %d, %Y'))
+    else:
+        YMD += [1]
+        fmt += ", {0}".format(date(*YMD).strftime('%B %Y'))
     return fmt
 
 
