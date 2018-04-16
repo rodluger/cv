@@ -11,6 +11,7 @@ install:
 addons:
     apt:
         packages:
+            - texlive-xetex
             - texlive-latex-recommended
             - texlive-latex-extra
             - texlive-fonts-recommended
