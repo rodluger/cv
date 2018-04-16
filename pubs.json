@@ -2,6 +2,67 @@
   {
     "arxiv": null,
     "authors": [
+      "Tian, F.",
+      "G{\\\"u}del, M.",
+      "Johnstone, C.",
+      "Lammer, H.",
+      "Luger, R.",
+      "Odert, P."
+    ],
+    "citations": null,
+    "doctype": "article",
+    "doi": "10.1007/s11214-018-0490-9",
+    "page": 65,
+    "pub": "Space Science Reviews",
+    "pubdate": "2018-04-00",
+    "title": "Water Loss From Young Planets",
+    "url": "http://adsabs.harvard.edu/abs/2018SSRv..214...65T",
+    "volume": "214",
+    "year": "2018"
+  },
+  {
+    "arxiv": null,
+    "authors": [
+      "Fleming, D.",
+      "Barnes, R.",
+      "Graham, D.",
+      "Luger, R.",
+      "Quinn, T."
+    ],
+    "citations": null,
+    "doctype": "abstract",
+    "doi": null,
+    "page": null,
+    "pub": "AAS/Division of Dynamical Astronomy Meeting",
+    "pubdate": "2018-04-00",
+    "title": "On the Lack of Circumbinary Planets Orbiting Isolated Binary Stars",
+    "url": "http://adsabs.harvard.edu/abs/2018DDA....4920206F",
+    "volume": null,
+    "year": "2018"
+  },
+  {
+    "arxiv": "1804.03676",
+    "authors": [
+      "Fleming, D.",
+      "Barnes, R.",
+      "Graham, D.",
+      "Luger, R.",
+      "Quinn, T."
+    ],
+    "citations": 0,
+    "doctype": "eprint",
+    "doi": null,
+    "page": null,
+    "pub": "ArXiv e-prints",
+    "pubdate": "2018-04-00",
+    "title": "On the Lack of Circumbinary Planets Orbiting Isolated Binary Stars",
+    "url": "http://adsabs.harvard.edu/abs/2018arXiv180403676F",
+    "volume": null,
+    "year": "2018"
+  },
+  {
+    "arxiv": null,
+    "authors": [
       "Meadows, V.",
       "Arney, G.",
       "Schwieterman, E.",
@@ -177,7 +238,7 @@
       "Heng, K.",
       "Queloz, D."
     ],
-    "citations": 38,
+    "citations": 39,
     "doctype": "article",
     "doi": "10.1038/s41550-017-0129",
     "page": 129,
@@ -271,7 +332,7 @@
       "Foreman-Mackey, D.",
       "Deming, D."
     ],
-    "citations": 49,
+    "citations": 50,
     "doctype": "article",
     "doi": "10.3847/0004-6256/152/4/100",
     "page": 100,
@@ -300,7 +361,7 @@
       "Quinn, T.",
       "Crisp, D."
     ],
-    "citations": 29,
+    "citations": 30,
     "doctype": "eprint",
     "doi": null,
     "page": null,
@@ -332,7 +393,7 @@
       "Lustig-Yaeger, J.",
       "Schwieterman, E."
     ],
-    "citations": 24,
+    "citations": 26,
     "doctype": "eprint",
     "doi": null,
     "page": null,
@@ -462,7 +523,7 @@
       "Luger, R.",
       "Barnes, R."
     ],
-    "citations": 89,
+    "citations": 90,
     "doctype": "article",
     "doi": "10.1089/ast.2014.1231",
     "page": 119,

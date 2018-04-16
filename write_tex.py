@@ -24,7 +24,7 @@ def format_pub(args):
     ind, pub = args
 
     cites = pub["citations"]
-    if cites == 0:
+    if cites == 0 or cites is None:
         cites = "---"
     fmt = "\\item[{{\\color{{numcolor}}\\scriptsize{0}}}] ".format(cites)
     n = [i for i in range(len(pub["authors"]))
@@ -119,7 +119,8 @@ if __name__ == "__main__":
     ntotal = len(ref) + len(unref)
     npapers = len(ref)
     nfirst = sum(1 for p in pubs if "Luger, R" in p["authors"][0])
-    cites = sorted((p["citations"] for p in pubs), reverse=True)
+    tmp = [p["citations"] if p["citations"] is not None else 0 for p in pubs]
+    cites = sorted(tmp, reverse=True)
     ncitations = sum(cites)
     hindex = sum(c >= i for i, c in enumerate(cites))
     summary = (("Total Pubs & \\textbf{{{0}}}\\\\"

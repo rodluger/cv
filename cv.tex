@@ -112,8 +112,11 @@
     I'm currently a postdoc at UW in Seattle, working on finding novel ways to detect
     \& char-\\ acterize exoplanets, particu-\\ larly those in the habitable zone. I mainly
     work with light curves from the K2 mission, and I'm gearing up to tackle science
-    with TESS, JWST, and other next-generation telescopes. Outside the office I love to
+    with TESS, JWST, and other next-generation telescopes.
+    \ifdefined \onepage \else
+    Outside the office I love to
     hike, cycle, swim, craft lattes, faulty parallelism, and Oxford commas.
+    \fi
 }
 
 %----------------------------------------------------------------------------------------
@@ -157,6 +160,7 @@ zone planets
 
 %------------------------------------------------
 
+\ifdefined \onepage \else
 \entry
 {2008--2009}
 {Student Researcher}
@@ -167,6 +171,7 @@ zone planets
 \item Research under Professor Eric Jensen on planet formation and T Tauri disks
 \end{list}
 }
+\fi
 
 %------------------------------------------------
 
@@ -235,11 +240,13 @@ leadership in Physics and Astronomy
 
 %------------------------------------------------
 
+\ifdefined \onepage \else
 \entry
 {2010}
 {The Phi Beta Kappa Society}
 {Swarthmore College}
 {}
+\fi
 
 %------------------------------------------------
 
@@ -296,11 +303,13 @@ Washington state using UW's inflatable mobile planetarium
 
 %------------------------------------------------
 
+\ifdefined \onepage \else
 \end{entrylist}
 %
 % PAGEBREAK
 %
 \begin{entrylist}
+\fi
 
 %------------------------------------------------
 
@@ -321,6 +330,7 @@ problem solving skills
 
 %
 
+\ifdefined \onepage \else
 \entry
 {2009--2010}
 {Science Associate \& Tutor}
@@ -332,6 +342,7 @@ problem solving skills
 astronomy; tutored students in courses in mechanics and E\&M
 \end{list}
 }
+\fi
 
 %------------------------------------------------
 
@@ -341,59 +352,60 @@ astronomy; tutored students in courses in mechanics and E\&M
 %	OTHER
 %----------------------------------------------------------------------------------------
 
-\section{other}
+\ifdefined \withother
+    \section{other}
+    \begin{entrylist}
 
-\begin{entrylist}
+    %------------------------------------------------
 
-%------------------------------------------------
+    \entry
+    {2013--2017}
+    {IT Manager}
+    {Virtual Planet Laboratory, University of Washington}
+    {%
+    \vspace{-1em}
+    \begin{list}{$+$}{\cvlist}
+    \item Managed VPL's virtual conferencing system and network
+    \end{list}
+    }
 
-\entry
-{2013--2017}
-{IT Manager}
-{Virtual Planet Laboratory, University of Washington}
-{%
-\vspace{-1em}
-\begin{list}{$+$}{\cvlist}
-\item Managed VPL's virtual conferencing system and network
-\end{list}
-}
+    %------------------------------------------------
 
-%------------------------------------------------
+    \entry
+    {2010--2012}
+    {Head Coach}
+    {St. Luke's School, New Canaan CT}
+    {%
+    \vspace{-1em}
+    \begin{list}{$+$}{\cvlist}
+    \item Head coach of the JV Boys Soccer and Fencing Teams
+    \item Assistant coach of the MS Tennis Team
+    \end{list}
+    }
 
-\entry
-{2010--2012}
-{Head Coach}
-{St. Luke's School, New Canaan CT}
-{%
-\vspace{-1em}
-\begin{list}{$+$}{\cvlist}
-\item Head coach of the JV Boys Soccer and Fencing Teams
-\item Assistant coach of the MS Tennis Team
-\end{list}
-}
+    %------------------------------------------------
 
-%------------------------------------------------
+    \entry
+    {2009--2010}
+    {Captain}
+    {Swarthmore College Fencing Team}
+    {%
+    \vspace{-1em}
+    \begin{list}{$+$}{\cvlist}
+    \item Captain and founding member of the Sabre Team
+    \end{list}
+    }
 
-\entry
-{2009--2010}
-{Captain}
-{Swarthmore College Fencing Team}
-{%
-\vspace{-1em}
-\begin{list}{$+$}{\cvlist}
-\item Captain and founding member of the Sabre Team
-\end{list}
-}
+    %------------------------------------------------
 
-%------------------------------------------------
-
-\end{entrylist}
+    \end{entrylist}
+\fi
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS
 %----------------------------------------------------------------------------------------
 
-\ifdefined\withpubs
+\ifdefined \withpubs
     %
     \aside{}{0.86}{
         {\footnotesize citations $\longrightarrow$}\\[1em]
@@ -412,10 +424,12 @@ astronomy; tutored students in courses in mechanics and E\&M
 %	TALKS
 %----------------------------------------------------------------------------------------
 
-\section{selected talks}
-%
-\begin{list}{}{\pubslist}
-    \input{talks}
-\end{list}
+\ifdefined \withtalks
+    \section{selected talks}
+    %
+    \begin{list}{}{\pubslist}
+        \input{talks}
+    \end{list}
+\fi
 
 \end{document}

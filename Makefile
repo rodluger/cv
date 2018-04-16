@@ -9,17 +9,25 @@ RM_TMP      = ${RM} $(foreach suff, ${TMP_SUFFS}, *.${suff})
 
 CHECK_RERUN = grep Rerun $*.log
 
-ALL_FILES = cv.pdf cv_pubs.pdf
+ALL_FILES = cv.pdf cv_nopubs.pdf cv_onepage.pdf
 
-all: ${ALL_FILES}
+all: update ${ALL_FILES}
 
-cv.pdf: cv.tex luger-cv.cls
-	${LATEX} cv
-	${LATEX} cv
+update:
+	python get_pubs.py
+	python write_tex.py
 
-cv_pubs.pdf: cv.tex luger-cv.cls pubs.tex
-	${LATEX} -jobname=cv_pubs "\def\withpubs{}\input{cv}"
-	${LATEX} -jobname=cv_pubs "\def\withpubs{}\input{cv}"
+cv.pdf: cv.tex luger-cv.cls pubs.tex talks.tex
+	${LATEX} -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
+	${LATEX} -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
+
+cv_nopubs.pdf: cv.tex luger-cv.cls
+	${LATEX} -jobname=cv_nopubs "\def\withother{}\input{cv}"
+	${LATEX} -jobname=cv_nopubs "\def\withother{}\input{cv}"
+
+cv_onepage.pdf: cv.tex luger-cv.cls
+	${LATEX} -jobname=cv_onepage "\def\onepage{}\input{cv}"
+	${LATEX} -jobname=cv_onepage "\def\onepage{}\input{cv}"
 
 clean:
 	${RM_TMP} ${ALL_FILES}
