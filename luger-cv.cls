@@ -68,14 +68,19 @@
 %%%%%%%%%
 
 \RequirePackage[quiet]{fontspec}
+\RequirePackage[scaled]{helvet}
 %\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 
 \newfontfamily\bodyfont[]{Helvetica Neue}
 \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
 \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
-
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+
+%\newfontfamily\thinfont[Path=Open_Sans_Condensed/]{OpenSansCondensed-Light.ttf}
+%\newfontfamily\headingfont[Path=Open_Sans_Condensed/]{OpenSansCondensed-Bold.ttf}
+%\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[Mapping=tex-text, Color=textcolor, Path=Open_Sans/]{OpenSans-Regular.ttf}
 
 %%%%%%%%%%
 % Header %
