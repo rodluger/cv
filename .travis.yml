@@ -5,6 +5,9 @@ language: python
 python:
     - "3.6"
 
+install:
+    - pip install ads titlecase
+
 addons:
     apt:
         packages:
@@ -21,7 +24,7 @@ after_success: |
         cd $TRAVIS_BUILD_DIR
         git checkout --orphan $TRAVIS_BRANCH-pdf
         git rm -rf .
-        git add -f cv_pubs.pdf cv.pdf pubs.pdf
+        git add -f cv.pdf cv_nopubs.pdf cv_onepage.pdf
         rev=$(git rev-parse --short HEAD)
         git -c user.name='travis' -c user.email='travis' commit -m "rebuild pdf at ${rev}"
         git push -q -f https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG $TRAVIS_BRANCH-pdf
