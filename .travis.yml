@@ -18,6 +18,7 @@ addons:
             - texlive-fonts-extra
             - latex-xcolor
             - lmodern
+            - unicode-math
 
 script:
     - make
