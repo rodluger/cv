@@ -16,6 +16,7 @@ addons:
             - texlive-latex-extra
             - texlive-fonts-recommended
             - texlive-fonts-extra
+            - latex-xcolor
 
 script:
     - make

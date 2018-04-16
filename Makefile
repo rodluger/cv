@@ -18,16 +18,16 @@ update:
 	python write_tex.py
 
 cv.pdf: cv.tex luger-cv.cls pubs.tex talks.tex
-	${LATEX} -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
-	${LATEX} -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
 
 cv_nopubs.pdf: cv.tex luger-cv.cls
-	${LATEX} -jobname=cv_nopubs "\def\withother{}\input{cv}"
-	${LATEX} -jobname=cv_nopubs "\def\withother{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_nopubs "\def\withother{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_nopubs "\def\withother{}\input{cv}"
 
 cv_onepage.pdf: cv.tex luger-cv.cls
-	${LATEX} -jobname=cv_onepage "\def\onepage{}\input{cv}"
-	${LATEX} -jobname=cv_onepage "\def\onepage{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
 
 clean:
 	${RM_TMP} ${ALL_FILES}
