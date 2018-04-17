@@ -1,4 +1,4 @@
-sudo: required
+sudo: false
 
 language: python
 
@@ -6,7 +6,6 @@ python:
     - "3.6"
 
 install:
-    - sudo tlmgr install pgf
     - pip install ads titlecase
 
 addons:
@@ -17,8 +16,9 @@ addons:
             - texlive-latex-extra
             - texlive-fonts-recommended
             - texlive-fonts-extra
+            - texlive-pictures
             - latex-xcolor
-            - lmodern # pgf
+            - lmodern
 
 script:
     - make
