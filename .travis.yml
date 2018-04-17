@@ -18,6 +18,7 @@ addons:
             - texlive-fonts-extra
             - latex-xcolor
             - lmodern
+            - texlive-pictures
 
 script:
     - make
