@@ -6,6 +6,7 @@ python:
     - "3.6"
 
 install:
+    - tlmgr install pgf
     - pip install ads titlecase
 
 addons:
@@ -17,8 +18,7 @@ addons:
             - texlive-fonts-recommended
             - texlive-fonts-extra
             - latex-xcolor
-            - lmodern
-            - texlive-pictures
+            - lmodern # pgf
 
 script:
     - make
