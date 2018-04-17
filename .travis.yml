@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 
 language: python
 
@@ -6,7 +6,7 @@ python:
     - "3.6"
 
 install:
-    - tlmgr install pgf
+    - sudo tlmgr install pgf
     - pip install ads titlecase
 
 addons:
