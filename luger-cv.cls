@@ -68,19 +68,17 @@
 %%%%%%%%%
 
 \RequirePackage[quiet]{fontspec}
-\RequirePackage[scaled]{helvet}
+
 %\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
-
-\newfontfamily\bodyfont[]{Helvetica Neue}
-\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
-\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
-
-%\newfontfamily\thinfont[Path=Open_Sans_Condensed/]{OpenSansCondensed-Light.ttf}
-%\newfontfamily\headingfont[Path=Open_Sans_Condensed/]{OpenSansCondensed-Bold.ttf}
+%\newfontfamily\bodyfont[]{Helvetica Neue}
+%\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+%\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
 %\defaultfontfeatures{Mapping=tex-text}
-%\setmainfont[Mapping=tex-text, Color=textcolor, Path=Open_Sans/]{OpenSans-Regular.ttf}
+%\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+
+\newfontfamily\headingfont[Path=fonts/]{Lato-Bold.ttf}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[Mapping=tex-text, Color=textcolor, Path=fonts/]{Lato-Light.ttf}
 
 %%%%%%%%%%
 % Header %
@@ -88,11 +86,6 @@
 
 \RequirePackage{tikz}
 
-\newcommand{\rolefont}{%
-  \fontsize{14pt}{24pt}\selectfont%
-  \thinfont%
-  \color{white}%
-}
 
 \newcommand{\header}[2]{%
   \begin{tikzpicture}[remember picture,overlay]
