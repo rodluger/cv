@@ -31,3 +31,4 @@ cv_onepage.pdf: cv.tex luger-cv.cls
 
 clean:
 	${RM_TMP} ${ALL_FILES}
+	${RM} talks.tex pubs_summary.tex pubs.tex
