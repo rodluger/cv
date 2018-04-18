@@ -1,0 +1,90 @@
+[
+  {
+    "authors": [
+      "Luger, R.",
+      "Lustig-Yaeger, J.",
+      "Agol, E."
+    ],
+    "title": "Probing the TRAPPIST-1 System with Planet-Planet Occultations",
+    "url": "http://astro.psu.edu/news-and-events/events",
+    "event": "Department Colloquium, Penn State University",
+    "location": "State College, PA",
+    "pubdate": "2017-09-11"
+  },
+  {
+    "authors": [
+      "Luger, R.",
+      "Kruse, E.",
+      "Foreman-Mackey, D.",
+      "and others"
+    ],
+    "title": "EVEREST Tutorial and Workshop",
+    "url": "https://github.com/rodluger/everest-workshop",
+    "event": "Kepler Science Conference IV",
+    "location": "Mountain View, CA",
+    "pubdate": "2017-06-21"
+  },
+  {
+    "authors": [
+      "Luger, R.",
+      "Sestovic, M.",
+      "Kruse, E.",
+      "and others"
+    ],
+    "title": "TRAPPIST-1: A Seven-Planet Resonant Chain Unveiled by K2",
+    "url": "https://ac.arc.nasa.gov/pbl7zb5efqsl",
+    "event": "Kepler Science Conference IV",
+    "location": "Mountain View, CA",
+    "pubdate": "2017-06-21"
+  },
+  {
+    "authors": [
+      "Luger, R.",
+      "Barnes, R.",
+      "Deitrick, R.",
+      "and others"
+    ],
+    "title": "Evolution of the Water Content of Proxima Centauri b",
+    "url": "http://www.hou.usra.edu/meetings/abscicon2017/pdf/3534.pdf",
+    "event": "Astrobiology Science Conference \\#3534",
+    "location": "Mesa, AZ",
+    "pubdate": "2017-04-28"
+  },
+  {
+    "authors": [
+      "Luger, R.",
+      "Kruse, E.",
+      "Foreman-Mackey, D.",
+      "and others"
+    ],
+    "title": "Evolution of the Water Content of Proxima Centauri b",
+    "url": "http://www.hou.usra.edu/meetings/abscicon2017/pdf/3338.pdf",
+    "event": "Astrobiology Science Conference \\#3534",
+    "location": "Mesa, AZ",
+    "pubdate": "2017-04-26"
+  },
+  {
+    "authors": [
+      "Luger, R.",
+      "Barnes, R."
+    ],
+    "title": "Extreme Water Loss and Abiotic O$_2$ Buildup on Planets Throughout the Habitable Zones of M Dwarfs",
+    "url": "http://adsabs.harvard.edu/abs/2015AAS...22540704L",
+    "event": "American Astronomical Society Meeting 225 \\#407.04",
+    "location": "Seattle, WA",
+    "pubdate": "2015-01"
+  },
+  {
+    "authors": [
+      "Luger, R.",
+      "Barnes, R.",
+      "Lopez, E.",
+      "and others"
+    ],
+    "title": "Habitable Evaporated Cores: Converting Mini-Neptunes into Super-Earths in the Habitable Zone of M Dwarfs",
+    "url": "http://adsabs.harvard.edu/abs/2015AsBio..15...57L",
+    "event": "American Astronomical Society Meeting 223, \\#325.05",
+    "location": "National Harbor, MD",
+    "pubdate": "2014-01"
+  }
+]
