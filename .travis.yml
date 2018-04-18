@@ -27,6 +27,5 @@ after_success: |
     git checkout --orphan $TRAVIS_BRANCH-pdf
     git rm -rf . > /dev/null 2>&1
     git add -f cv.pdf cv_nopubs.pdf cv_onepage.pdf
-    rev=$(git rev-parse --short HEAD)
-    git -c user.name='travis' -c user.email='travis' commit -m "rebuild pdf at ${rev}"
+    git -c user.name='travis' -c user.email='travis' commit -m "rebuild pdf"
     git push -q -f https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG $TRAVIS_BRANCH-pdf
