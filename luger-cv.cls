@@ -86,7 +86,7 @@
   \vspace*{-1in}
   \hspace*{-2.125in}
   \centering
-  \includegraphics[width=0.95\paperwidth]{header_moon.pdf}
+  \includegraphics[width=0.95\paperwidth]{header.pdf}
   \vspace*{-0.1in}
   }
 }

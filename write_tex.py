@@ -45,10 +45,13 @@ def format_pub(args):
 
     title = pub["title"]
     title = title.replace("\u2500", "-")
+    title = title.replace("TRAPPIST-1", "TRAP\\-PIST-1")
     if pub["doi"] is not None:
         fmt += ", \\doi{{{0}}}{{{1}}}".format(pub["doi"], title)
     elif pub["arxiv"] is not None:
         fmt += ", \\arxiv{{{0}}}{{{1}}}".format(pub["arxiv"], title)
+    elif pub["url"] is not None:
+        fmt += ", \\link{{{0}}}{{{1}}}".format(pub["url"], title)
     else:
         fmt += ", \\emph{{{0}}}".format(title)
 
