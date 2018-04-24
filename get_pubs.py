@@ -65,7 +65,8 @@ def manual_exclude(paper):
         return True
 
     # Remove Vikki's astrobio paper duplicate
-    if paper.title[0].startswith("The Habitability of Proxima"):
+    if paper.author[0].startswith("Meadows") and \
+       paper.title[0].startswith("The Habitability of Proxima"):
         if paper.pub == "Astrobiology":
             return True
         else:

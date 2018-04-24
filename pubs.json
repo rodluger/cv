@@ -90,38 +90,6 @@
     "year": "2018"
   },
   {
-    "arxiv": "1608.06919",
-    "authors": [
-      "Barnes, R.",
-      "Deitrick, R.",
-      "Luger, R.",
-      "Driscoll, P.",
-      "Quinn, T.",
-      "Fleming, D.",
-      "Guyer, B.",
-      "McDonald, D.",
-      "Meadows, V.",
-      "Arney, G.",
-      "Crisp, D.",
-      "Domagal-Goldman, S.",
-      "Foreman-Mackey, D.",
-      "Kaib, N.",
-      "Lincowski, A.",
-      "Lustig-Yaeger, J.",
-      "Schwieterman, E."
-    ],
-    "citations": 26,
-    "doctype": "article",
-    "doi": "10.1089/ast.2016.1589",
-    "page": 133,
-    "pub": "Astrobiology",
-    "pubdate": "2018-02-00",
-    "title": "The Habitability of Proxima Centauri B I: Evolutionary Scenarios",
-    "url": "http://adsabs.harvard.edu/abs/2018AsBio..18..133M",
-    "volume": "18",
-    "year": "2018"
-  },
-  {
     "arxiv": null,
     "authors": [
       "Saunders, N.",
@@ -334,6 +302,38 @@
     "title": "EVEREST: Pixel Level Decorrelation of K2 Light Curves",
     "url": "http://adsabs.harvard.edu/abs/2016AJ....152..100L",
     "volume": "152",
+    "year": "2016"
+  },
+  {
+    "arxiv": "1608.06919",
+    "authors": [
+      "Barnes, R.",
+      "Deitrick, R.",
+      "Luger, R.",
+      "Driscoll, P.",
+      "Quinn, T.",
+      "Fleming, D.",
+      "Guyer, B.",
+      "McDonald, D.",
+      "Meadows, V.",
+      "Arney, G.",
+      "Crisp, D.",
+      "Domagal-Goldman, S.",
+      "Foreman-Mackey, D.",
+      "Kaib, N.",
+      "Lincowski, A.",
+      "Lustig-Yaeger, J.",
+      "Schwieterman, E."
+    ],
+    "citations": 26,
+    "doctype": "eprint",
+    "doi": null,
+    "page": null,
+    "pub": "ArXiv e-prints",
+    "pubdate": "2016-08-00",
+    "title": "The Habitability of Proxima Centauri B I: Evolutionary Scenarios",
+    "url": "http://adsabs.harvard.edu/abs/2016arXiv160806919B",
+    "volume": null,
     "year": "2016"
   },
   {
