@@ -10,6 +10,9 @@ import ads
 from utf8totex import utf8totex
 from titlecase import titlecase
 
+__all__ = ["get_papers"]
+
+
 def title_callback(word, **kwargs):
     if '\\' in word:
         return word
@@ -55,7 +58,29 @@ def format_authors(authors):
 
     return authors
 
-__all__ = ["get_papers"]
+def manual_exclude(paper):
+    """Manual exclusions."""
+    # Remove DDS talks
+    if paper.pub == "LPI Contributions":
+        return True
+
+    # Remove Vikki's astrobio paper duplicate
+    if paper.title[0].startswith("The Habitability of Proxima"):
+        if paper.pub == "Astrobiology":
+            return True
+        else:
+            paper.id = "25657744"
+            paper.pub = "Astrobiology"
+            paper.year = "2018"
+            paper.doctype = "article"
+            paper.doi = ["10.1089/ast.2016.1589"]
+            paper.page = ["133"]
+            paper.pubdate = "2018-02-00"
+            paper.bibcode = "2018AsBio..18..133M"
+            paper.volume = "18"
+
+    return False
+
 
 def get_papers(author):
     papers = list(ads.SearchQuery(
@@ -71,6 +96,9 @@ def get_papers(author):
         if not (("Luger, Rodrigo" in paper.author) or
                 ("Luger, R." in paper.author) or
                 ("Luger, R" in paper.author)):
+            continue
+
+        if manual_exclude(paper):
             continue
 
         aid = [":".join(t.split(":")[1:]) for t in paper.identifier

@@ -6,3 +6,6 @@
 *.pdf
 .DS_Store
 __pycache__
+talks.tex
+pubs.tex
+pubs_summary.tex
