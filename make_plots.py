@@ -13,7 +13,7 @@ __all__ = ["plot_cites"]
 
 def plot_cites():
     """Plot citation dates histogram."""
-    citedates = np.loadtxt('citedates.txt')
+    citedates = np.loadtxt('citedates.txt')[1:]
     hist, bin_edges = np.histogram(citedates, bins=15)
     cdf = np.cumsum(hist)
     bins = 0.5 * (bin_edges[1:] + bin_edges[:-1])

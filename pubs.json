@@ -103,6 +103,35 @@
     "year": "2018"
   },
   {
+    "arxiv": "1608.08620",
+    "authors": [
+      "Meadows, V.",
+      "Arney, G.",
+      "Schwieterman, E.",
+      "Lustig-Yaeger, J.",
+      "Lincowski, A.",
+      "Robinson, T.",
+      "Domagal-Goldman, S.",
+      "Deitrick, R.",
+      "Barnes, R.",
+      "Fleming, D.",
+      "Luger, R.",
+      "Driscoll, P.",
+      "Quinn, T.",
+      "Crisp, D."
+    ],
+    "citations": 38,
+    "doctype": "article",
+    "doi": "10.1089/ast.2016.1589",
+    "page": 133,
+    "pub": "Astrobiology",
+    "pubdate": "2018-02-00",
+    "title": "The Habitability of Proxima Centauri B: Environmental States and Observational Discriminants",
+    "url": "http://adsabs.harvard.edu/abs/2018AsBio..18..133M",
+    "volume": "18",
+    "year": "2018"
+  },
+  {
     "arxiv": null,
     "authors": [
       "Saunders, N.",

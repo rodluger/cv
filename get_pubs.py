@@ -11,6 +11,7 @@ from utf8totex import utf8totex
 from titlecase import titlecase
 from tqdm import tqdm
 import numpy as np
+import time
 
 __all__ = ["get_papers"]
 
@@ -20,6 +21,7 @@ def title_callback(word, **kwargs):
         return word
     else:
         return None
+
 
 def format_title(arg):
     '''
@@ -37,9 +39,10 @@ def format_title(arg):
     arg = re.sub('O2Buildup', r'O$_2$ Buildup', arg)
 
     # Capitalize!
-    arg = titlecase(arg, callback = title_callback)
+    arg = titlecase(arg, callback=title_callback)
 
     return arg
+
 
 def format_authors(authors):
     '''
@@ -60,6 +63,7 @@ def format_authors(authors):
 
     return authors
 
+
 def manual_exclude(paper):
     """Manual exclusions."""
     # Remove DDS talks
@@ -67,6 +71,7 @@ def manual_exclude(paper):
         return True
 
     # Remove Vikki's astrobio paper duplicate
+    '''
     if paper.author[0].startswith("Meadows") and \
        paper.title[0].startswith("The Habitability of Proxima"):
         if paper.pub == "Astrobiology":
@@ -81,6 +86,7 @@ def manual_exclude(paper):
             paper.pubdate = "2018-02-00"
             paper.bibcode = "2018AsBio..18..133M"
             paper.volume = "18"
+    '''
 
     return False
 
@@ -94,7 +100,17 @@ def get_papers(author):
         max_pages=100,
     ))
     dicts = []
-    citedates = []
+
+    # Count the citations as a function of time every 30 days
+    last_updated = np.loadtxt('citedates.txt')[0]
+    if (time.time() - last_updated) > (86400 * 30):
+        citedates = []
+        last_updated = time.time()
+        count_cites = True
+    else:
+        citedates = np.loadtxt('citedates.txt')[1:]
+        count_cites = False
+
     for paper in papers:
 
         if not (("Luger, Rodrigo" in paper.author) or
@@ -126,7 +142,7 @@ def get_papers(author):
             page = None
 
         # Get citation dates
-        if paper.citation is not None:
+        if count_cites and paper.citation is not None:
             for i, bibcode in tqdm(enumerate(paper.citation),
                                    total=len(paper.citation)):
                 cite = list(ads.SearchQuery(bibcode=bibcode,
@@ -148,11 +164,16 @@ def get_papers(author):
             citations=paper.citation_count,
             url="http://adsabs.harvard.edu/abs/" + paper.bibcode,
         ))
+
+    # Sort the cite dates and prepend the date
+    # they were last updated
+    citedates = [last_updated] + sorted(citedates)
+
     return sorted(dicts, key=itemgetter("pubdate"), reverse=True), citedates
 
 
 if __name__ == "__main__":
     papers, citedates = get_papers("Luger, R")
-    np.savetxt('citedates.txt', citedates)
+    np.savetxt('citedates.txt', citedates, fmt='%.3f')
     with open("pubs.json", "w") as f:
         json.dump(papers, f, sort_keys=True, indent=2, separators=(",", ": "))
