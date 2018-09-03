@@ -9,6 +9,8 @@ import re
 import ads
 from utf8totex import utf8totex
 from titlecase import titlecase
+from tqdm import tqdm
+import numpy as np
 
 __all__ = ["get_papers"]
 
@@ -88,10 +90,11 @@ def get_papers(author):
         author=author,
         fl=["id", "title", "author", "doi", "year", "pubdate", "pub",
             "volume", "page", "identifier", "doctype", "citation_count",
-            "bibcode"],
+            "bibcode", "citation"],
         max_pages=100,
     ))
     dicts = []
+    citedates = []
     for paper in papers:
 
         if not (("Luger, Rodrigo" in paper.author) or
@@ -122,6 +125,15 @@ def get_papers(author):
         except TypeError:
             page = None
 
+        # Get citation dates
+        if paper.citation is not None:
+            for i, bibcode in tqdm(enumerate(paper.citation),
+                                   total=len(paper.citation)):
+                cite = list(ads.SearchQuery(bibcode=bibcode,
+                                            fl=["pubdate"]))[0]
+                date = int(cite.pubdate[:4]) + int(cite.pubdate[5:7]) / 12.
+                citedates.append(date)
+
         dicts.append(dict(
             doctype=paper.doctype,
             authors=format_authors(paper.author),
@@ -136,9 +148,11 @@ def get_papers(author):
             citations=paper.citation_count,
             url="http://adsabs.harvard.edu/abs/" + paper.bibcode,
         ))
-    return sorted(dicts, key=itemgetter("pubdate"), reverse=True)
+    return sorted(dicts, key=itemgetter("pubdate"), reverse=True), citedates
+
 
 if __name__ == "__main__":
-    papers = get_papers("Luger, R")
+    papers, citedates = get_papers("Luger, R")
+    np.savetxt('citedates.txt', citedates)
     with open("pubs.json", "w") as f:
         json.dump(papers, f, sort_keys=True, indent=2, separators=(",", ": "))
