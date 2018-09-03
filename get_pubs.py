@@ -69,29 +69,10 @@ def manual_exclude(paper):
     # Remove DDS talks
     if paper.pub == "LPI Contributions":
         return True
-
-    # Remove Vikki's astrobio paper duplicate
-    '''
-    if paper.author[0].startswith("Meadows") and \
-       paper.title[0].startswith("The Habitability of Proxima"):
-        if paper.pub == "Astrobiology":
-            return True
-        else:
-            paper.id = "25657744"
-            paper.pub = "Astrobiology"
-            paper.year = "2018"
-            paper.doctype = "article"
-            paper.doi = ["10.1089/ast.2016.1589"]
-            paper.page = ["133"]
-            paper.pubdate = "2018-02-00"
-            paper.bibcode = "2018AsBio..18..133M"
-            paper.volume = "18"
-    '''
-
     return False
 
 
-def get_papers(author):
+def get_papers(author, count_cites=False):
     papers = list(ads.SearchQuery(
         author=author,
         fl=["id", "title", "author", "doi", "year", "pubdate", "pub",
@@ -102,14 +83,11 @@ def get_papers(author):
     dicts = []
 
     # Count the citations as a function of time every 30 days
-    last_updated = np.loadtxt('citedates.txt')[0]
-    if (time.time() - last_updated) > (86400 * 30):
-        citedates = []
-        last_updated = time.time()
-        count_cites = True
-    else:
-        citedates = np.loadtxt('citedates.txt')[1:]
-        count_cites = False
+    if count_cites:
+        last_updated = np.loadtxt('citedates.txt')[0]
+        if (time.time() - last_updated) > (86400 * 30):
+            citedates = []
+            last_updated = time.time()
 
     for paper in papers:
 
@@ -165,15 +143,16 @@ def get_papers(author):
             url="http://adsabs.harvard.edu/abs/" + paper.bibcode,
         ))
 
-    # Sort the cite dates and prepend the date
-    # they were last updated
-    citedates = [last_updated] + sorted(citedates)
+    if count_cites:
+        # Sort the cite dates and prepend the date
+        # they were last updated
+        citedates = [last_updated] + sorted(citedates)
+        np.savetxt('citedates.txt', citedates, fmt='%.3f')
 
-    return sorted(dicts, key=itemgetter("pubdate"), reverse=True), citedates
+    return sorted(dicts, key=itemgetter("pubdate"), reverse=True)
 
 
 if __name__ == "__main__":
-    papers, citedates = get_papers("Luger, R")
-    np.savetxt('citedates.txt', citedates, fmt='%.3f')
+    papers = get_papers("Luger, R", count_cites=False)
     with open("pubs.json", "w") as f:
         json.dump(papers, f, sort_keys=True, indent=2, separators=(",", ": "))

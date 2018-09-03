@@ -14,9 +14,9 @@ ALL_FILES = cv.pdf cv_nopubs.pdf cv_onepage.pdf
 all: update ${ALL_FILES}
 
 update:
-	#python get_pubs.py
+	python get_pubs.py
 	python write_tex.py
-	#python make_plots.py
+	python make_plots.py
 
 cv.pdf: cv.tex luger-cv.cls pubs.tex talks.tex
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
