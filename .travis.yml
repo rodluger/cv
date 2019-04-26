@@ -6,7 +6,7 @@ python:
     - "3.6"
 
 install:
-    - pip install ads titlecase tqdm
+    - pip install ads titlecase tqdm matplotlib
 
 addons:
     apt:
