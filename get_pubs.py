@@ -153,6 +153,6 @@ def get_papers(author, count_cites=False):
 
 
 if __name__ == "__main__":
-    papers = get_papers("Luger, R", count_cites=False)
+    papers = get_papers("Luger, R", count_cites=True)
     with open("pubs.json", "w") as f:
         json.dump(papers, f, sort_keys=True, indent=2, separators=(",", ": "))
