@@ -9,3 +9,7 @@ __pycache__
 talks.tex
 pubs.tex
 pubs_summary.tex
+stars.json
+tmp.tex
+*.json
+bibcodes.txt

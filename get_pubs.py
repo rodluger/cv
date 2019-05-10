@@ -89,6 +89,9 @@ def get_papers(author, count_cites=False):
             citedates = []
             last_updated = time.time()
 
+    # Save bibcodes for later
+    bibcodes = []
+
     for paper in papers:
 
         if not (("Luger, Rodrigo" in paper.author) or
@@ -128,6 +131,9 @@ def get_papers(author, count_cites=False):
                 date = int(cite.pubdate[:4]) + int(cite.pubdate[5:7]) / 12.
                 citedates.append(date)
 
+        # Save bibcode
+        bibcodes.append(paper.bibcode)
+
         dicts.append(dict(
             doctype=paper.doctype,
             authors=format_authors(paper.author),
@@ -148,6 +154,11 @@ def get_papers(author, count_cites=False):
         # they were last updated
         citedates = [last_updated] + sorted(citedates)
         np.savetxt('citedates.txt', citedates, fmt='%.3f')
+
+    # Save bibcodes
+    with open('bibcodes.txt', 'w') as f: 
+        for bibcode in bibcodes:
+            print(bibcode, file=f)
 
     return sorted(dicts, key=itemgetter("pubdate"), reverse=True)
 

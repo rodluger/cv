@@ -15,6 +15,8 @@ all: update ${ALL_FILES}
 
 update:
 	python get_pubs.py
+	python get_metrics.py
+	python get_git.py
 	python write_tex.py
 	python make_plots.py
 
