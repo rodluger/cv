@@ -20,7 +20,7 @@ addons:
             - lmodern
 
 script:
-    curl -i https://api.github.com/
+    - curl -i https://api.github.com/
     - make
 
 after_success: |
