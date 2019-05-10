@@ -39,5 +39,6 @@ if __name__ == "__main__":
     try:
         get_all_stars()
     except urllib.error.HTTPError:
-        # DEBUG
+        # DEBUG: Investigate this...
+        print("HTTPError in `get_git.py`")
         pass
