@@ -1,3 +1,4 @@
+import urllib
 from urllib.request import Request, urlopen
 import json
 
@@ -35,4 +36,8 @@ def get_repo_stats(repo):
 
 
 if __name__ == "__main__":
-    get_all_stars()
+    try:
+        get_all_stars()
+    except urllib.error.HTTPError:
+        # DEBUG
+        pass
