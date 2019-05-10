@@ -82,12 +82,8 @@ def get_papers(author, count_cites=False):
     ))
     dicts = []
 
-    # Count the citations as a function of time every 30 days
-    if count_cites:
-        last_updated = np.loadtxt('citedates.txt')[0]
-        if (time.time() - last_updated) > (86400 * 30):
-            citedates = []
-            last_updated = time.time()
+    # Count the citations as a function of time
+    citedates = []
 
     # Save bibcodes for later
     bibcodes = []
@@ -150,9 +146,8 @@ def get_papers(author, count_cites=False):
         ))
 
     if count_cites:
-        # Sort the cite dates and prepend the date
-        # they were last updated
-        citedates = [last_updated] + sorted(citedates)
+        # Sort the cite dates
+        citedates = sorted(citedates)
         np.savetxt('citedates.txt', citedates, fmt='%.3f')
 
     # Save bibcodes
