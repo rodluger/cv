@@ -2,7 +2,7 @@ from urllib.request import Request, urlopen
 from urllib.parse import urlencode
 import json
 import os
-token = os.getenv("ADS_DEV_TOKEN", "") 
+token = os.getenv("ADS_DEV_KEY", "") 
 
 
 def get_metrics():
