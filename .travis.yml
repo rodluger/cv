@@ -20,7 +20,6 @@ addons:
             - lmodern
 
 script:
-    - source debug.sh
     - make
 
 after_success: |
