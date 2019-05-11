@@ -1,1 +1,0 @@
-curl -H "Accept: application/vnd.github.v3.star+json" -i https://api.github.com/repos/rodluger/starry/stargazers?page=1&per_page=100
