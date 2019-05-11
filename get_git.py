@@ -1,7 +1,7 @@
 import urllib
 from urllib.request import Request, urlopen
 import json
-
+import os
 
 __all__ = ["get_all_stars"]
 
@@ -11,6 +11,7 @@ def get_repo_stars(repo, maxpages=5):
     for page in range(1, maxpages + 1):
         req = Request('https://api.github.com/repos/rodluger/%s/stargazers?page=%d&per_page=100' % (repo, page))
         req.add_header('Accept', 'application/vnd.github.v3.star+json')
+        req.add_header('Authorization', 'token %s' % os.getenv('GITHUB_API_KEY', ''))
         content = urlopen(req).read()
         par = json.loads(content)
         if len(par) == 0:
