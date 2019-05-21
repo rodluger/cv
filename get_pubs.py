@@ -122,11 +122,14 @@ def get_papers(author, count_cites=False):
         if count_cites and paper.citation is not None:
             for i, bibcode in tqdm(enumerate(paper.citation),
                                    total=len(paper.citation)):
-                cite = list(ads.SearchQuery(bibcode=bibcode,
-                                            fl=["pubdate"]))[0]
-                date = int(cite.pubdate[:4]) + int(cite.pubdate[5:7]) / 12.
-                citedates.append(date)
-
+                try:
+                    cite = list(ads.SearchQuery(bibcode=bibcode,
+                                                fl=["pubdate"]))[0]
+                    date = int(cite.pubdate[:4]) + int(cite.pubdate[5:7]) / 12.
+                    citedates.append(date)
+                except IndexError:
+                    pass
+                    
         # Save bibcode
         bibcodes.append(paper.bibcode)
 
