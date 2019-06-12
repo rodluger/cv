@@ -1,5 +1,39 @@
 [
   {
+    "authors": [
+      "Luger, R."
+    ],
+    "title": "An Introduction to Gaussian Process Regression",
+    "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session9",
+    "event": "LSSTC Data Science Fellowship Program",
+    "location": "Pittsburgh, PA",
+    "pubdate": "2019-06-08"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
+    "title": "Gradient-based Inference Techniques for Exoplanet Light Curves",
+    "url": "https://keplerscience.arc.nasa.gov/data/KepSciConV/KeplerSciConV-Tues-pm-Luger.pdf",
+    "event": "Kepler Science Conference V",
+    "location": "Glendale, CA",
+    "pubdate": "2019-03-05"
+  },
+  {
+    "authors": [
+      "Luger, R.",
+      "Agol, E.",
+      "Foreman-Mackey, D.",
+      "Fleming, D.",
+      "others"
+    ],
+    "title": ""STARRY: Analytic Occultation and Rotation Light Curves"",
+    "url": "https://cloudproject.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=53656312-f40f-4310-b84e-aa4c00fe40d1",
+    "event": "TESS Data Workshop",
+    "location": "Baltimore, MD",
+    "pubdate": "2019-02-11"
+  },
+  {
       "authors": [
         "Luger, R.",
         "Lustig-Yaeger, J.",
@@ -41,7 +75,7 @@
       "Kruse, E.",
       "Foreman-Mackey, D.",
       "Agol, E.",
-      "and others"
+      "others"
     ],
     "title": "EVEREST Tutorial and Workshop",
     "url": "https://github.com/rodluger/everest-workshop",
@@ -55,7 +89,7 @@
       "Sestovic, M.",
       "Kruse, E.",
       "Grimm, S.",
-      "and others"
+      "others"
     ],
     "title": "TRAPPIST-1: A Seven-Planet Resonant Chain Unveiled by K2",
     "url": "https://ac.arc.nasa.gov/pbl7zb5efqsl",
@@ -68,7 +102,7 @@
       "Luger, R.",
       "Barnes, R.",
       "Deitrick, R.",
-      "and others"
+      "others"
     ],
     "title": "Evolution of the Water Content of Proxima Centauri b",
     "url": "http://www.hou.usra.edu/meetings/abscicon2017/pdf/3534.pdf",
@@ -82,7 +116,7 @@
       "Kruse, E.",
       "Foreman-Mackey, D.",
       "Agol, E.",
-      "and others"
+      "others"
     ],
     "title": "Habitable Zone Planets with K2",
     "url": "http://www.hou.usra.edu/meetings/abscicon2017/pdf/3338.pdf",
@@ -107,7 +141,7 @@
       "Barnes, R.",
       "Lopez, E.",
       "Fortney, J.",
-      "and others"
+      "others"
     ],
     "title": "Habitable Evaporated Cores: Converting Mini-Neptunes into Super-Earths in the Habitable Zone of M Dwarfs",
     "url": "http://adsabs.harvard.edu/abs/2015AsBio..15...57L",
