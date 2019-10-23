@@ -25,10 +25,12 @@ def format_pub(args):
 
     cites = pub["citations"]
     if cites == 0 or cites is None:
-        cites = "---"
-    fmt = "\\item[{{\\color{{numcolor}}\\scriptsize{0}}}] ".format(cites)
-    n = [i for i in range(len(pub["authors"]))
-         if "Luger, R" in pub["authors"][i]][0]
+        cites = "\\textemdash"
+    if pub["doctype"] == "article":
+        fmt = "\\item[{{\\color{{numcolor}}\\scriptsize\\bfseries{0}}}] ".format(cites)
+    else:
+        fmt = "\\item[{{\\color{{numcolor}}\\scriptsize{0}}}] ".format(cites)
+    n = [i for i in range(len(pub["authors"])) if "Luger, R" in pub["authors"][i]][0]
     pub["authors"][n] = "\\textbf{Luger, R.}"
     if len(pub["authors"]) > 5:
         fmt += ", ".join(pub["authors"][:4])
@@ -56,10 +58,9 @@ def format_pub(args):
         fmt += ", \\emph{{{0}}}".format(title)
 
     if not pub["pub"] is None:
-        fmt += ", " + JOURNAL_MAP.get(pub["pub"].strip("0123456789# "),
-                                      pub["pub"])
+        fmt += ", " + JOURNAL_MAP.get(pub["pub"].strip("0123456789# "), pub["pub"])
 
-    if pub["pub"] == 'ArXiv e-prints':
+    if pub["pub"] == "ArXiv e-prints":
         fmt += ":{0}".format(pub["arxiv"])
 
     if pub["volume"] is not None:
@@ -75,8 +76,7 @@ def format_talk(args):
     ind, talk = args
 
     fmt = "\\item"
-    n = [i for i in range(len(talk["authors"]))
-         if "Luger, R" in talk["authors"][i]][0]
+    n = [i for i in range(len(talk["authors"])) if "Luger, R" in talk["authors"][i]][0]
     talk["authors"][n] = "\\textbf{Luger, R.}"
     if len(talk["authors"]) > 5:
         fmt += ", ".join(talk["authors"][:4])
@@ -99,10 +99,10 @@ def format_talk(args):
 
     YMD = [int(i) for i in talk["pubdate"].split("-")]
     if len(YMD) == 3:
-        fmt += ", {0}".format(date(*YMD).strftime('%B %d, %Y'))
+        fmt += ", {0}".format(date(*YMD).strftime("%B %d, %Y"))
     else:
         YMD += [1]
-        fmt += ", {0}".format(date(*YMD).strftime('%B %Y'))
+        fmt += ", {0}".format(date(*YMD).strftime("%B %Y"))
     return fmt
 
 
@@ -126,14 +126,16 @@ if __name__ == "__main__":
     cites = sorted(tmp, reverse=True)
     ncitations = sum(cites)
     hindex = sum(c >= i for i, c in enumerate(cites))
-    summary = (("Total Pubs & \\textbf{{{0}}}\\\\"
-                "Refereed & \\textbf{{{1}}}\\\\"
-                "First Author & \\textbf{{{2}}}\\\\"
-                "Citations & \quad \\textbf{{{3}}}\\\\"
-                "h-index & \\textbf{{{4}}}")
-               .format(ntotal, npapers, nfirst, ncitations, hindex))
-    summary = "\\begin{table}\\begin{tabular}{rr}" + \
-              summary + "\\end{tabular}\\end{table}"
+    summary = (
+        "Total Pubs & \\textbf{{{0}}}\\\\"
+        "Refereed & \\textbf{{{1}}}\\\\"
+        "First Author & \\textbf{{{2}}}\\\\"
+        "Citations & \quad \\textbf{{{3}}}\\\\"
+        "h-index & \\textbf{{{4}}}"
+    ).format(ntotal, npapers, nfirst, ncitations, hindex)
+    summary = (
+        "\\begin{table}\\begin{tabular}{rr}" + summary + "\\end{tabular}\\end{table}"
+    )
     with open("pubs_summary.tex", "w") as f:
         f.write(summary)
 

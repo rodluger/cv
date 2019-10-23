@@ -32,7 +32,7 @@ cv_onepage.pdf: cv.tex luger-cv.cls
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
 
-local:
+download:
 	# Get updated JSON files
 	git clone https://github.com/rodluger/cv && cd cv && git fetch && git checkout master-pdf && cp *.json ../ && cp citedates.txt ../ && cd .. && rm -rf cv
 
@@ -40,6 +40,7 @@ local:
 	python write_tex.py
 	python make_plots.py
 
+local:
 	# cv.pdf
 	echo "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}" | tectonic "-"
 	mv texput.pdf cv.pdf
