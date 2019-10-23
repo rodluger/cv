@@ -13,3 +13,6 @@ stars.json
 tmp.tex
 *.json
 bibcodes.txt
+.vscode
+pubs.json
+citedates.txt
