@@ -3,6 +3,36 @@
     "authors": [
       "Luger, R."
     ],
+    "title": "Toward Maps of Exoplanet Surfaces",
+    "url": "https://github.com/rodluger/talks/tree/master/yale",
+    "event": "Yale University Exoplanet Journal Club",
+    "location": "New Haven, CT",
+    "pubdate": "2019-10-08"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
+    "title": "Toward Maps of Exoplanet Surfaces",
+    "url": "https://github.com/rodluger/talks/tree/master/villanova",
+    "event": "Villanova University Astronomy Department Colloquium",
+    "location": "Villanova, PA",
+    "pubdate": "2019-09-20"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
+    "title": "Regularization and Ridge Regression",
+    "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session10",
+    "event": "LSSTC Data Science Fellowship Program",
+    "location": "New York, NY",
+    "pubdate": "2019-09-12"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
     "title": "An Introduction to Gaussian Process Regression",
     "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session9",
     "event": "LSSTC Data Science Fellowship Program",
@@ -34,28 +64,28 @@
     "pubdate": "2019-02-11"
   },
   {
-      "authors": [
-        "Luger, R.",
-        "Lustig-Yaeger, J.",
-        "Agol, E."
-      ],
-      "title": "Probing the TRAPPIST-1 System with K2, JWST, and Beyond",
-      "url": "http://adsabs.harvard.edu/abs/2018AAS...23141002L",
-      "event": "American Astronomical Society Meeting 231, \\textbf{410.02}",
-      "location": "National Harbor, MD",
-      "pubdate": "2018-01"
+    "authors": [
+      "Luger, R.",
+      "Lustig-Yaeger, J.",
+      "Agol, E."
+    ],
+    "title": "Probing the TRAPPIST-1 System with K2, JWST, and Beyond",
+    "url": "http://adsabs.harvard.edu/abs/2018AAS...23141002L",
+    "event": "American Astronomical Society Meeting 231, \\textbf{410.02}",
+    "location": "National Harbor, MD",
+    "pubdate": "2018-01"
   },
   {
-      "authors": [
-        "Luger, R.",
-        "Lustig-Yaeger, J.",
-        "Agol, E."
-      ],
-      "title": "Probing the TRAPPIST-1 System with Planet-Planet Occultations",
-      "url": "https://www.cfa.harvard.edu/events/stars-planets-seminar?field_seminar_series_value=fall17",
-      "event": "Stars and Planets Seminar, Center for Astrophysics",
-      "location": "Cambridge, MA",
-      "pubdate": "2017-10-30"
+    "authors": [
+      "Luger, R.",
+      "Lustig-Yaeger, J.",
+      "Agol, E."
+    ],
+    "title": "Probing the TRAPPIST-1 System with Planet-Planet Occultations",
+    "url": "https://www.cfa.harvard.edu/events/stars-planets-seminar?field_seminar_series_value=fall17",
+    "event": "Stars and Planets Seminar, Center for Astrophysics",
+    "location": "Cambridge, MA",
+    "pubdate": "2017-10-30"
   },
   {
     "authors": [

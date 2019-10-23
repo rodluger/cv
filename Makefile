@@ -32,6 +32,26 @@ cv_onepage.pdf: cv.tex luger-cv.cls
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
 
+local:
+	# Get updated JSON files
+	git clone https://github.com/rodluger/cv && cd cv && git fetch && git checkout master-pdf && cp *.json ../ && cp citedates.txt ../ && cd .. && rm -rf cv
+
+	# Write aux tex file & make plots
+	python write_tex.py
+	python make_plots.py
+
+	# cv.pdf
+	echo "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}" | tectonic "-"
+	mv texput.pdf cv.pdf
+
+	# cv_nopubs.pdf
+	echo "\def\withother{}\input{cv}" | tectonic "-"
+	mv texput.pdf cv_nopubs.pdf
+
+	# cv_onepage.pdf
+	echo "\def\onepage{}\input{cv}" | tectonic "-"
+	mv texput.pdf cv_onepage.pdf
+
 clean:
 	${RM_TMP} ${ALL_FILES}
 	${RM} talks.tex pubs_summary.tex pubs.tex
