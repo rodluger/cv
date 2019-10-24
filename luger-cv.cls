@@ -22,7 +22,7 @@
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{linkblue}{RGB}{10,82,131}
-\definecolor{lightgray}{HTML}{999999}
+\definecolor{lightgray}{HTML}{777777}
 
 \ifdefined\@cv@print
   \colorlet{green}{gray}
