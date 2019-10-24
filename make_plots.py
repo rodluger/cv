@@ -10,6 +10,7 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import numpy as np
+from operator import itemgetter
 
 lato = fm.FontProperties(fname="fonts/Lato-Regular.ttf")
 
@@ -17,14 +18,14 @@ lato = fm.FontProperties(fname="fonts/Lato-Regular.ttf")
 __all__ = ["make_plots"]
 
 
-def plot_cites(ax):
+def plot_cites(ax, year1=2015):
     """Plot citation dates histogram."""
     citedates = np.loadtxt("citedates.txt")[1:]
     hist, bin_edges = np.histogram(citedates, bins=15)
     cdf = np.cumsum(hist)
     bins = 0.5 * (bin_edges[1:] + bin_edges[:-1])
-    ax.plot(bins, cdf, ".", color="C0", ms=3)
-    ax.plot(bins, cdf, "-", color="C0", lw=3, alpha=0.5)
+    ax.plot(bins, cdf, ".", color="C1", ms=3)
+    ax.plot(bins, cdf, "-", color="C1", lw=3, alpha=0.5)
     plt.setp(
         ax.get_xticklabels(), rotation=30, fontsize=10, fontproperties=lato, alpha=0.75
     )
@@ -36,9 +37,10 @@ def plot_cites(ax):
         tick.set_fontsize(10)
     ax.set_ylabel("citations", fontsize=16)
     ax.set_xlabel("year", fontsize=16)
+    ax.set_xlim(year1, datetime.now().year + 1)
 
 
-def plot_metrics(ax):
+def plot_metrics(ax, year1=2015):
     with open("metrics.json") as json_file:
         metrics = json.load(json_file)
     for i, metric in enumerate(["h", "g", "i10"]):
@@ -60,6 +62,7 @@ def plot_metrics(ax):
     ax.legend(loc="upper left", fontsize=8)
     ax.set_ylabel("index", fontsize=16)
     ax.set_xlabel("year", fontsize=16)
+    ax.set_xlim(year1, datetime.now().year + 1)
 
 
 def plot_stars(ax, year1=2015):
@@ -92,8 +95,8 @@ def plot_stars(ax, year1=2015):
                 except ValueError:
                     pass
     inds = np.array(np.linspace(0, len(bins) - 1, 20), dtype=int)
-    ax.plot_date(np.array(bins)[inds], np.array(counts)[inds], ".", color="C0", ms=3)
-    ax.plot_date(bins, counts, "-", color="C0", lw=3, alpha=0.5)
+    ax.plot_date(np.array(bins)[inds], np.array(counts)[inds], ".", color="C2", ms=3)
+    ax.plot_date(bins, counts, "-", color="C2", lw=3, alpha=0.5)
 
     plt.setp(
         ax.get_xticklabels(), rotation=30, fontsize=10, fontproperties=lato, alpha=0.75
@@ -101,6 +104,7 @@ def plot_stars(ax, year1=2015):
     plt.setp(
         ax.get_yticklabels(), rotation=30, fontsize=10, fontproperties=lato, alpha=0.75
     )
+    years = list(years) + [datetime.now().year + 1]
     ax.set_xticks(
         matplotlib.dates.date2num(
             [datetime(year, 1, 1, tzinfo=tzinfo) for year in years]
@@ -115,7 +119,17 @@ def plot_stars(ax, year1=2015):
 
 def plot_papers(ax, year1=2015):
     """Plot paper dates histogram."""
-    pubdates = np.loadtxt("pubdates.txt")[1:]
+    # Get pub dates
+    with open("pubs.json", "r") as f:
+        pubs = json.load(f)
+    with open("pubs_manual.json", "r") as f:
+        pubs_manual = json.load(f)
+    pubs = sorted(pubs + pubs_manual, key=itemgetter("pubdate"), reverse=True)
+    pubs = [p for p in pubs if p["doctype"] in ["article", "eprint"]]
+    pubdates = []
+    for pub in pubs:
+        date = int(pub["pubdate"][:4]) + int(pub["pubdate"][5:7]) / 12.0
+        pubdates.append(date)
     hist, bin_edges = np.histogram(pubdates, bins=15)
     cdf = np.cumsum(hist)
     bins = 0.5 * (bin_edges[1:] + bin_edges[:-1])
@@ -132,6 +146,7 @@ def plot_papers(ax, year1=2015):
         tick.set_fontsize(10)
     ax.set_ylabel("publications", fontsize=16)
     ax.set_xlabel("year", fontsize=16)
+    ax.set_xlim(year1, datetime.now().year + 1)
 
 
 def make_plots():
@@ -139,8 +154,8 @@ def make_plots():
     fig.subplots_adjust(wspace=0.6)
     plot_papers(ax[0])
     plot_cites(ax[1])
-    plot_metrics(ax[2])
-    plot_stars(ax[3])
+    plot_stars(ax[2])
+    plot_metrics(ax[3])
     for axis in ax[4:]:
         axis.axis("off")
 

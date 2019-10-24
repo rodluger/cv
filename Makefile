@@ -34,7 +34,7 @@ cv_onepage.pdf: cv.tex luger-cv.cls
 
 download:
 	# Get updated JSON files
-	git clone https://github.com/rodluger/cv && cd cv && git fetch && git checkout master-pdf && cp *.json ../ && cp citedates.txt ../ && cp pubdates.txt ../ && cd .. && rm -rf cv
+	git clone https://github.com/rodluger/cv && cd cv && git fetch && git checkout master-pdf && cp *.json ../ && cp citedates.txt ../ && cd .. && rm -rf cv
 
 	# Write aux tex file & make plots
 	python write_tex.py

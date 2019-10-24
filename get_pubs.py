@@ -100,9 +100,6 @@ def get_papers(author, count_cites=True):
     # Count the citations as a function of time
     citedates = []
 
-    # Count papers as a function of time
-    pubdates = []
-
     # Save bibcodes for later
     bibcodes = []
 
@@ -141,13 +138,6 @@ def get_papers(author, count_cites=True):
         except TypeError:
             page = None
 
-        # Append pub date
-        try:
-            date = int(paper.pubdate[:4]) + int(paper.pubdate[5:7]) / 12.0
-            pubdates.append(date)
-        except IndexError:
-            pass
-
         # Get citation dates
         if count_cites and paper.citation is not None:
             for i, bibcode in tqdm(
@@ -184,10 +174,6 @@ def get_papers(author, count_cites=True):
         # Sort the cite dates
         citedates = sorted(citedates)
         np.savetxt("citedates.txt", citedates, fmt="%.3f")
-
-    # Sort the pub dates
-    pubdates = sorted(pubdates)
-    np.savetxt("pubdates.txt", pubdates, fmt="%.3f")
 
     # Save bibcodes
     with open("bibcodes.txt", "w") as f:
