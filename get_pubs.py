@@ -69,6 +69,11 @@ def manual_exclude(paper):
     # Remove DDS talks
     if paper.pub == "LPI Contributions":
         return True
+
+    # Remove DS Tuc duplicate
+    if "Four Newborn Planets" in format_title(paper.title[0]) and paper.doi is None:
+        return True
+
     return False
 
 
