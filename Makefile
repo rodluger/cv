@@ -25,12 +25,16 @@ cv.pdf: cv.tex luger-cv.cls pubs.tex talks.tex
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
 
 cv_nopubs.pdf: cv.tex luger-cv.cls
-	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_nopubs "\def\withother{}\input{cv}"
-	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_nopubs "\def\withother{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_nopubs "\def\withother{}\def\withtalks{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_nopubs "\def\withother{}\def\withtalks{}\input{cv}"
 
 cv_onepage.pdf: cv.tex luger-cv.cls
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
+
+cv_pubs.pdf: cv_pubs.tex luger-cv.cls
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_pubs "\input{cv_pubs}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_pubs "\input{cv_pubs}"
 
 download:
 	# Get updated JSON files
@@ -46,12 +50,16 @@ local:
 	mv texput.pdf cv.pdf
 
 	# cv_nopubs.pdf
-	echo "\def\withother{}\input{cv}" | tectonic "-"
+	echo "\def\withother{}\def\withtalks{}\input{cv}" | tectonic "-"
 	mv texput.pdf cv_nopubs.pdf
 
 	# cv_onepage.pdf
 	echo "\def\onepage{}\input{cv}" | tectonic "-"
 	mv texput.pdf cv_onepage.pdf
+
+	# cv_pubs.pdf
+	echo "\input{cv_pubs}" | tectonic "-"
+	mv texput.pdf cv_pubs.pdf
 
 clean:
 	${RM_TMP} ${ALL_FILES}
