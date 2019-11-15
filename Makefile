@@ -9,7 +9,7 @@ RM_TMP      = ${RM} $(foreach suff, ${TMP_SUFFS}, *.${suff})
 
 CHECK_RERUN = grep Rerun $*.log
 
-ALL_FILES = cv.pdf cv_nopubs.pdf cv_onepage.pdf
+ALL_FILES = cv.pdf cv_nopubs.pdf cv_onepage.pdf cv_pubs.pdf
 
 all: update ${ALL_FILES}
 
