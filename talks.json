@@ -83,7 +83,7 @@
     ],
     "title": "Probing the TRAPPIST-1 System with Planet-Planet Occultations",
     "url": "https://www.cfa.harvard.edu/events/stars-planets-seminar?field_seminar_series_value=fall17",
-    "event": "Stars and Planets Seminar, Center for Astrophysics",
+    "event": "Stars \& Planets Seminar, Center for Astrophysics",
     "location": "Cambridge, MA",
     "pubdate": "2017-10-30"
   },
@@ -95,7 +95,7 @@
     ],
     "title": "Probing the TRAPPIST-1 System with Planet-Planet Occultations",
     "url": "http://astro.psu.edu/news-and-events/events",
-    "event": "Department Colloquium, Penn State University",
+    "event": "Dept. Colloquium, Penn State University",
     "location": "State College, PA",
     "pubdate": "2017-09-11"
   },
@@ -161,7 +161,7 @@
     ],
     "title": "Extreme Water Loss and Abiotic O$_2$ Buildup on Planets Throughout the Habitable Zones of M Dwarfs",
     "url": "http://adsabs.harvard.edu/abs/2015AAS...22540704L",
-    "event": "American Astronomical Society Meeting 225, \\textbf{407.04}",
+    "event": "AAS Meeting 225, \\textbf{407.04}",
     "location": "Seattle, WA",
     "pubdate": "2015-01"
   },
@@ -175,7 +175,7 @@
     ],
     "title": "Habitable Evaporated Cores: Converting Mini-Neptunes into Super-Earths in the Habitable Zone of M Dwarfs",
     "url": "http://adsabs.harvard.edu/abs/2015AsBio..15...57L",
-    "event": "American Astronomical Society Meeting 223, \\textbf{325.05}",
+    "event": "AAS Meeting 223, \\textbf{325.05}",
     "location": "National Harbor, MD",
     "pubdate": "2014-01"
   }
