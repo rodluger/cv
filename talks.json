@@ -4,6 +4,45 @@
       "Luger, R."
     ],
     "title": "Toward Maps of Exoplanet Surfaces",
+    "url": "https://phas.ubc.ca/toward-maps-exoplanet-surfaces",
+    "event": "University of British Columbia",
+    "location": "Vancouver, Canada",
+    "pubdate": "2020-04-12"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
+    "title": "Lots of Fun With TRAPPIST-1",
+    "event": "Stanford KIPAC Tea",
+    "location": "Stanford, CA",
+    "pubdate": "2020-02-07"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
+    "title": "Toward Maps of Exoplanet Surfaces",
+    "url": "https://kipac.stanford.edu/events/toward-maps-exoplanet-surfaces",
+    "event": "Stanford Astrophysics Colloquium",
+    "location": "Stanford, CA",
+    "pubdate": "2020-02-06"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
+    "title": "Toward Maps of Exoplanet Surfaces",
+    "url": "https://github.com/rodluger/talks/tree/master/oxford",
+    "event": "Oxford Physics Department Seminar",
+    "location": "Oxford, UK",
+    "pubdate": "2020-01-15"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
+    "title": "Toward Maps of Exoplanet Surfaces",
     "url": "https://github.com/rodluger/talks/tree/master/yale",
     "event": "Yale University Exoplanet Journal Club",
     "location": "New Haven, CT",
@@ -71,7 +110,7 @@
     ],
     "title": "Probing the TRAPPIST-1 System with K2, JWST, and Beyond",
     "url": "http://adsabs.harvard.edu/abs/2018AAS...23141002L",
-    "event": "American Astronomical Society Meeting 231, \\textbf{410.02}",
+    "event": "AAS Meeting 231, \\textbf{410.02}",
     "location": "National Harbor, MD",
     "pubdate": "2018-01"
   },
