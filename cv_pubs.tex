@@ -35,6 +35,8 @@
 \def\faHandPointerO{{\FA\symbol{"F25A}}}
 \def\faMapMarker{{\FA\symbol{"F041}}}
 
+\input{citationskip}
+
 \begin{document}
 
 \header
@@ -52,8 +54,11 @@
 %	PUBLICATIONS
 %----------------------------------------------------------------------------------------
 
-% TODO: Re-think the arrow alignment!
-\aside{}{3.05}{
+\ifdefined \citationskip
+\else
+    \def\citationskip{3.85}
+\fi
+\aside{}{\citationskip}{
     {\footnotesize citations $\longrightarrow$}\\[0em]
     {\footnotesize (refereed in \textbf{bold})}
 }

@@ -3,13 +3,14 @@ BIB         = biber
 BASH        = bash -c
 ECHO        = echo
 RM          = rm -rf
-
 TMP_SUFFS   = aux bbl blg log dvi ps eps out
 RM_TMP      = ${RM} $(foreach suff, ${TMP_SUFFS}, *.${suff})
-
 CHECK_RERUN = grep Rerun $*.log
-
 ALL_FILES = cv.pdf cv_nopubs.pdf cv_onepage.pdf cv_pubs.pdf
+
+# Environment variables; set these in the commit message!
+CITATION_SKIP = $(shell python get_env.py CITATION_SKIP)
+CITATION_SKIP_PUBS = $(shell python get_env.py CITATION_SKIP_PUBS)
 
 all: update ${ALL_FILES}
 
@@ -45,7 +46,9 @@ download:
 	python make_plots.py
 
 local:
+
 	# cv.pdf
+	echo "\\\newcommand\\\citationskip{${CITATION_SKIP}}" > citationskip.tex
 	echo "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}" | tectonic "-"
 	mv texput.pdf cv.pdf
 
@@ -58,6 +61,7 @@ local:
 	mv texput.pdf cv_onepage.pdf
 
 	# cv_pubs.pdf
+	echo "\\\newcommand\\\citationskip{${CITATION_SKIP_PUBS}}" > citationskip.tex
 	echo "\input{cv_pubs}" | tectonic "-"
 	mv texput.pdf cv_pubs.pdf
 

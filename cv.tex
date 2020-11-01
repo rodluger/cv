@@ -35,6 +35,8 @@
 \def\faHandPointerO{{\FA\symbol{"F25A}}}
 \def\faMapMarker{{\FA\symbol{"F041}}}
 
+\input{citationskip}
+
 \begin{document}
 
 \header
@@ -509,7 +511,11 @@
 
 \ifdefined \withpubs
     %
-    \aside{}{0.86}{
+    \ifdefined \citationskip
+    \else
+        \def\citationskip{2.36}
+    \fi
+    \aside{}{\citationskip}{
     {\footnotesize citations $\longrightarrow$}\\[0em]
     {\footnotesize (refereed in \textbf{bold})}
     }
