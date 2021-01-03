@@ -34,10 +34,10 @@ cv_onepage.pdf: cv.tex luger-cv.cls
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
 
-publications.pdf: publications.tex luger-cv.cls
+publications.pdf: cv_pubs.tex luger-cv.cls
 	echo "\\\newcommand\\\citationskip{${CITATION_SKIP_PUBS}}" > citationskip.tex
-	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=publications "\input{publications}"
-	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=publications "\input{publications}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_pubs "\input{cv_pubs}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_pubs "\input{cv_pubs}"
 
 download:
 	# Get updated JSON files
