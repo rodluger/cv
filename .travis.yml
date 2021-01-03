@@ -27,7 +27,7 @@ after_success: |
     git checkout --orphan $TRAVIS_BRANCH-pdf
     git rm -rf . > /dev/null 2>&1
     cp cv.pdf luger_cv.pdf
-    git add -f luger_cv.pdf cv.pdf cv_nopubs.pdf cv_onepage.pdf cv_pubs.pdf
+    git add -f luger_cv.pdf cv.pdf cv_nopubs.pdf cv_onepage.pdf publications.pdf
     git add -f pubs.json metrics.json stars.json citedates.txt
     git -c user.name='travis' -c user.email='travis' commit -m "rebuild pdf"
     git push -q -f https://$GITHUB_USER:$GITHUB_API_KEY@github.com/$TRAVIS_REPO_SLUG $TRAVIS_BRANCH-pdf > /dev/null 2>&1

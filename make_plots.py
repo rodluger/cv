@@ -37,7 +37,7 @@ def plot_cites(ax, year1=2015):
         tick.set_fontsize(10)
     ax.set_ylabel("citations", fontsize=16)
     ax.set_xlabel("year", fontsize=16)
-    ax.set_xlim(year1, datetime.now().year + 1)
+    ax.set_xlim(year1, datetime.now().year + datetime.now().month / 12)
 
 
 def plot_metrics(ax, year1=2015):
@@ -48,8 +48,15 @@ def plot_metrics(ax, year1=2015):
         inds = x >= 2015
         x = x[inds]
         y = y[inds]
-        ax.plot(x, y, ".", color="C%d" % i, ms=3)
-        ax.plot(x, y, "-", color="C%d" % i, lw=3, alpha=0.5, label=metric)
+
+        # HACK to add a little more resolution.
+        # TODO: Re-think this...
+        fac = 2
+        xi = np.repeat(x, fac) + np.tile(np.linspace(0, 1, fac, endpoint=False), len(x))
+        yi = np.interp(xi, x + 0.5, y)
+
+        ax.plot(xi, yi, ".", color="C%d" % i, ms=3)
+        ax.plot(xi, yi, "-", color="C%d" % i, lw=3, alpha=0.5, label=metric)
     plt.setp(
         ax.get_xticklabels(), rotation=30, fontsize=10, fontproperties=lato, alpha=0.75
     )
@@ -62,7 +69,7 @@ def plot_metrics(ax, year1=2015):
     ax.legend(loc="upper left", fontsize=8)
     ax.set_ylabel("index", fontsize=16)
     ax.set_xlabel("year", fontsize=16)
-    ax.set_xlim(year1, datetime.now().year + 1)
+    ax.set_xlim(year1, datetime.now().year + datetime.now().month / 12)
 
 
 def plot_stars(ax, year1=2015):
@@ -115,6 +122,7 @@ def plot_stars(ax, year1=2015):
         tick.set_fontsize(10)
     ax.set_ylabel("github stars", fontsize=16)
     ax.set_xlabel("year", fontsize=16)
+    ax.margins(0.01, None)
 
 
 def plot_papers(ax, year1=2015):
@@ -146,7 +154,7 @@ def plot_papers(ax, year1=2015):
         tick.set_fontsize(10)
     ax.set_ylabel("publications", fontsize=16)
     ax.set_xlabel("year", fontsize=16)
-    ax.set_xlim(year1, datetime.now().year + 1)
+    ax.set_xlim(year1, datetime.now().year + datetime.now().month / 12)
 
 
 def make_plots():

@@ -144,8 +144,11 @@
     {%
         \vspace{-1em}
         \begin{list}{$+$}{\cvlist}
-            \item Develop and maintain the \texttt{starry} light curve modeling code
-            \item Develop methods to detect \& characterize exoplanets with TESS and JWST
+            \item Work on statistical and computational data analysis problems
+                  \ifdefined \onepage \else
+                      applied to stellar and exoplanetary astronomy
+                  \fi
+            \item Develop algorithms and open-source software for timeseries analysis
         \end{list}
     }
 
@@ -219,7 +222,7 @@
     {Flatiron Fellowship}
     {Center for Computational Astrophysics, New York, NY}
     {%
-        \vspace*{-0.75em}
+        \vspace*{-1.1em}
     }
 
     %------------------------------------------------
@@ -228,7 +231,7 @@
     {Hubble Postdoctoral Fellowship}
     {(Declined)}
     {%
-        \vspace*{-0.75em}
+        \vspace*{-1.1em}
     }
 
     %------------------------------------------------
@@ -238,7 +241,7 @@
     {51 Pegasi b Fellowship}
     {(Declined)}
     {%
-        \vspace*{-0.75em}
+        \vspace*{-1.1em}
     }
 
     %------------------------------------------------
@@ -248,7 +251,7 @@
     {ARCS Fellowship}
     {University of Washington}
     {%
-        \vspace*{-0.75em}
+        \vspace*{-1.1em}
     }
 
     %------------------------------------------------
@@ -258,7 +261,7 @@
     {Bobby Berman Memorial Prize}
     {Swarthmore College}
     {%
-        \vspace*{-0.75em}
+        \vspace*{-1.1em}
     }
 
     %------------------------------------------------
@@ -361,46 +364,50 @@
 
     %------------------------------------------------
 
-    \entry
-    {2019-}
-    {Lecturer, LSST Data Science Fellowship}
-    {Carnegie Mellon / Flatiron Institute}
-    {%
-        \vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item Lectured on various topics related to statistical
-                  inference at week-long schools for early-career astronomers
-        \end{list}
-    }
+    \ifdefined \onepage \else
 
-    %------------------------------------------------
+        \entry
+        {2019-}
+        {Lecturer, LSST Data Science Fellowship}
+        {Carnegie Mellon / Flatiron Institute}
+        {%
+            \vspace{-1em}
+            \begin{list}{$+$}{\cvlist}
+                \item Lectured on various topics related to statistical
+                      inference at week-long schools for early-career astronomers
+            \end{list}
+        }
 
-    \entry
-    {2012--2017}
-    {Mobile Planetarium}
-    {University of Washington}
-    {%
-        \vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item Presented planetarium shows at schools and public venues throughout
-                  Washington state using UW's inflatable mobile planetarium
-        \end{list}
-    }
+        %------------------------------------------------
 
-    %------------------------------------------------
+        \entry
+        {2012--2017}
+        {Mobile Planetarium}
+        {University of Washington}
+        {%
+            \vspace{-1em}
+            \begin{list}{$+$}{\cvlist}
+                \item Presented planetarium shows at schools and public venues throughout
+                      Washington state using UW's inflatable mobile planetarium
+            \end{list}
+        }
 
-    \entry
-    {2012--2013}
-    {Teaching Assistant}
-    {University of Washington}
-    {%
-        \vspace{-1em}
-        \begin{list}{$+$}{\cvlist}
-            \item Taught two bi-weekly tutorial sessions for two college astronomy courses
-        \end{list}
-    }
+        %------------------------------------------------
 
-    %------------------------------------------------
+        \entry
+        {2012--2013}
+        {Teaching Assistant}
+        {University of Washington}
+        {%
+            \vspace{-1em}
+            \begin{list}{$+$}{\cvlist}
+                \item Taught two bi-weekly tutorial sessions for two college astronomy courses
+            \end{list}
+        }
+
+        %------------------------------------------------
+
+    \fi
 
     \ifdefined \onepage \else
 \end{entrylist}
@@ -450,6 +457,81 @@
 
 \end{entrylist}
 
+%----------------------------------------------------------------------------------------
+%	STUDENTS
+%----------------------------------------------------------------------------------------
+
+
+\ifdefined \withother
+
+    \section{students}
+    \begin{entrylist}
+
+        %------------------------------------------------
+
+        \entry
+        {2020--}
+        {Shashank Dholakia}
+        {University of California, Berkeley}
+        {%
+            \vspace{-1em}
+            \begin{list}{$+$}{\cvlist}
+                \item Developing analytic transit light curve models for oblate stars
+            \end{list}
+        }
+
+        %------------------------------------------------
+
+        \entry
+        {2020--}
+        {Rebecca Young}
+        {Simons-NSBP Scholars Program, CCA}
+        {%
+            \vspace{-1em}
+            \begin{list}{$+$}{\cvlist}
+                \item Inferring differential rotation rates from \emph{Kepler} light curves
+            \end{list}
+        }
+
+        %------------------------------------------------
+
+        \entry
+        {2020--}
+        {Fran Bartoli\'c}
+        {Pre-doctoral Program, CCA}
+        {%
+            \vspace{-1em}
+            \begin{list}{$+$}{\cvlist}
+                \item Mapping the surface of Io from Jupiter occultation data
+            \end{list}
+        }
+
+        \entry
+        {2019--2020}
+        {Asmaa Elsayed \& Brynner Hidalgo}
+        {AstroCom Program, CUNY/CCA}
+        {%
+            \vspace{-1em}
+            \begin{list}{$+$}{\cvlist}
+                \item Understand the time evolution of spotted stellar surfaces
+            \end{list}
+        }
+
+        \entry
+        {2016--2018}
+        {Nicholas Saunders}
+        {University of Washington}
+        {%
+            \vspace{-1em}
+            \begin{list}{$+$}{\cvlist}
+                \item Develop tools to mitigate systematics in \emph{K2} data
+            \end{list}
+        }
+
+        %------------------------------------------------
+
+    \end{entrylist}
+\fi
 
 %----------------------------------------------------------------------------------------
 %	OTHER
@@ -483,7 +565,7 @@
             \vspace{-1em}
             \begin{list}{$+$}{\cvlist}
                 \item Head coach of the JV Boys Soccer and Fencing Teams
-                \item Assistant coach of the MS Tennis Team
+                      %\item Assistant coach of the MS Tennis Team
             \end{list}
         }
 
@@ -534,6 +616,7 @@
 %----------------------------------------------------------------------------------------
 
 \ifdefined \withtalks
+
     \section{selected talks}
     %
     \begin{list}{}{\pubslist}
