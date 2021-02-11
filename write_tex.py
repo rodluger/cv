@@ -76,23 +76,11 @@ def format_talk(args):
     ind, talk = args
 
     fmt = "\\item"
-    n = [i for i in range(len(talk["authors"])) if "Luger, R" in talk["authors"][i]][0]
-    talk["authors"][n] = "\\textbf{Luger, R.}"
-    if len(talk["authors"]) > 5:
-        fmt += ", ".join(talk["authors"][:4])
-        fmt += ", \etal"
-        if n >= 4:
-            fmt += "\\ (including\\ \\textbf{Luger, R.})"
-    elif len(talk["authors"]) > 1:
-        fmt += ", ".join(talk["authors"][:-1])
-        fmt += ", \\& " + talk["authors"][-1]
-    else:
-        fmt += talk["authors"][0]
 
     if not talk["url"] is None:
-        fmt += ", \\link{{{0}}}{{{1}}}".format(talk["url"], talk["title"])
+        fmt += "\\link{{{0}}}{{{1}}}".format(talk["url"], talk["title"])
     else:
-        fmt += ", \\emph{{{0}}}".format(talk["title"])
+        fmt += "\\emph{{{0}}}".format(talk["title"])
 
     fmt += ", {0}".format(talk["event"])
     fmt += ", {0}".format(talk["location"])

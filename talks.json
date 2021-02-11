@@ -3,6 +3,26 @@
     "authors": [
       "Luger, R."
     ],
+    "title": "Gaussian Processes for Stellar Variability",
+    "url": "",
+    "event": "University of New South Wales",
+    "location": "Sydney, Australia",
+    "pubdate": "2021-02-03"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
+    "title": "Gaussian Processes for Stellar Variability",
+    "url": "https://luger.dev/blog/2021-01-03.html",
+    "event": "Center for Computational Astrophysics",
+    "location": "New York, NY",
+    "pubdate": "2020-11-05"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
     "title": "Toward Maps of Exoplanet Surfaces",
     "url": "",
     "event": "American Museum of Natural History",

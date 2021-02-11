@@ -9,7 +9,7 @@ CHECK_RERUN = grep Rerun $*.log
 ALL_FILES = cv.pdf cv_nopubs.pdf cv_onepage.pdf publications.pdf
 
 # Environment variables; set these in the commit message!
-CITATION_SKIP = $(shell python get_env.py CITATION_SKIP 2.36)
+CITATION_SKIP = $(shell python get_env.py CITATION_SKIP 0.95)
 CITATION_SKIP_PUBS = $(shell python get_env.py CITATION_SKIP_PUBS 3.85)
 
 all: update ${ALL_FILES}
