@@ -10,7 +10,7 @@ ALL_FILES = cv.pdf cv_nopubs.pdf cv_onepage.pdf publications.pdf
 
 # Environment variables; set these in the commit message!
 CITATION_SKIP = $(shell python get_env.py CITATION_SKIP 0.95)
-CITATION_SKIP_PUBS = $(shell python get_env.py CITATION_SKIP_PUBS 3.85)
+CITATION_SKIP_PUBS = $(shell python get_env.py CITATION_SKIP_PUBS 3.45)
 
 all: update ${ALL_FILES}
 
@@ -27,8 +27,8 @@ cv.pdf: cv.tex luger-cv.cls pubs.tex talks.tex
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
 
 cv_nopubs.pdf: cv.tex luger-cv.cls
-	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_nopubs "\def\withother{}\input{cv}"
-	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_nopubs "\def\withother{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_nopubs "\def\withother{}\def\withtalks{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_nopubs "\def\withother{}\def\withtalks{}\input{cv}"
 
 cv_onepage.pdf: cv.tex luger-cv.cls
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
@@ -58,7 +58,7 @@ local:
 	mv texput.pdf cv.pdf
 
 	# cv_nopubs.pdf
-	echo "\def\withother{}\input{cv}" | tectonic "-"
+	echo "\def\withother{}\def\withtalks{}\input{cv}" | tectonic "-"
 	mv texput.pdf cv_nopubs.pdf
 
 	# cv_onepage.pdf
