@@ -24,7 +24,16 @@ def get_repo_stars(repo, maxpages=5):
     return params
 
 
-def get_all_stars(repos=["starry", "everest", "planetplanet", "cortex", "Limbdark.jl"]):
+def get_all_stars(
+    repos=[
+        "starry_process",
+        "starry",
+        "everest",
+        "planetplanet",
+        "cortex",
+        "Limbdark.jl",
+    ]
+):
     stars = []
     for repo in repos:
         stars += get_repo_stars(repo)

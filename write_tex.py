@@ -75,7 +75,13 @@ def format_pub(args):
 def format_talk(args):
     ind, talk = args
 
-    fmt = "\\item"
+    if talk.get("icon", None) is not None:
+        icon = talk.get("icon", None)
+        if not talk["url"] is None:
+            icon = "\\link{{{0}}}{{{1}}}".format(talk["url"], icon)
+        fmt = "\\item[{{\\color{{numcolor}}\\scriptsize{0}}}] ".format(icon)
+    else:
+        fmt = "\\item"
 
     if not talk["url"] is None:
         fmt += "\\link{{{0}}}{{{1}}}".format(talk["url"], talk["title"])
