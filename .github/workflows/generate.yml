@@ -1,4 +1,4 @@
-name: tests
+name: generate
 
 on:
   push:
@@ -31,6 +31,7 @@ jobs:
         uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
+            pip install ads titlecase tqdm matplotlib
             apk add make
             make
         
