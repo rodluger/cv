@@ -22,7 +22,12 @@ update:
 	python make_plots.py
 
 cv.pdf: cv.tex luger-cv.cls pubs.tex talks.tex
-	echo "\\\newcommand\\\citationskip{${CITATION_SKIP}}" > citationskip.tex
+	echo "\newcommand\citationskip{${CITATION_SKIP}}" > citationskip.tex
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
+
+cv.pdf: cv.tex luger-cv.cls pubs.tex talks.tex
+	echo "\newcommand\citationskip{${CITATION_SKIP}}" > citationskip.tex
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\def\withpubs{}\def\withother{}\def\withtalks{}\input{cv}"
 
@@ -35,7 +40,7 @@ cv_onepage.pdf: cv.tex luger-cv.cls
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv_onepage "\def\onepage{}\input{cv}"
 
 publications.pdf: cv_pubs.tex luger-cv.cls
-	echo "\\\newcommand\\\citationskip{${CITATION_SKIP_PUBS}}" > citationskip.tex
+	echo "\newcommand\citationskip{${CITATION_SKIP_PUBS}}" > citationskip.tex
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=publications "\input{cv_pubs}"
 	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=publications "\input{cv_pubs}"
 
