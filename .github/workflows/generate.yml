@@ -33,6 +33,7 @@ jobs:
           make update
         env:
           ADS_DEV_KEY: ${{ secrets.ADS_DEV_KEY }}
+          GITHUB_API_KEY: ${{ secrets.GH_TOKEN }}
 
       - name: Build the PDFs
         uses: xu-cheng/texlive-action/full@v1
