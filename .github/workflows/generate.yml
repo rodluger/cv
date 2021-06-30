@@ -31,6 +31,8 @@ jobs:
         shell: bash -l {0}
         run: |
           make update
+        env:
+          ADS_DEV_KEY: ${{ ADS_DEV_KEY }}
 
       - name: Build the PDFs
         uses: xu-cheng/texlive-action/full@v1
