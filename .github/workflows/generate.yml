@@ -27,13 +27,20 @@ jobs:
           python -m pip install -U pip
           python -m pip install ads titlecase tqdm matplotlib
 
+      - name: Run scripts
+        shell: bash -l {0}
+        run: |
+          make update
+
       - name: Build the PDFs
         uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
-            pip install ads titlecase tqdm matplotlib
             apk add make
-            make
+            make cv.pdf
+            make cv_nopubs.pdf
+            make cv_onepage.pdf
+            make publications.pdf
         
       - name: Publish
         shell: bash -l {0}
