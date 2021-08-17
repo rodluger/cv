@@ -14,7 +14,7 @@ def get_repo_stars(repo, maxpages=5):
             % (repo, page)
         )
         req.add_header("Accept", "application/vnd.github.v3.star+json")
-        req.add_header("Authorization", "token %s" % os.getenv("GITHUB_API_KEY", ""))
+        req.add_header("Authorization", "token %s" % os.getenv("GH_API_KEY", ""))
         content = urlopen(req).read()
         par = json.loads(content)
         if len(par) == 0:
