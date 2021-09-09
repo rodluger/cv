@@ -2,11 +2,39 @@ import urllib
 from urllib.request import Request, urlopen
 import json
 import os
+import sys
+
 
 __all__ = ["get_all_stars"]
 
 
-def get_repo_stars(repo, maxpages=5):
+def get_all_repos(minstars=3, maxpages=10):
+    params = []
+    for page in range(1, maxpages + 1):
+        req = Request(
+            "https://api.github.com/users/rodluger/repos?page=%d&per_page=100"
+            % page
+        )
+        req.add_header("Accept", "application/vnd.github.v3.star+json")
+        API_KEY = os.getenv("GH_API_KEY", None)
+        if API_KEY is not None:
+            req.add_header("Authorization", "token %s" % API_KEY)
+        content = urlopen(req).read()
+        par = json.loads(content)
+        if len(par) == 0:
+            break
+        else:
+            params += par
+    
+    repos = []
+    for param in params:
+        if int(param["stargazers_count"]) > minstars:
+            repos.append(param["name"])
+
+    return repos
+
+
+def get_repo_stars(repo, maxpages=10):
     params = []
     for page in range(1, maxpages + 1):
         req = Request(
@@ -14,7 +42,9 @@ def get_repo_stars(repo, maxpages=5):
             % (repo, page)
         )
         req.add_header("Accept", "application/vnd.github.v3.star+json")
-        req.add_header("Authorization", "token %s" % os.getenv("GH_API_KEY", ""))
+        API_KEY = os.getenv("GH_API_KEY", None)
+        if API_KEY is not None:
+            req.add_header("Authorization", "token %s" % API_KEY)
         content = urlopen(req).read()
         par = json.loads(content)
         if len(par) == 0:
@@ -24,36 +54,21 @@ def get_repo_stars(repo, maxpages=5):
     return params
 
 
-def get_all_stars(
-    repos=[
-        "starry_process",
-        "starry",
-        "everest",
-        "planetplanet",
-        "cortex",
-        "Limbdark.jl",
-    ]
-):
-    stars = []
-    for repo in repos:
-        stars += get_repo_stars(repo)
-    with open("stars.json", "w") as json_file:
-        json.dump(stars, json_file)
-
-
-def get_repo_stats(repo):
-    req = Request(
-        "https://api.github.com/repos/rodluger/%s/stats/participation" % (repo)
-    )
-    content = urlopen(req).read()
-    par = json.loads(content)
-    # TODO
+def get_all_stars(clobber=False):
+    if clobber or not os.path.exists("stars.json"):
+        stars = []
+        repos = get_all_repos()
+        for repo in repos:
+            stars += get_repo_stars(repo)
+        with open("stars.json", "w") as json_file:
+            json.dump(stars, json_file)
+    else:
+        print("Using cached stars.")
 
 
 if __name__ == "__main__":
-    try:
-        get_all_stars()
-    except urllib.error.HTTPError:
-        # DEBUG: Investigate this...
-        print("HTTPError in `get_git.py`")
-        pass
+    if len(sys.argv) > 1 and sys.argv[1] == "--clobber":
+        clobber = True
+    else:
+        clobber = False
+    get_all_stars(clobber=clobber)

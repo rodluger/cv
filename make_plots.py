@@ -6,11 +6,13 @@ import json
 from dateutil import parser
 from datetime import datetime
 import matplotlib
+matplotlib.use( "agg" )
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import numpy as np
 from operator import itemgetter
+
 
 lato = fm.FontProperties(fname="fonts/Lato-Regular.ttf")
 

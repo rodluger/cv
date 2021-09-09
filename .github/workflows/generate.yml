@@ -35,6 +35,7 @@ jobs:
         env:
           ADS_DEV_KEY: ${{ secrets.ADS_DEV_KEY }}
           GH_API_KEY: ${{ secrets.GH_API_KEY }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
 
       - name: Build the PDFs
         uses: xu-cheng/texlive-action/full@v1

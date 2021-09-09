@@ -3,6 +3,17 @@
     "authors": [
       "Luger, R."
     ],
+    "title": "Linear Models for TESS Systematics",
+    "url": "https://www.youtube.com/watch?v=0bvJ8OVJLrs&t=913s",
+    "event": "TESS Science Conference II",
+    "location": "Online",
+    "pubdate": "2021-08-05",
+    "icon": "\\faVideoCamera"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
     "title": "A Bunch of Random Things I'm Working On (don't worry, they're all related to spherical harmonics)",
     "url": "https://www.youtube.com/watch?v=K6dM5xPrzX0",
     "event": "Center for Computational Astrophysics Lunch Talk",
@@ -200,6 +211,17 @@
     "event": "Dept. Colloquium, Penn State University",
     "location": "State College, PA",
     "pubdate": "2017-09-11"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
+    "title": "On the Evolution, Detection, and Characterization of Small Planets in the Habitable Zones of Low Mass Stars",
+    "url": "https://www.youtube.com/watch?v=gAItVkSzTNY&t=12s",
+    "event": "Dissertation Talk",
+    "location": "Seattle, WA",
+    "pubdate": "2017-08-11",
+    "icon": "\\faVideoCamera"
   },
   {
     "authors": [

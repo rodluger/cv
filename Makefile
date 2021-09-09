@@ -15,9 +15,9 @@ CITATION_SKIP_PUBS = $(shell python get_env.py CITATION_SKIP_PUBS 3.45)
 all: update ${ALL_FILES}
 
 update:
-	python get_pubs.py
-	python get_metrics.py
-	python get_git.py
+	python get_pubs.py --clobber
+	python get_metrics.py --clobber
+	python get_git.py --clobber
 	python write_tex.py
 	python make_plots.py
 

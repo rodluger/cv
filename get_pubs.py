@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-from __future__ import division, print_function
-
+import os
 import json
 from operator import itemgetter
 import re
@@ -12,6 +10,7 @@ from titlecase import titlecase
 from tqdm import tqdm
 import numpy as np
 import time
+import sys
 
 __all__ = ["get_papers"]
 
@@ -108,7 +107,14 @@ def get_papers(author, count_cites=True):
     # Save bibcodes for later
     bibcodes = []
 
-    for paper in papers:
+    # Save papers that cite me
+    if os.path.exists("papers_that_cite_me.json"):
+        with open("papers_that_cite_me.json", "r") as f:
+            papers_that_cite_me = json.load(f)
+    else:
+        papers_that_cite_me = {}
+
+    for paper in tqdm(papers):
 
         if not (
             ("Luger, Rodrigo" in paper.author)
@@ -145,12 +151,14 @@ def get_papers(author, count_cites=True):
 
         # Get citation dates
         if count_cites and paper.citation is not None:
-            for i, bibcode in tqdm(
-                enumerate(paper.citation), total=len(paper.citation)
-            ):
+            for i, bibcode in enumerate(paper.citation):
                 try:
-                    cite = list(ads.SearchQuery(bibcode=bibcode, fl=["pubdate"]))[0]
-                    date = int(cite.pubdate[:4]) + int(cite.pubdate[5:7]) / 12.0
+                    if bibcode in papers_that_cite_me.keys():
+                        date = papers_that_cite_me[bibcode]
+                    else:
+                        cite = list(ads.SearchQuery(bibcode=bibcode, fl=["pubdate"]))[0]
+                        date = int(cite.pubdate[:4]) + int(cite.pubdate[5:7]) / 12.0
+                        papers_that_cite_me[bibcode] = date
                     citedates.append(date)
                 except IndexError:
                     pass
@@ -185,10 +193,21 @@ def get_papers(author, count_cites=True):
         for bibcode in bibcodes:
             print(bibcode, file=f)
 
+    # Save papers that cite me
+    with open("papers_that_cite_me.json", "w") as f:
+        json.dump(papers_that_cite_me, f)
+
     return sorted(dicts, key=itemgetter("pubdate"), reverse=True)
 
 
 if __name__ == "__main__":
-    papers = get_papers("Luger, R", count_cites=True)
-    with open("pubs.json", "w") as f:
-        json.dump(papers, f, sort_keys=True, indent=2, separators=(",", ": "))
+    if len(sys.argv) > 1 and sys.argv[1] == "--clobber":
+        clobber = True
+    else:
+        clobber = False
+    if clobber or not os.path.exists("pubs.json"):
+        papers = get_papers("Luger, R", count_cites=True)
+        with open("pubs.json", "w") as f:
+            json.dump(papers, f, sort_keys=True, indent=2, separators=(",", ": "))
+    else:
+        print("Using cached pubs.")
