@@ -3,11 +3,23 @@
     "authors": [
       "Luger, R."
     ],
+    "title": "An Introduction to Gaussian Process Regression",
+    "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session13",
+    "event": "LSSTC Data Science Fellowship Program",
+    "location": "Online",
+    "pubdate": "2021-10-05",
+    "icon": "\\faCloudDownload"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
     "title": "Signal or Noise: My love-hate relationship with stellar variability",
     "url": "https://drive.google.com/file/d/1v8VfR-d3Zku_9piP_2VpqC4rNHMylNsp/view?usp=sharing",
     "event": "University of Michigan Astronomy Department Colloquium",
     "location": "Ann Arbor, MI",
-    "pubdate": "2021-09-23"
+    "pubdate": "2021-09-23",
+    "icon": "\\faCloudDownload"
   },
   {
     "authors": [
