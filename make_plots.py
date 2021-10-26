@@ -114,7 +114,7 @@ def plot_stars(ax, year1=2015):
     plt.setp(
         ax.get_yticklabels(), rotation=30, fontsize=10, fontproperties=lato, alpha=0.75
     )
-    years = list(years) + [datetime.now().year + 1]
+    years = list(years) + #[datetime.now().year + 1]
     ax.set_xticks(
         matplotlib.dates.date2num(
             [datetime(year, 1, 1, tzinfo=tzinfo) for year in years]
