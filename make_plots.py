@@ -6,7 +6,8 @@ import json
 from dateutil import parser
 from datetime import datetime
 import matplotlib
-matplotlib.use( "agg" )
+
+matplotlib.use("agg")
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
@@ -124,7 +125,7 @@ def plot_stars(ax, year1=2015):
         tick.set_fontsize(10)
     ax.set_ylabel("github stars", fontsize=16)
     ax.set_xlabel("year", fontsize=16)
-    ax.margins(0.01, None)
+    ax.margins(0.05, None)
 
 
 def plot_papers(ax, year1=2015):

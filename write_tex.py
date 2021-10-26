@@ -108,9 +108,19 @@ if __name__ == "__main__":
     with open("pubs_manual.json", "r") as f:
         pubs_manual = json.load(f)
     pubs = sorted(pubs + pubs_manual, key=itemgetter("pubdate"), reverse=True)
+
+    # Manual hack: transfer citations from
+    # exoplanet Zenodo (which we don't list)
+    # to exoplanet JOSS paper
+    for p in pubs:
+        if p["doi"] == "10.5281/zenodo.1998447":
+            for q in pubs:
+                if q["doi"] == "10.21105/joss.03285":
+                    q["citations"] += p["citations"]
+
     pubs = [p for p in pubs if p["doctype"] in ["article", "eprint"]]
     ref = [p for p in pubs if p["doctype"] == "article"]
-    unref = [p for p in pubs if p["doctype"] == "eprint"]
+    unref = [p for p in pubs if p["doctype"] != "article"]
 
     # Compute citation stats
     ntotal = len(ref) + len(unref)
