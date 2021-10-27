@@ -292,6 +292,20 @@
   {
     "authors": [
       "Luger, R.",
+      "Bedell, M.",
+      "Foreman-Mackey, D.",
+      "Angus, R.",
+      "Hogg, D."
+    ],
+    "title": "Surface Maps of Stars and Exoplanets",
+    "url": "http://adsabs.harvard.edu/abs/2020AAS...23513201L",
+    "event": "AAS Meeting 235, \\textbf{132.01}",
+    "location": "Honolulu, HI",
+    "pubdate": "2020-01"
+  },
+  {
+    "authors": [
+      "Luger, R.",
       "Barnes, R."
     ],
     "title": "Extreme Water Loss and Abiotic O$_2$ Buildup on Planets Throughout the Habitable Zones of M Dwarfs",
