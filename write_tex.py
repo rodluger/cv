@@ -10,7 +10,7 @@ from operator import itemgetter
 __all__ = ["format_pub"]
 
 JOURNAL_MAP = {
-    "ArXiv e-prints": "ArXiv",
+    "arXiv e-prints": "arXiv",
     "Monthly Notices of the Royal Astronomical Society": "\\mnras",
     "The Astrophysical Journal": "\\apj",
     "The Astronomical Journal": "\\aj",
@@ -60,8 +60,11 @@ def format_pub(args):
     if not pub["pub"] is None:
         fmt += ", " + JOURNAL_MAP.get(pub["pub"].strip("0123456789# "), pub["pub"])
 
-    if pub["pub"] == "ArXiv e-prints":
+    if pub["pub"] == "arXiv e-prints":
         fmt += ":{0}".format(pub["arxiv"])
+
+    if pub.get("accepted", False):
+        fmt += ", \\textbf{{{0} accepted}}".format(pub["accepted"])
 
     if pub["volume"] is not None:
         fmt += ", \\textbf{{{0}}}".format(pub["volume"])
@@ -117,6 +120,19 @@ if __name__ == "__main__":
             for q in pubs:
                 if q["doi"] == "10.21105/joss.03285":
                     q["citations"] += p["citations"]
+
+    # Manual hack: accepted papers
+    ApJ = [
+        "Efficient and Precise Transit Light Curves for Rapidly-Rotating, Oblate Stars"
+    ]
+    AJ = [
+        "Analytic Light Curves in Reflected Light: Phase Curves, Occultations, and Non-Lambertian Scattering for Spherical Planets and Moons"
+    ]
+    for p in pubs:
+        if p["title"] in ApJ:
+            p["accepted"] = "ApJ"
+        elif p["title"] in AJ:
+            p["accepted"] = "AJ"
 
     pubs = [p for p in pubs if p["doctype"] in ["article", "eprint"]]
     ref = [p for p in pubs if p["doctype"] == "article"]
