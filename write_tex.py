@@ -126,7 +126,8 @@ if __name__ == "__main__":
         "Efficient and Precise Transit Light Curves for Rapidly-Rotating, Oblate Stars"
     ]
     AJ = [
-        "Analytic Light Curves in Reflected Light: Phase Curves, Occultations, and Non-Lambertian Scattering for Spherical Planets and Moons"
+        "Analytic Light Curves in Reflected Light: Phase Curves, Occultations, and Non-Lambertian Scattering for Spherical Planets and Moons",
+        "Occultation Mapping of Io's Surface in the Near-Infrared I: Inferring Static Maps"
     ]
     for p in pubs:
         if p["title"] in ApJ:
