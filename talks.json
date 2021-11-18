@@ -3,6 +3,16 @@
     "authors": [
       "Luger, R."
     ],
+    "title": "Stellar Variability as a Statistical Process",
+    "event": "Department Colloquium",
+    "location": "Instit\"ut f\"ur Astrophysik G\"oettingen",
+    "pubdate": "2021-11-18",
+    "icon": "\\faCloudDownload"
+  },
+  {
+    "authors": [
+      "Luger, R."
+    ],
     "title": "An Introduction to Gaussian Process Regression",
     "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session13",
     "event": "LSSTC Data Science Fellowship Program",
