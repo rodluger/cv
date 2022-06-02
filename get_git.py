@@ -10,21 +10,22 @@ __all__ = ["get_all_stars"]
 
 def get_all_repos(minstars=3, maxpages=10):
     params = []
-    for page in range(1, maxpages + 1):
-        req = Request(
-            "https://api.github.com/users/rodluger/repos?page=%d&per_page=100"
-            % page
-        )
-        req.add_header("Accept", "application/vnd.github.v3.star+json")
-        API_KEY = os.getenv("GH_API_KEY", None)
-        if API_KEY is not None:
-            req.add_header("Authorization", "token %s" % API_KEY)
-        content = urlopen(req).read()
-        par = json.loads(content)
-        if len(par) == 0:
-            break
-        else:
-            params += par
+    for user in ["rodluger", "showyourwork"]:
+        for page in range(1, maxpages + 1):
+            req = Request(
+                "https://api.github.com/users/%s/repos?page=%d&per_page=100"
+                % (user, page)
+            )
+            req.add_header("Accept", "application/vnd.github.v3.star+json")
+            API_KEY = os.getenv("GH_API_KEY", None)
+            if API_KEY is not None:
+                req.add_header("Authorization", "token %s" % API_KEY)
+            content = urlopen(req).read()
+            par = json.loads(content)
+            if len(par) == 0:
+                break
+            else:
+                params += par
     
     repos = []
     for param in params:
