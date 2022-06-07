@@ -15,7 +15,7 @@ import numpy as np
 from operator import itemgetter
 
 
-lato = fm.FontProperties(fname="fonts/Lato-Regular.ttf")
+lato = fm.FontProperties()  # fname="fonts/Lato-Regular.ttf")
 
 
 __all__ = ["make_plots"]
@@ -35,7 +35,7 @@ def plot_cites(ax, year1=2015):
     plt.setp(
         ax.get_yticklabels(), rotation=30, fontsize=10, fontproperties=lato, alpha=0.75
     )
-    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True, nbins=4))
     for tick in ax.get_xticklabels() + ax.get_yticklabels():
         tick.set_fontsize(10)
     ax.set_ylabel("citations", fontsize=16)
@@ -66,7 +66,7 @@ def plot_metrics(ax, year1=2015):
     plt.setp(
         ax.get_yticklabels(), rotation=30, fontsize=10, fontproperties=lato, alpha=0.75
     )
-    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True, nbins=4))
     for tick in ax.get_xticklabels() + ax.get_yticklabels():
         tick.set_fontsize(10)
     ax.legend(loc="upper left", fontsize=8)
@@ -114,7 +114,7 @@ def plot_stars(ax, year1=2015):
     plt.setp(
         ax.get_yticklabels(), rotation=30, fontsize=10, fontproperties=lato, alpha=0.75
     )
-    years = list(years) # + [datetime.now().year + 1]
+    years = list(years)[1::2]  # + [datetime.now().year + 1]
     ax.set_xticks(
         matplotlib.dates.date2num(
             [datetime(year, 1, 1, tzinfo=tzinfo) for year in years]
@@ -152,7 +152,7 @@ def plot_papers(ax, year1=2015):
     plt.setp(
         ax.get_yticklabels(), rotation=30, fontsize=10, fontproperties=lato, alpha=0.75
     )
-    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True, nbins=4))
     for tick in ax.get_xticklabels() + ax.get_yticklabels():
         tick.set_fontsize(10)
     ax.set_ylabel("publications", fontsize=16)

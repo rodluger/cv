@@ -67,7 +67,7 @@ def format_pub(args):
         fmt += ", \\textbf{{{0} accepted}}".format(pub["accepted"])
 
     if pub["volume"] is not None:
-        fmt += ", \\textbf{{{0}}}".format(pub["volume"])
+        fmt += ", {0}".format(pub["volume"])
 
     if pub["page"] is not None:
         fmt += ", {0}".format(pub["page"])
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     ]
     AJ = [
         "Analytic Light Curves in Reflected Light: Phase Curves, Occultations, and Non-Lambertian Scattering for Spherical Planets and Moons",
-        "Occultation Mapping of Io's Surface in the Near-Infrared I: Inferring Static Maps"
+        "Occultation Mapping of Io's Surface in the Near-Infrared I: Inferring Static Maps",
     ]
     for p in pubs:
         if p["title"] in ApJ:

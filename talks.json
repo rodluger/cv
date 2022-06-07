@@ -59,7 +59,7 @@
   {
     "authors": ["Luger, R."],
     "title": "An Introduction to Gaussian Process Regression",
-    "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session13",
+    "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/main/Sessions/Session13",
     "event": "LSSTC Data Science Fellowship Program",
     "location": "Online",
     "pubdate": "2021-10-05",
@@ -171,7 +171,7 @@
   {
     "authors": ["Luger, R."],
     "title": "Regularization and Ridge Regression",
-    "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session10",
+    "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/main/Sessions/Session10",
     "event": "LSSTC Data Science Fellowship Program",
     "location": "New York, NY",
     "pubdate": "2019-09-12",
@@ -180,7 +180,7 @@
   {
     "authors": ["Luger, R."],
     "title": "An Introduction to Gaussian Process Regression",
-    "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session9",
+    "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/main/Sessions/Session9",
     "event": "LSSTC Data Science Fellowship Program",
     "location": "Pittsburgh, PA",
     "pubdate": "2019-06-08",
@@ -214,7 +214,7 @@
     "authors": ["Luger, R.", "Lustig-Yaeger, J.", "Agol, E."],
     "title": "Probing the TRAPPIST-1 System with K2, JWST, and Beyond",
     "url": "http://adsabs.harvard.edu/abs/2018AAS...23141002L",
-    "event": "AAS Meeting 231, \\textbf{410.02}",
+    "event": "AAS Meeting 231, 410.02",
     "location": "National Harbor, MD",
     "pubdate": "2018-01"
   },
@@ -277,7 +277,7 @@
     "authors": ["Luger, R.", "Barnes, R.", "Deitrick, R.", "others"],
     "title": "Evolution of the Water Content of Proxima Centauri b",
     "url": "http://www.hou.usra.edu/meetings/abscicon2017/pdf/3534.pdf",
-    "event": "Astrobiology Science Conference, \\textbf{3534}",
+    "event": "Astrobiology Science Conference, 3534",
     "location": "Mesa, AZ",
     "pubdate": "2017-04-28"
   },
@@ -291,7 +291,7 @@
     ],
     "title": "Habitable Zone Planets with K2",
     "url": "http://www.hou.usra.edu/meetings/abscicon2017/pdf/3338.pdf",
-    "event": "Astrobiology Science Conference, \\textbf{3338}",
+    "event": "Astrobiology Science Conference, 3338",
     "location": "Mesa, AZ",
     "pubdate": "2017-04-26"
   },
@@ -305,7 +305,7 @@
     ],
     "title": "Surface Maps of Stars and Exoplanets",
     "url": "http://adsabs.harvard.edu/abs/2020AAS...23513201L",
-    "event": "AAS Meeting 235, \\textbf{132.01}",
+    "event": "AAS Meeting 235, 132.01",
     "location": "Honolulu, HI",
     "pubdate": "2020-01"
   },
@@ -313,7 +313,7 @@
     "authors": ["Luger, R.", "Barnes, R."],
     "title": "Extreme Water Loss and Abiotic O$_2$ Buildup on Planets Throughout the Habitable Zones of M Dwarfs",
     "url": "http://adsabs.harvard.edu/abs/2015AAS...22540704L",
-    "event": "AAS Meeting 225, \\textbf{407.04}",
+    "event": "AAS Meeting 225, 407.04",
     "location": "Seattle, WA",
     "pubdate": "2015-01"
   },
@@ -327,7 +327,7 @@
     ],
     "title": "Habitable Evaporated Cores: Converting Mini-Neptunes into Super-Earths in the Habitable Zone of M Dwarfs",
     "url": "http://adsabs.harvard.edu/abs/2015AsBio..15...57L",
-    "event": "AAS Meeting 223, \\textbf{325.05}",
+    "event": "AAS Meeting 223, 325.05",
     "location": "National Harbor, MD",
     "pubdate": "2014-01"
   }

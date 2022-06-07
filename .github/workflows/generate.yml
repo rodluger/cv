@@ -6,7 +6,7 @@ on:
     branches: [master]
   workflow_dispatch:
   schedule:
-    - cron:  '00 00 * * 1'
+    - cron: "00 00 * * 1"
 
 jobs:
   generate:
@@ -44,18 +44,15 @@ jobs:
         with:
           run: |
             apk add make
-            make cv.pdf
-            make cv_nopubs.pdf
-            make cv_onepage.pdf
-            make publications.pdf
-        
+            make luger_cv.pdf
+            make luger_cv_academic.pdf
+
       - name: Publish
         shell: bash -l {0}
         run: |
           git checkout --orphan master-pdf
           git rm --cached -rf . > /dev/null 2>&1
-          cp cv.pdf luger_cv.pdf
-          git add -f luger_cv.pdf cv.pdf cv_nopubs.pdf cv_onepage.pdf publications.pdf
+          git add -f luger_cv.pdf luger_cv_academic.pdf
           git add -f pubs.json metrics.json stars.json citedates.txt
           git -c user.name='gh-actions' -c user.email='gh-actions' commit -m "rebuild pdf"
           git push -q -f https://github.com/$GITHUB_REPOSITORY master-pdf > /dev/null 2>&1

@@ -1,0 +1,627 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 1.2 (3/5/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{luger-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+
+\usepackage{fontspec}
+\newfontfamily{\FA}[Path = fonts/]{fontawesome-webfont}
+
+\usepackage{ragged2e}
+\usepackage{tikz}
+\usepackage{lastpage}
+
+\usepackage{marginnote}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{%
+    \hspace*{-2.5in}%
+    \raisebox{0.4in}[0pt][0pt]{\includegraphics[width=2.5in]{header.pdf}}%
+    \hspace*{-1.75in}%
+    \raisebox{0.235in}[0pt][0pt]{\textbf{curriculum vitae}}%
+    \hspace*{-0.67in}%
+    \textbf{\thepage~/~\pageref{LastPage}}
+}
+\cfoot{}
+
+\def\faEnvelope{{\FA\symbol{"F0E0}}}
+\def\faGithub{{\FA\symbol{"F09B}}}
+\def\faDesktop{{\FA\symbol{"F108}}}
+\def\faPhone{{\FA\symbol{"F095}}}
+\def\faHandPointerO{{\FA\symbol{"F25A}}}
+\def\faMapMarker{{\FA\symbol{"F041}}}
+\def\faVideoCamera{{\FA\symbol{"F03D}}}
+\def\faCloudDownload{{\FA\symbol{"F0ED}}}
+
+\input{citationskip}
+
+\begin{document}
+
+\thispagestyle{empty}
+\header
+
+%----------------------------------------------------------------------------------------
+%	COORDINATES
+%----------------------------------------------------------------------------------------
+
+\aside{coordinates}{0.0325}{
+    %
+    \vspace*{-0.1cm}
+    %
+    \href{mailto:rodluger@gmail.com}{{\addfontfeature{Color=linkblue}rodluger@gmail.com}\ \faEnvelope}\\[0.5em]
+    %
+    \href{https://github.com/rodluger}{{\addfontfeature{Color=linkblue}github.com/rodluger}\ \faGithub}\\[0.5em]
+    %
+    \href{https://luger.dev}{{\addfontfeature{Color=linkblue}luger.dev}\ \faHandPointerO}\\[0.5em]
+    %
+    \href{tel:610-675-6056}{{\addfontfeature{Color=linkblue}+1 (610) 675 6056}\ \faPhone}\\[0.5em]
+    %
+    \href{https://www.google.com/maps/place/Center+for+Computational+Astrophysics/@40.7406078,-73.9906964,15z/data=!4m2!3m1!1s0x0:0xaa8b3847c99de596?sa=X&sqi=2&ved=2ahUKEwjk5bPEyp3dAhWqsKQKHUPgDkoQ_BIwDXoECAcQCw}{{\addfontfeature{Color=linkblue}\small Center for Computational }\\
+        \href{https://www.google.com/maps/place/Center+for+Computational+Astrophysics/@40.7406078,-73.9906964,15z/data=!4m2!3m1!1s0x0:0xaa8b3847c99de596?sa=X&sqi=2&ved=2ahUKEwjk5bPEyp3dAhWqsKQKHUPgDkoQ_BIwDXoECAcQCw}{{\addfontfeature{Color=linkblue}\small Astrophysics, NY}}\ \faMapMarker}
+    %
+}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{education}
+
+\begin{entrylist}
+
+    %------------------------------------------------
+
+    \entry
+    {2012--2017}
+    {PhD {\normalfont Astronomy and Astrobiology}}
+    {University of Washington, Seattle WA}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item On the evolution, detection, and characterization of small, potentially habitable extrasolar planets
+            (advised by Eric Agol, Rory Barnes, Victoria Meadows)
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2012--2013}
+    {MSc {\normalfont Astronomy and Astrobiology}}
+    {University of Washington, Seattle WA}
+
+    %------------------------------------------------
+
+    \entry
+    {2006--2010}
+    {BA {\normalfont Astrophysics}}
+    {Swarthmore College, Swarthmore PA}
+    {\vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Minor in English Literature
+        \end{list}}
+
+    %------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	ABOUT
+%----------------------------------------------------------------------------------------
+
+\aside{about}{0.0325}{
+    \footnotesize
+    \mbox{I~am~a~postdoctoral~fellow~at}
+    \mbox{the~Center~for~Computational}
+    \mbox{Astrophysics~in~New~York~City,}
+    \mbox{\scalebox{1.025}[1.0]{working~on~finding~novel~ways}}
+    \mbox{to~discover~\&~characterize~exo-}
+    \mbox{\scalebox{.975}[1.0]{planets.~I~am~broadly~interested}}
+    \mbox{in~open~source~software,~time-}
+    \mbox{series~analysis,~astro-statistics,}
+    \mbox{\scalebox{.975}[1.0]{and~general~analytic~techniques}}
+    \mbox{\scalebox{.925}[1.0]{\&~algorithms~for~astronomy.~Out-}}
+    \mbox{\scalebox{.925}[1.0]{side~the~office~I~love~to~hike,~cycle,}}
+    \mbox{\scalebox{.945}[1.0]{swim,~craft~lattes,~faulty~parallel-}}
+    \mbox{ism,~and~Oxford~commas.~~~~~~~~~~~~~~~~~~~~~}
+}
+
+%----------------------------------------------------------------------------------------
+%	POSITIONS
+%----------------------------------------------------------------------------------------
+
+\section{positions}
+
+\begin{entrylist}
+
+    %------------------------------------------------
+
+    \entry
+    {2018--}
+    {Flatiron Research Fellow}
+    {Center for Computational Astrophysics, New York, NY}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Work on hard statistical and computational data analysis problems
+                  applied to cutting edge problems in stellar and exoplanetary astrophysics
+            \item Develop algorithms and open source software for timeseries analysis
+            \item Expert on Gaussian processes, Bayesian inference, astrophysical imaging
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2017--2018}
+    {Postdoctoral Researcher}
+    {University of Washington}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Developed techniques to reconstruct surface maps of extrasolar planets
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2012--2017}
+    {Research Associate}
+    {University of Washington}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Developed signal processing methods to detect \& characterize exoplanets
+            \item Investigated the atmospheric evolution of Earth-like exoplanets
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2010--2012}
+    {High School Teacher}
+    {St. Luke's School, New Canaan CT}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Created and taught a college-level elective course in astrophysics for seniors
+            \item Taught junior physics, w/ a focus on critical thinking \& creative problem solving
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	STATS
+%----------------------------------------------------------------------------------------
+
+\aside{stats}{0.075}{
+    \vspace*{0.5em}
+    \input{pubs_summary}
+}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS
+%----------------------------------------------------------------------------------------
+
+\section{honors}
+
+\begin{entrylist}
+
+    \entry
+    {2018--2022}
+    {Flatiron Fellowship}
+    {Center for Computational Astrophysics, New York, NY}
+    {%
+        \vspace*{-1.1em}
+    }
+
+    %------------------------------------------------
+    \entry
+    {2018}
+    {Hubble Postdoctoral Fellowship}
+    {(Declined)}
+    {%
+        \vspace*{-1.1em}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2018}
+    {51 Pegasi b Fellowship}
+    {(Declined)}
+    {%
+        \vspace*{-1.1em}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2012--2015}
+    {ARCS Fellowship}
+    {University of Washington}
+    {%
+        \vspace*{-1.1em}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2010}
+    {Bobby Berman Memorial Prize}
+    {Swarthmore College}
+    {%
+        \vspace*{-1.1em}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2010}
+    {The Phi Beta Kappa Society}
+    {Swarthmore College}
+    {}
+
+    %------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	REFS
+%----------------------------------------------------------------------------------------
+
+\aside{references}{0.0325}{
+    \textbf{dan foreman-mackey}\\
+    {\footnotesize \hspace*{-2em}\scalebox{.85}[1.0]{dforeman-mackey@flatironinstitute.org}}\\[0.3em]
+    \textbf{david w. hogg}\\
+    {\footnotesize dhogg@flatironinstitute.org}\\[0.3em]
+    \textbf{eric agol}\\
+    {\footnotesize agol@uw.edu}\\[0.3em]
+}
+
+%----------------------------------------------------------------------------------------
+%	METRICS
+%----------------------------------------------------------------------------------------
+
+
+\section{metrics}
+\raisebox{-0.75\height}[0pt][0pt]{
+    \begin{tikzpicture}
+        \draw (0, 0) node[inner sep=0] {\includegraphics[height=1.25in]{metrics.pdf}};
+        \draw (3.95, 1.75) node {\addfontfeature{Color=linkblue}\footnotesize\href{https://en.wikipedia.org/wiki/H-index}{(what's this?)}};
+    \end{tikzpicture}
+}
+
+\pagebreak
+
+
+%----------------------------------------------------------------------------------------
+%	SOFTWARE
+%----------------------------------------------------------------------------------------
+
+\aside{}{5.6}{
+{\footnotesize primary developer}\\[1em]
+\hrule
+{\footnotesize secondary developer}
+}
+\section{popular software}
+
+\begin{entrylist}
+
+    %------------------------------------------------
+    
+    \entry
+    {\textbf{\scalebox{.85}[1.0]{showyourwork}}}
+    {\textnormal{\texttt{pip install showyourwork}}}
+    {}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item A workflow for open source, reproducible scientific articles
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {\textbf{starry}}
+    {\textnormal{\texttt{pip install starry}}}
+    {}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Tools for light curve modeling \& mapping stars and planets
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {\textbf{\scalebox{.85}[1.0]{starry-process}}}
+    {\textnormal{\texttt{pip install starry-process}}}
+    {}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Gaussian processes for modeling stellar variability
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {\textbf{planetplanet}}
+    {\textnormal{\texttt{pip install planetplanet}}}
+    {}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Tools for modeling planet-planet occultations
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {\textbf{everest}}
+    {\textnormal{\texttt{pip install everest-pipeline}}}
+    {}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Tools for de-trending \emph{K2} light curves\\[-0.5em]
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {\textbf{exoplanet}}
+    {\textnormal{\texttt{pip install exoplanet}}}
+    {}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Tools for probabilistic modeling of exoplanet time series data
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {\textbf{VPLANET}}
+    {\textnormal{\texttt{pip install vplanet}}}
+    {}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Suite for simulating planetary system evolution and habitability
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	STUDENTS
+%----------------------------------------------------------------------------------------
+
+
+\section{students}
+\begin{entrylist}
+
+    %------------------------------------------------
+
+    \entry
+    {2022--}
+    {Sabina Sagynbayeva}
+    {Stony Brook University}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Hierarchical Bayesian modeling of stellar surfaces
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2020--}
+    {Shashank Dholakia}
+    {University of California, Berkeley}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Developing analytic transit light curve models for oblate stars
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2020--}
+    {Shishir Dholakia}
+    {University of California, Berkeley}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Developing analytic transit light curve models for oblate stars
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2020--2021}
+    {Rebecca Young}
+    {Simons-NSBP Scholars Program, CCA}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Inferring differential rotation rates from \emph{Kepler} light curves
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2020--}
+    {Fran Bartoli\'c}
+    {Pre-doctoral Program, CCA}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Mapping the surface of Io from Jupiter occultation data
+        \end{list}
+    }
+
+    \entry
+    {2019--}
+    {Asmaa Elsayed}
+    {AstroCom Program, CUNY/CCA}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Understand the time evolution of spotted stellar surfaces
+        \end{list}
+    }
+
+    \entry
+    {2019}
+    {Brynner Hidalgo}
+    {AstroCom Program, CUNY/CCA}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Understand the time evolution of spotted stellar surfaces
+        \end{list}
+    }
+
+    \entry
+    {2016--2018}
+    {Nicholas Saunders}
+    {University of Washington}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Develop tools to mitigate systematics in \emph{K2} data
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	OTHER
+%----------------------------------------------------------------------------------------
+
+\section{other}
+\begin{entrylist}
+
+    %------------------------------------------------
+
+    \entry
+    {2018--}
+    {Organizer, Astronomical Data Community Meeting}
+    {CCA}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Organize weekly meeting for NYC area graduate students, postdocs, \& faculty
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2013--2017}
+    {IT Manager}
+    {Virtual Planet Laboratory, University of Washington}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Managed VPL's virtual conferencing system and network
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+    \entry
+    {2010--2012}
+    {Head Coach}
+    {St. Luke's School, New Canaan CT}
+    {%
+        \vspace{-1em}
+        \begin{list}{{\color{numcolor}$-$}}{\cvlist}
+            \item Head coach of the JV Boys Soccer and Fencing Teams
+                    %\item Assistant coach of the MS Tennis Team
+        \end{list}
+    }
+
+    %------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	TALKS
+%----------------------------------------------------------------------------------------
+
+%\clearpage
+
+\aside{}{0.95}{
+    {\footnotesize {\color{numcolor}\faCloudDownload}\,: Downloadable}\\[0em]
+    {\footnotesize {\color{numcolor}\faVideoCamera}\,: Watchable \phantom{XX.}}
+}
+\section{selected research talks}
+%
+\begin{list}{}{\pubslist}
+    \input{talks}
+\end{list}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+%
+\clearpage
+\aside{}{0.95}{
+{\footnotesize citations $\longrightarrow$}\\[0em]
+{\footnotesize (refereed in \textbf{bold})}
+}
+%
+\section{research publications}
+%
+\begin{list}{}{\pubslist}
+    \input{pubs}
+\end{list}
+%
+\vspace{1em}
+
+
+
+\end{document}
