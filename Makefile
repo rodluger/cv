@@ -18,12 +18,12 @@ update:
 	python make_plots.py
 
 luger_cv.pdf: luger_cv.tex luger-cv.cls pubs.tex talks.tex
-	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\input{luger_cv}"
-	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\input{luger_cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=luger_cv "\input{luger_cv}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=luger_cv "\input{luger_cv}"
 
 luger_cv_academic.pdf: luger_cv_academic.tex luger-cv.cls pubs.tex talks.tex
-	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\input{luger_cv_academic}"
-	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=cv "\input{luger_cv_academic}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=luger_cv_academic "\input{luger_cv_academic}"
+	${LATEX} -interaction=nonstopmode -halt-on-error -jobname=luger_cv_academic "\input{luger_cv_academic}"
 
 download:
 	# Get updated JSON files
