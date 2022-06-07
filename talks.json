@@ -1,8 +1,55 @@
 [
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
+    "title": "Statistical Approaches to the Characterization of Stars, Exoplanets, and Solar System Bodies",
+    "url": "https://drive.google.com/file/d/105rgTKOlh54gq9do6ntDaIfW83xD-ECX/view?usp=sharing",
+    "event": "Department Colloquium",
+    "location": "University of California, Berkeley",
+    "pubdate": "2022-04-14",
+    "icon": "\\faCloudDownload"
+  },
+  {
+    "authors": ["Luger, R."],
+    "title": "Statistical Approaches to Stellar and Exoplanetary Characterization",
+    "url": "",
+    "event": "Department Colloquium",
+    "location": "University of Toronto",
+    "pubdate": "2022-02-18"
+  },
+  {
+    "authors": ["Luger, R."],
+    "title": "Algorithms, Statistics, and Software for Exoplanet Detection and Characterization",
+    "url": "",
+    "event": "Department Colloquium",
+    "location": "University of Toronto Mississauga",
+    "pubdate": "2022-03-15"
+  },
+  {
+    "authors": ["Luger, R."],
+    "title": "Algorithms, Statistics, and Software for Exoplanet Detection and Characterization",
+    "url": "",
+    "event": "Department Colloquium",
+    "location": "Carnegie Mellon University",
+    "pubdate": "2022-02-3"
+  },
+  {
+    "authors": ["Luger, R."],
+    "title": "Algorithms, Statistics, and Software for Exoplanet Detection and Characterization",
+    "url": "",
+    "event": "Department Colloquium",
+    "location": "Stony Brook University",
+    "pubdate": "2022-01-31"
+  },
+  {
+    "authors": ["Luger, R."],
+    "title": "Algorithms, Statistics, and Software for Exoplanet Detection and Characterization",
+    "url": "",
+    "event": "Department Colloquium",
+    "location": "Pennsylvania State University",
+    "pubdate": "2022-01-28"
+  },
+  {
+    "authors": ["Luger, R."],
     "title": "Stellar Variability as a Statistical Process",
     "url": "",
     "event": "Department Colloquium",
@@ -10,9 +57,7 @@
     "pubdate": "2021-11-18"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "An Introduction to Gaussian Process Regression",
     "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session13",
     "event": "LSSTC Data Science Fellowship Program",
@@ -21,9 +66,7 @@
     "icon": "\\faCloudDownload"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Signal or Noise: My love-hate relationship with stellar variability",
     "url": "https://drive.google.com/file/d/1v8VfR-d3Zku_9piP_2VpqC4rNHMylNsp/view?usp=sharing",
     "event": "University of Michigan Astronomy Department Colloquium",
@@ -32,9 +75,7 @@
     "icon": "\\faCloudDownload"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Linear Models for TESS Systematics",
     "url": "https://www.youtube.com/watch?v=0bvJ8OVJLrs&t=913s",
     "event": "TESS Science Conference II",
@@ -43,9 +84,7 @@
     "icon": "\\faVideoCamera"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "A Bunch of Random Things I'm Working On (don't worry, they're all related to spherical harmonics)",
     "url": "https://www.youtube.com/watch?v=K6dM5xPrzX0",
     "event": "Center for Computational Astrophysics Lunch Talk",
@@ -54,9 +93,7 @@
     "icon": "\\faVideoCamera"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Gaussian Processes for Stellar Variability",
     "url": "",
     "event": "University of New South Wales AstroSeminar",
@@ -64,9 +101,7 @@
     "pubdate": "2021-02-03"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Gaussian Processes for Stellar Variability",
     "url": "https://luger.dev/blog/2021-01-03.html",
     "event": "Center for Computational Astrophysics Lunch Talk",
@@ -75,9 +110,7 @@
     "icon": "\\faVideoCamera"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Toward Maps of Exoplanet Surfaces",
     "url": "",
     "event": "American Museum of Natural History Astronomy Colloquium",
@@ -85,9 +118,7 @@
     "pubdate": "2020-03-10"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Toward Maps of Exoplanet Surfaces",
     "url": "https://phas.ubc.ca/toward-maps-exoplanet-surfaces",
     "event": "University of British Columbia Astronomy Seminar",
@@ -95,9 +126,7 @@
     "pubdate": "2020-04-12"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Lots of Fun With TRAPPIST-1",
     "url": "",
     "event": "Stanford KIPAC Tea",
@@ -105,9 +134,7 @@
     "pubdate": "2020-02-07"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Toward Maps of Exoplanet Surfaces",
     "url": "https://kipac.stanford.edu/events/toward-maps-exoplanet-surfaces",
     "event": "Stanford Astrophysics Colloquium",
@@ -115,9 +142,7 @@
     "pubdate": "2020-02-06"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Toward Maps of Exoplanet Surfaces",
     "url": "https://github.com/rodluger/talks/tree/master/oxford",
     "event": "Oxford Physics Department Seminar",
@@ -126,9 +151,7 @@
     "icon": "\\faCloudDownload"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Toward Maps of Exoplanet Surfaces",
     "url": "https://github.com/rodluger/talks/tree/master/yale",
     "event": "Yale University Exoplanet Journal Club",
@@ -137,9 +160,7 @@
     "icon": "\\faCloudDownload"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Toward Maps of Exoplanet Surfaces",
     "url": "https://github.com/rodluger/talks/tree/master/villanova",
     "event": "Villanova University Astronomy Department Colloquium",
@@ -148,9 +169,7 @@
     "icon": "\\faCloudDownload"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Regularization and Ridge Regression",
     "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session10",
     "event": "LSSTC Data Science Fellowship Program",
@@ -159,9 +178,7 @@
     "icon": "\\faCloudDownload"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "An Introduction to Gaussian Process Regression",
     "url": "https://github.com/LSSTC-DSFP/LSSTC-DSFP-Sessions/tree/master/Session9",
     "event": "LSSTC Data Science Fellowship Program",
@@ -170,9 +187,7 @@
     "icon": "\\faCloudDownload"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "Gradient-based Inference Techniques for Exoplanet Light Curves",
     "url": "https://keplerscience.arc.nasa.gov/data/KepSciConV/KeplerSciConV-Tues-pm-Luger.pdf",
     "event": "Kepler Science Conference V",
@@ -196,11 +211,7 @@
     "icon": "\\faVideoCamera"
   },
   {
-    "authors": [
-      "Luger, R.",
-      "Lustig-Yaeger, J.",
-      "Agol, E."
-    ],
+    "authors": ["Luger, R.", "Lustig-Yaeger, J.", "Agol, E."],
     "title": "Probing the TRAPPIST-1 System with K2, JWST, and Beyond",
     "url": "http://adsabs.harvard.edu/abs/2018AAS...23141002L",
     "event": "AAS Meeting 231, \\textbf{410.02}",
@@ -208,11 +219,7 @@
     "pubdate": "2018-01"
   },
   {
-    "authors": [
-      "Luger, R.",
-      "Lustig-Yaeger, J.",
-      "Agol, E."
-    ],
+    "authors": ["Luger, R.", "Lustig-Yaeger, J.", "Agol, E."],
     "title": "Probing the TRAPPIST-1 System with Planet-Planet Occultations",
     "url": "https://www.cfa.harvard.edu/events/stars-planets-seminar?field_seminar_series_value=fall17",
     "event": "Stars \\& Planets Seminar, Center for Astrophysics",
@@ -220,11 +227,7 @@
     "pubdate": "2017-10-30"
   },
   {
-    "authors": [
-      "Luger, R.",
-      "Lustig-Yaeger, J.",
-      "Agol, E."
-    ],
+    "authors": ["Luger, R.", "Lustig-Yaeger, J.", "Agol, E."],
     "title": "Probing the TRAPPIST-1 System with Planet-Planet Occultations",
     "url": "http://astro.psu.edu/news-and-events/events",
     "event": "Dept. Colloquium, Penn State University",
@@ -232,9 +235,7 @@
     "pubdate": "2017-09-11"
   },
   {
-    "authors": [
-      "Luger, R."
-    ],
+    "authors": ["Luger, R."],
     "title": "On the Evolution, Detection, and Characterization of Small Planets in the Habitable Zones of Low Mass Stars",
     "url": "https://www.youtube.com/watch?v=gAItVkSzTNY&t=12s",
     "event": "Dissertation Talk",
@@ -273,12 +274,7 @@
     "icon": "\\faVideoCamera"
   },
   {
-    "authors": [
-      "Luger, R.",
-      "Barnes, R.",
-      "Deitrick, R.",
-      "others"
-    ],
+    "authors": ["Luger, R.", "Barnes, R.", "Deitrick, R.", "others"],
     "title": "Evolution of the Water Content of Proxima Centauri b",
     "url": "http://www.hou.usra.edu/meetings/abscicon2017/pdf/3534.pdf",
     "event": "Astrobiology Science Conference, \\textbf{3534}",
@@ -314,10 +310,7 @@
     "pubdate": "2020-01"
   },
   {
-    "authors": [
-      "Luger, R.",
-      "Barnes, R."
-    ],
+    "authors": ["Luger, R.", "Barnes, R."],
     "title": "Extreme Water Loss and Abiotic O$_2$ Buildup on Planets Throughout the Habitable Zones of M Dwarfs",
     "url": "http://adsabs.harvard.edu/abs/2015AAS...22540704L",
     "event": "AAS Meeting 225, \\textbf{407.04}",
